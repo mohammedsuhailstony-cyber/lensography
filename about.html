@@ -1,0 +1,970 @@
+[11:04 pm, 5/8/2026] suhail lenso: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | Lensography</title>
+<meta name="description" content="Meet Suhail, the creative behind Lenso and Lensography.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#f4f0e8;
+color:#181816;
+}
+
+body.menu-open{
+overflow:hidden;
+}
+
+…
+[11:07 pm, 5/8/2026] suhail lenso: <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | Lensography</title>
+<meta name="description" content="Meet Suhail, the creative behind Lenso and Lensography.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#f4f0e8;
+color:#181816;
+}
+
+body.menu-open{
+overflow:hidden;
+}
+
+a{
+text-decoration:none;
+color:inherit;
+}
+
+img{
+display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+.label{
+font-size:9px;
+letter-spacing:4px;
+text-transform:uppercase;
+margin-bottom:20px;
+}
+
+.heading{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(44px,5vw,70px);
+font-weight:400;
+line-height:.95;
+}
+
+
+/* NAVIGATION */
+
+.navbar{
+position:relative;
+width:100%;
+padding:28px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:100;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:29px;
+letter-spacing:5px;
+}
+
+.menu-button{
+border:0;
+background:none;
+color:#181816;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:14px;
+font-size:10px;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+.hamburger{
+width:27px;
+height:18px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.hamburger span{
+height:1px;
+width:100%;
+background:currentColor;
+}
+
+
+/* FULL SCREEN MENU */
+
+.menu-overlay{
+position:fixed;
+inset:0;
+background:#171715;
+color:#eee;
+z-index:500;
+opacity:0;
+visibility:hidden;
+transition:opacity .4s ease, visibility .4s ease;
+}
+
+.menu-overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.menu-top{
+height:90px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 5%;
+}
+
+.menu-logo{
+font-family:'Cormorant Garamond',serif;
+font-size:29px;
+letter-spacing:5px;
+}
+
+.close-button{
+border:0;
+background:none;
+color:#fff;
+font-size:32px;
+cursor:pointer;
+}
+
+.menu-content{
+height:calc(100vh - 90px);
+display:grid;
+grid-template-columns:1.2fr .8fr;
+padding:4% 8% 6%;
+align-items:center;
+}
+
+.menu-links{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.menu-links a{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(43px,5.5vw,78px);
+font-weight:400;
+line-height:1.05;
+transition:.3s;
+}
+
+.menu-links a:hover{
+opacity:.45;
+transform:translateX(10px);
+}
+
+.menu-links small{
+font-family:'Montserrat',sans-serif;
+font-size:9px;
+letter-spacing:3px;
+margin-right:20px;
+color:#777;
+}
+
+.menu-side{
+border-left:1px solid #333;
+padding-left:60px;
+}
+
+.menu-side-title{
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#777;
+margin-bottom:25px;
+}
+
+.menu-side p{
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+line-height:1.3;
+max-width:300px;
+}
+
+.socials{
+display:flex;
+gap:25px;
+margin-top:40px;
+}
+
+.socials a{
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+
+/* PAGE TITLE */
+
+.page-title{
+max-width:1200px;
+margin:0 auto;
+padding:105px 7% 105px;
+text-align:left;
+}
+
+.page-title .label{
+margin-bottom:18px;
+}
+
+.page-title h1{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(50px,6vw,82px);
+font-weight:400;
+font-style:normal;
+line-height:.94;
+letter-spacing:-1px;
+max-width:850px;
+}
+
+
+/* ABOUT SUHAIL */
+
+.about-founder{
+max-width:1200px;
+margin:0 auto;
+padding:20px 7% 130px;
+
+display:grid;
+grid-template-columns:minmax(280px,390px) 1fr;
+gap:85px;
+align-items:center;
+}
+
+.founder-photo{
+width:100%;
+aspect-ratio:1/1;
+overflow:hidden;
+background:#ddd6ca;
+}
+
+.founder-photo img{
+object-position:center;
+}
+
+.founder-text{
+max-width:620px;
+}
+
+.founder-text h2{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(45px,5vw,66px);
+font-weight:400;
+line-height:.95;
+}
+
+.founder-role{
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-top:20px;
+color:#777168;
+}
+
+.founder-text p{
+font-size:13px;
+line-height:2;
+color:#625d55;
+margin-top:26px;
+}
+
+
+/* LENSO */
+
+.lenso{
+background:#171715;
+color:#eee;
+padding:120px 8%;
+}
+
+.lenso-inner{
+max-width:1100px;
+margin:auto;
+display:grid;
+grid-template-columns:.75fr 1.25fr;
+gap:90px;
+align-items:start;
+}
+
+.lenso-title{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(55px,7vw,90px);
+font-weight:400;
+line-height:.9;
+}
+
+.lenso-text .big{
+font-family:'Cormorant Garamond',serif;
+font-size:30px;
+line-height:1.3;
+color:#eee;
+margin-bottom:28px;
+}
+
+.lenso-text p{
+font-size:13px;
+line-height:2;
+color:#b8b4ac;
+margin-bottom:22px;
+}
+
+
+/* CONNECTION */
+
+.connection{
+padding:125px 8%;
+text-align:center;
+max-width:1000px;
+margin:auto;
+}
+
+.connection .heading{
+margin-bottom:30px;
+}
+
+.connection p{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(27px,3.5vw,41px);
+line-height:1.35;
+color:#4f4a43;
+}
+
+
+/* CTA */
+
+.cta{
+background:#ded6ca;
+padding:115px 7%;
+text-align:center;
+}
+
+.cta h2{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(50px,7vw,82px);
+font-weight:400;
+line-height:.9;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:35px;
+}
+
+.button{
+display:inline-block;
+padding:16px 25px;
+border:1px solid #181816;
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+transition:.3s;
+}
+
+.button:hover{
+background:#181816;
+color:#fff;
+}
+
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#ddd;
+padding:70px 6% 30px;
+}
+
+.footer-top{
+display:flex;
+justify-content:space-between;
+gap:50px;
+margin-bottom:60px;
+}
+
+.footer-logo{
+font-family:'Cormorant Garamond',serif;
+font-size:38px;
+letter-spacing:5px;
+}
+
+.footer-links{
+display:flex;
+gap:27px;
+flex-wrap:wrap;
+}
+
+.footer-links a{
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.footer-bottom{
+border-top:1px solid #333;
+padding-top:25px;
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#777;
+}
+
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.navbar{
+padding:24px 20px;
+}
+
+.logo{
+font-size:21px;
+letter-spacing:4px;
+}
+
+.menu-button{
+font-size:0;
+}
+
+.menu-top{
+height:75px;
+padding:0 20px;
+}
+
+.menu-logo{
+font-size:21px;
+}
+
+.menu-content{
+display:block;
+height:auto;
+padding:35px 25px;
+}
+
+.menu-links a{
+font-size:44px;
+line-height:1.08;
+}
+
+.menu-links small{
+font-size:7px;
+margin-right:10px;
+}
+
+.menu-side{
+border-left:0;
+border-top:1px solid #333;
+padding:25px 0 0;
+margin-top:25px;
+}
+
+.menu-side p{
+font-size:20px;
+}
+
+.socials{
+margin-top:25px;
+}
+
+
+/* PAGE TITLE MOBILE */
+
+.page-title{
+padding:65px 25px 75px;
+}
+
+.page-title .label{
+margin-bottom:15px;
+}
+
+.page-title h1{
+font-size:52px;
+font-weight:400;
+font-style:normal;
+line-height:.94;
+letter-spacing:-.5px;
+}
+
+
+/* FOUNDER MOBILE */
+
+.about-founder{
+grid-template-columns:1fr;
+padding:10px 25px 90px;
+gap:42px;
+}
+
+.founder-photo{
+max-width:350px;
+margin:auto;
+}
+
+.founder-text h2{
+font-size:48px;
+}
+
+.founder-text p{
+font-size:12.5px;
+line-height:1.9;
+}
+
+
+/* LENSO MOBILE */
+
+.lenso{
+padding:80px 25px;
+}
+
+.lenso-inner{
+grid-template-columns:1fr;
+gap:40px;
+}
+
+.lenso-title{
+font-size:65px;
+}
+
+.lenso-text .big{
+font-size:26px;
+}
+
+
+/* CONNECTION MOBILE */
+
+.connection{
+padding:90px 25px;
+}
+
+.connection p{
+font-size:27px;
+}
+
+
+/* CTA MOBILE */
+
+.cta{
+padding:90px 25px;
+}
+
+.cta h2{
+font-size:57px;
+}
+
+.buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.button{
+width:100%;
+max-width:280px;
+}
+
+
+/* FOOTER MOBILE */
+
+.footer-top{
+display:block;
+}
+
+.footer-links{
+display:grid;
+gap:20px;
+margin-top:35px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- FULL SCREEN MENU -->
+
+<div class="menu-overlay" id="menu">
+
+<div class="menu-top">
+
+<div class="menu-logo">
+LENSOGRAPHY
+</div>
+
+<button class="close-button" onclick="closeMenu()">
+×
+</button>
+
+</div>
+
+<div class="menu-content">
+
+
+<div class="menu-links">
+
+<a href="index.html">
+<small>01</small>Home
+</a>
+
+<a href="about.html">
+<small>02</small>About Us
+</a>
+
+<a href="gallery.html">
+<small>03</small>Gallery
+</a>
+
+<a href="testimonials.html">
+<small>04</small>Testimonials
+</a>
+
+<a href="booking.html">
+<small>05</small>Book Us
+</a>
+
+<a href="contact.html">
+<small>06</small>Contact
+</a>
+
+</div>
+
+
+<div class="menu-side">
+
+<div class="menu-side-title">
+Lensography
+</div>
+
+<p>
+Wedding stories,
+honestly captured
+and beautifully preserved.
+</p>
+
+<div class="socials">
+
+<a href="https://instagram.com/lensography.in" target="_blank">
+Instagram
+</a>
+
+<a href="#">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+LENSOGRAPHY
+</a>
+
+<button class="menu-button" onclick="openMenu()">
+
+MENU
+
+<span class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</span>
+
+</button>
+
+</nav>
+
+
+<!-- PAGE TITLE -->
+
+<section class="page-title">
+
+<div class="label">
+About
+</div>
+
+<h1>
+The story behind<br>
+Lensography.
+</h1>
+
+</section>
+
+
+<!-- ABOUT SUHAIL -->
+
+<section class="about-founder">
+
+<div class="founder-photo">
+
+<!-- Upload your photo to GitHub as suhail.jpg -->
+
+<img
+src="suhail.jpg"
+alt="Suhail - Founder of Lensography">
+
+</div>
+
+
+<div class="founder-text">
+
+<div class="label">
+Behind The Brand
+</div>
+
+<h2>
+Hi, I'm Suhail.
+</h2>
+
+<div class="founder-role">
+Founder & Creative Director
+</div>
+
+<p>
+My creative journey started when I was 14,
+learning graphic design and exploring how ideas
+could be turned into something visual.
+What began as curiosity slowly became freelance work,
+real projects and eventually a much bigger creative journey.
+</p>
+
+<p>
+Over time, I discovered photography and filmmaking.
+The camera gave me a different way to tell stories —
+not by creating every moment, but by noticing
+the real ones already happening.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- LENSO -->
+
+<section class="lenso">
+
+<div class="lenso-inner">
+
+<div>
+
+<div class="label">
+Where It Started
+</div>
+
+<h2 class="lenso-title">
+Lenso.
+</h2>
+
+</div>
+
+
+<div class="lenso-text">
+
+<p class="big">
+Before Lensography, there was Lenso —
+the beginning of my creative journey.
+</p>
+
+<p>
+Lenso started as my freelance creative identity
+when I was 14. It became the place where I learned
+through real work, experimented with design
+and understood what it meant to build something
+of my own.
+</p>
+
+<p>
+As my interests grew from design into photography
+and filmmaking, that same creative foundation
+evolved into Lensography — a space dedicated
+to documenting people, emotions and stories.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONNECTION -->
+
+<section class="connection">
+
+<div class="label">
+Suhail · Lenso · Lensography
+</div>
+
+<h2 class="heading">
+One creative journey.
+</h2>
+
+<p>
+Lenso is where I learned to create.<br>
+Lensography is where I learned to preserve stories.
+</p>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="label">
+Lensography
+</div>
+
+<h2>
+Let's tell<br>
+your story.
+</h2>
+
+<div class="buttons">
+
+<a href="gallery.html" class="button">
+Explore Gallery
+</a>
+
+<a href="booking.html" class="button">
+Book Your Date
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-top">
+
+<div class="footer-logo">
+LENSOGRAPHY
+</div>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="booking.html">Book Us</a>
+<a href="contact.html">Contact</a>
+
+<a href="https://instagram.com/lensography.in" target="_blank">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Lensography · Wedding Photography & Films
+</div>
+
+</footer>
+
+
+<script>
+
+const menu = document.getElementById("menu");
+
+function openMenu(){
+menu.classList.add("active");
+document.body.classList.add("menu-open");
+}
+
+function closeMenu(){
+menu.classList.remove("active");
+document.body.classList.remove("menu-open");
+}
+
+document.addEventListener("keydown", function(event){
+
+if(event.key === "Escape"){
+closeMenu();
+}
+
+});
+
+</script>
+
+</body>
+</html>
