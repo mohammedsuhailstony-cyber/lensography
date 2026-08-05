@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lensography | Wedding Photography & Films</title>
+<meta name="description" content="Lensography — timeless wedding photography and films.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html,body{
+width:100%;
+min-height:100%;
+}
+
+body{
+font-family:'Montserrat',sans-serif;
+background:#f4f0e8;
+color:#181816;
+}
+
+body.menu-open{
+overflow:hidden;
+}
+
+a{
+color:inherit;
+text-decoration:none;
+}
+
+img{
+display:block;
+width:100%;
+object-fit:cover;
+}
+
+/* ================= NAV ================= */
+
+.navbar{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+padding:28px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:100;
+color:white;
+}
+
+.logo{
+font-family:'Cormorant Garamond',serif;
+font-size:29px;
+letter-spacing:5px;
+font-weight:500;
+}
+
+.menu-button{
+border:0;
+background:none;
+color:white;
+cursor:pointer;
+display:flex;
+align-items:center;
+gap:14px;
+font-size:10px;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+.hamburger{
+width:27px;
+height:18px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.hamburger span{
+height:1px;
+width:100%;
+background:currentColor;
+display:block;
+}
+
+/* ================= FULL SCREEN MENU ================= */
+
+.menu-overlay{
+position:fixed;
+inset:0;
+background:#171715;
+color:#eee;
+z-index:500;
+
+opacity:0;
+visibility:hidden;
+
+transition:
+opacity .45s ease,
+visibility .45s ease;
+}
+
+.menu-overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.menu-top{
+height:90px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 5%;
+}
+
+.menu-logo{
+font-family:'Cormorant Garamond',serif;
+font-size:29px;
+letter-spacing:5px;
+}
+
+.close-button{
+border:0;
+background:none;
+color:white;
+cursor:pointer;
+font-size:32px;
+font-weight:200;
+}
+
+.menu-content{
+height:calc(100vh - 90px);
+display:grid;
+grid-template-columns:1.2fr .8fr;
+padding:4% 8% 6%;
+align-items:center;
+}
+
+.menu-links{
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+}
+
+.menu-links a{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(43px,5.5vw,78px);
+font-weight:400;
+line-height:1.05;
+transition:.3s;
+}
+
+.menu-links a:hover{
+opacity:.45;
+transform:translateX(10px);
+}
+
+.menu-links small{
+font-family:'Montserrat',sans-serif;
+font-size:9px;
+letter-spacing:3px;
+margin-right:20px;
+vertical-align:middle;
+color:#777;
+}
+
+.menu-side{
+border-left:1px solid #333;
+padding-left:60px;
+}
+
+.menu-side-title{
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+color:#777;
+margin-bottom:25px;
+}
+
+.menu-side p{
+font-family:'Cormorant Garamond',serif;
+font-size:28px;
+line-height:1.3;
+max-width:300px;
+}
+
+.socials{
+margin-top:45px;
+display:flex;
+gap:25px;
+}
+
+.socials a{
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+height:100vh;
+min-height:680px;
+
+background:
+linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.42)),
+url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90')
+center/cover;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+text-align:center;
+color:white;
+
+padding:100px 25px 50px;
+}
+
+.hero-inner{
+max-width:1050px;
+}
+
+.eyebrow{
+font-size:9px;
+letter-spacing:5px;
+text-transform:uppercase;
+margin-bottom:30px;
+}
+
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(62px,9vw,125px);
+font-weight:400;
+line-height:.82;
+}
+
+.hero h1 em{
+font-weight:400;
+}
+
+.hero p{
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+font-size:22px;
+margin-top:35px;
+}
+
+.button{
+display:inline-block;
+margin-top:38px;
+border:1px solid currentColor;
+padding:16px 25px;
+
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+
+transition:.3s;
+}
+
+.button:hover{
+background:white;
+color:#111;
+}
+
+/* ================= INTRO ================= */
+
+.intro{
+padding:140px 7%;
+max-width:1150px;
+margin:auto;
+text-align:center;
+}
+
+.section-label{
+font-size:9px;
+letter-spacing:4px;
+text-transform:uppercase;
+margin-bottom:25px;
+}
+
+.heading{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(45px,6vw,78px);
+font-weight:400;
+line-height:1;
+}
+
+.intro p{
+max-width:670px;
+margin:32px auto 0;
+font-size:13px;
+line-height:2;
+color:#686259;
+}
+
+/* ================= FEATURED ================= */
+
+.featured{
+padding:30px 5% 130px;
+}
+
+.featured-heading{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-bottom:50px;
+}
+
+.featured-heading span{
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(12,1fr);
+gap:16px;
+}
+
+.image{
+position:relative;
+overflow:hidden;
+}
+
+.image img{
+height:100%;
+transition:transform .8s ease;
+}
+
+.image:hover img{
+transform:scale(1.04);
+}
+
+.image1{
+grid-column:span 7;
+height:680px;
+}
+
+.image2{
+grid-column:span 5;
+height:680px;
+}
+
+.image3{
+grid-column:span 5;
+height:550px;
+}
+
+.image4{
+grid-column:span 7;
+height:550px;
+}
+
+/* ================= STORY ================= */
+
+.story{
+background:#171715;
+color:#eee;
+padding:130px 7%;
+
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:90px;
+align-items:center;
+}
+
+.story-photo{
+height:720px;
+}
+
+.story-photo img{
+height:100%;
+}
+
+.story-text p{
+font-size:13px;
+line-height:2;
+color:#bcb8af;
+margin-top:30px;
+max-width:520px;
+}
+
+.story .button:hover{
+color:#171715;
+}
+
+/* ================= QUOTE ================= */
+
+.quote{
+padding:140px 7%;
+background:#ded6ca;
+text-align:center;
+}
+
+.quote blockquote{
+font-family:'Cormorant Garamond',serif;
+font-style:italic;
+font-size:clamp(37px,5vw,65px);
+line-height:1.05;
+max-width:1000px;
+margin:auto;
+}
+
+.quote-name{
+font-size:9px;
+letter-spacing:3px;
+text-transform:uppercase;
+margin-top:35px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+min-height:80vh;
+
+background:
+linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.48)),
+url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=90')
+center/cover;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+color:white;
+text-align:center;
+padding:80px 25px;
+}
+
+.cta h2{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(55px,8vw,105px);
+font-weight:400;
+line-height:.85;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+background:#111;
+color:#ddd;
+padding:80px 6% 30px;
+}
+
+.footer-top{
+display:flex;
+justify-content:space-between;
+gap:50px;
+margin-bottom:70px;
+}
+
+.footer-logo{
+font-family:'Cormorant Garamond',serif;
+font-size:38px;
+letter-spacing:5px;
+}
+
+.footer-links{
+display:flex;
+flex-wrap:wrap;
+gap:28px;
+}
+
+.footer-links a{
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.footer-bottom{
+border-top:1px solid #333;
+padding-top:25px;
+font-size:9px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#777;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:800px){
+
+.navbar{
+padding:24px 20px;
+}
+
+.logo{
+font-size:21px;
+letter-spacing:4px;
+}
+
+.menu-button{
+font-size:0;
+}
+
+.menu-top{
+height:75px;
+padding:0 20px;
+}
+
+.menu-logo{
+font-size:21px;
+}
+
+.menu-content{
+display:block;
+height:auto;
+padding:40px 25px;
+}
+
+.menu-links a{
+font-size:47px;
+margin-bottom:6px;
+}
+
+.menu-links small{
+font-size:7px;
+margin-right:10px;
+}
+
+.menu-side{
+border-left:0;
+border-top:1px solid #333;
+padding:30px 0 0;
+margin-top:30px;
+}
+
+.menu-side p{
+font-size:21px;
+}
+
+.socials{
+margin-top:25px;
+}
+
+.hero{
+min-height:760px;
+}
+
+.hero h1{
+line-height:.9;
+}
+
+.intro{
+padding:95px 25px;
+}
+
+.featured{
+padding:20px 15px 90px;
+}
+
+.featured-heading{
+display:block;
+}
+
+.featured-heading span{
+display:block;
+margin-top:18px;
+}
+
+.gallery{
+display:block;
+}
+
+.image{
+height:500px !important;
+margin-bottom:15px;
+}
+
+.story{
+grid-template-columns:1fr;
+padding:80px 20px;
+gap:50px;
+}
+
+.story-photo{
+height:550px;
+}
+
+.quote{
+padding:100px 25px;
+}
+
+.footer-top{
+display:block;
+}
+
+.footer-links{
+margin-top:40px;
+display:grid;
+gap:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FULL SCREEN MENU -->
+
+<div class="menu-overlay" id="menu">
+
+<div class="menu-top">
+
+<div class="menu-logo">
+LENSOGRAPHY
+</div>
+
+<button class="close-button" onclick="closeMenu()">
+×
+</button>
+
+</div>
+
+<div class="menu-content">
+
+<div class="menu-links">
+
+<a href="index.html">
+<small>01</small> Home
+</a>
+
+<a href="about.html">
+<small>02</small> About Us
+</a>
+
+<a href="gallery.html">
+<small>03</small> Gallery
+</a>
+
+<a href="testimonials.html">
+<small>04</small> Testimonials
+</a>
+
+<a href="booking.html">
+<small>05</small> Book Us
+</a>
+
+<a href="contact.html">
+<small>06</small> Contact
+</a>
+
+</div>
+
+
+<div class="menu-side">
+
+<div class="menu-side-title">
+Lensography
+</div>
+
+<p>
+Wedding stories,
+honestly captured
+and beautifully preserved.
+</p>
+
+<div class="socials">
+
+<a href="https://instagram.com/lensography.in"
+target="_blank">
+Instagram
+</a>
+
+<a href="#">
+WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- NAV -->
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+LENSOGRAPHY
+</a>
+
+<button class="menu-button" onclick="openMenu()">
+
+MENU
+
+<span class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</span>
+
+</button>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-inner">
+
+<div class="eyebrow">
+Wedding Photography & Films
+</div>
+
+<h1>
+Stories of Love,<br>
+<em>Captured Forever.</em>
+</h1>
+
+<p>
+Honest moments. Timeless memories.
+</p>
+
+<a href="gallery.html" class="button">
+Explore Our Stories
+</a>
+
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<div class="section-label">
+Welcome to Lensography
+</div>
+
+<h2 class="heading">
+We preserve more<br>
+than photographs.
+</h2>
+
+<p>
+Every wedding has its own people, emotions and little moments
+that disappear within seconds. Lensography documents those moments
+with an honest and timeless approach, creating photographs and films
+that allow you to experience your story again and again.
+</p>
+
+<a href="about.html"
+class="button"
+style="color:#171715;">
+Our Story
+</a>
+
+</section>
+
+
+<!-- FEATURED STORIES -->
+
+<section class="featured">
+
+<div class="featured-heading">
+
+<div>
+
+<div class="section-label">
+Selected Work
+</div>
+
+<h2 class="heading">
+Love Stories
+</h2>
+
+</div>
+
+<span>
+Weddings · Couples · Celebrations
+</span>
+
+</div>
+
+
+<div class="gallery">
+
+<div class="image image1">
+<img
+src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1500&q=88"
+alt="Wedding photography">
+</div>
+
+<div class="image image2">
+<img
+src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1300&q=88"
+alt="Wedding couple">
+</div>
+
+<div class="image image3">
+<img
+src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=88"
+alt="Wedding">
+</div>
+
+<div class="image image4">
+<img
+src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1500&q=88"
+alt="Wedding celebration">
+</div>
+
+</div>
+
+<div style="text-align:center">
+
+<a href="gallery.html"
+class="button"
+style="color:#171715;">
+View Full Gallery
+</a>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT PREVIEW -->
+
+<section class="story">
+
+<div class="story-photo">
+
+<img
+src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1300&q=88"
+alt="Lensography wedding photography">
+
+</div>
+
+
+<div class="story-text">
+
+<div class="section-label">
+Our Philosophy
+</div>
+
+<h2 class="heading">
+Real moments.<br>
+Beautiful stories.
+</h2>
+
+<p>
+We believe the photographs that matter most are often the ones
+that weren't planned — a glance, a laugh, a tear or a quiet moment
+between two people.
+</p>
+
+<p>
+Our approach blends natural documentary storytelling with an
+elegant visual style, creating memories that feel authentic today
+and timeless years from now.
+</p>
+
+<a href="about.html" class="button">
+Discover Lensography
+</a>
+
+</div>
+
+</section>
+
+
+<!-- TESTIMONIAL -->
+
+<section class="quote">
+
+<div class="section-label">
+Kind Words
+</div>
+
+<blockquote>
+“Every photograph took us back to exactly
+how our wedding day felt.”
+</blockquote>
+
+<div class="quote-name">
+A Lensography Couple
+</div>
+
+<a href="testimonials.html"
+class="button"
+style="color:#171715;">
+Read Their Stories
+</a>
+
+</section>
+
+
+<!-- BOOKING CTA -->
+
+<section class="cta">
+
+<div>
+
+<div class="eyebrow">
+Bookings & Enquiries
+</div>
+
+<h2>
+Your story<br>
+starts here.
+</h2>
+
+<a href="booking.html" class="button">
+Book Your Date
+</a>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-top">
+
+<div class="footer-logo">
+LENSOGRAPHY
+</div>
+
+<div class="footer-links">
+
+<a href="index.html">Home</a>
+
+<a href="about.html">About</a>
+
+<a href="gallery.html">Gallery</a>
+
+<a href="testimonials.html">Testimonials</a>
+
+<a href="booking.html">Book Us</a>
+
+<a href="contact.html">Contact</a>
+
+<a href="https://instagram.com/lensography.in"
+target="_blank">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+© 2026 Lensography · Wedding Photography & Films
+</div>
+
+</footer>
+
+
+<script>
+
+const menu =
+document.getElementById("menu");
+
+function openMenu(){
+
+menu.classList.add("active");
+
+document.body.classList.add("menu-open");
+
+}
+
+function closeMenu(){
+
+menu.classList.remove("active");
+
+document.body.classList.remove("menu-open");
+
+}
+
+document.addEventListener("keydown",function(event){
+
+if(event.key === "Escape"){
+closeMenu();
+}
+
+});
+
+</script>
+
+</body>
+</html>
