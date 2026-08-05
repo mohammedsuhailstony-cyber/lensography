@@ -6,17 +6,17 @@
 
 <title>About | Lensography</title>
 
-<meta name="description" content="Meet Mohammed Suhail, founder of Lensography, and discover the story, philosophy and creative approach behind our wedding photography and films.">
+<meta name="description" content="Meet Mohammed Suhail, founder of Lensography, and discover the story, journey and purpose behind Lensography wedding photography and films.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================================================
-   RESET
+RESET
 ========================================================= */
 
 *{
@@ -59,35 +59,12 @@ font:inherit;
 img{
 display:block;
 width:100%;
+object-fit:cover;
 }
 
 
 /* =========================================================
-   VARIABLES
-========================================================= */
-
-:root{
-
---cream:#f3efe7;
---cream-light:#f8f5ed;
---cream-dark:#e5dfd4;
-
---black:#191917;
---dark:#171715;
-
---text:#625e57;
---muted:#777168;
-
---line:#d6cfc4;
---dark-line:#373734;
-
---white:#f4f1ea;
-
-}
-
-
-/* =========================================================
-   GLOBAL
+GLOBAL
 ========================================================= */
 
 .container{
@@ -95,34 +72,18 @@ width:min(1180px,90%);
 margin:auto;
 }
 
-.label,
-.section-label{
+.label{
 font-size:8px;
 font-weight:400;
 letter-spacing:3.5px;
 text-transform:uppercase;
-color:var(--muted);
+color:#777168;
 }
 
-.section-label{
-margin-bottom:25px;
-}
-
-.display,
-.big-heading{
+.display{
 font-family:'Cormorant Garamond',serif;
-font-weight:500;
-}
-
-.big-heading{
-font-size:clamp(48px,5.5vw,76px);
-line-height:.96;
-}
-
-.body-copy{
-font-size:12px;
-line-height:1.9;
-color:var(--text);
+font-weight:400;
+line-height:.94;
 }
 
 .btn{
@@ -133,34 +94,34 @@ justify-content:center;
 min-height:48px;
 padding:0 23px;
 
-border:1px solid var(--black);
+border:1px solid currentColor;
 
 font-size:8px;
-font-weight:500;
-letter-spacing:2.5px;
+letter-spacing:2.7px;
 text-transform:uppercase;
 
 transition:.3s ease;
 }
 
 .btn-dark{
-background:var(--black);
+background:#191917;
+border-color:#191917;
 color:#fff;
 }
 
 .btn-dark:hover{
 background:transparent;
-color:var(--black);
+color:#191917;
 }
 
 .btn-outline:hover{
-background:var(--black);
+background:#191917;
 color:#fff;
 }
 
 
 /* =========================================================
-   NAVIGATION
+NAV
 ========================================================= */
 
 .navbar{
@@ -174,7 +135,8 @@ justify-content:space-between;
 position:relative;
 z-index:100;
 
-background:var(--cream);
+background:#f3efe7;
+color:#191917;
 }
 
 .logo{
@@ -188,7 +150,7 @@ line-height:1;
 .menu-button{
 border:0;
 background:none;
-color:var(--black);
+color:#191917;
 
 display:flex;
 align-items:center;
@@ -219,7 +181,7 @@ background:currentColor;
 
 
 /* =========================================================
-   FULL SCREEN MENU
+FULL MENU
 ========================================================= */
 
 .menu-overlay{
@@ -228,7 +190,7 @@ inset:0;
 
 z-index:1000;
 
-background:var(--dark);
+background:#171715;
 color:#eee;
 
 opacity:0;
@@ -256,7 +218,6 @@ justify-content:space-between;
 .menu-logo{
 font-family:'Cormorant Garamond',serif;
 font-size:27px;
-font-weight:500;
 letter-spacing:5px;
 }
 
@@ -266,7 +227,7 @@ background:none;
 color:#fff;
 
 font-family:'Cormorant Garamond',serif;
-font-size:40px;
+font-size:39px;
 
 cursor:pointer;
 }
@@ -346,12 +307,12 @@ text-transform:uppercase;
 
 
 /* =========================================================
-   HERO
+HERO
 ========================================================= */
 
 .hero{
 padding:70px 0 75px;
-border-bottom:1px solid var(--line);
+border-bottom:1px solid #d6cfc4;
 }
 
 .hero .label{
@@ -362,10 +323,9 @@ margin-bottom:20px;
 max-width:1000px;
 
 font-family:'Cormorant Garamond',serif;
-
 font-size:clamp(68px,9vw,125px);
-font-weight:500;
-line-height:.84;
+font-weight:400;
+line-height:.82;
 
 letter-spacing:-2px;
 }
@@ -382,7 +342,6 @@ margin-top:30px;
 
 font-family:'Cormorant Garamond',serif;
 font-size:clamp(21px,2.5vw,29px);
-font-weight:500;
 line-height:1.35;
 
 color:#615d56;
@@ -390,20 +349,37 @@ color:#615d56;
 
 
 /* =========================================================
-   COMMON SECTIONS
+COMMON SECTION
 ========================================================= */
 
 .section{
-padding:72px 0;
+padding:70px 0;
+}
+
+.section-label{
+font-size:8px;
+letter-spacing:3.5px;
+text-transform:uppercase;
+
+color:#777168;
+
+margin-bottom:25px;
+}
+
+.big-heading{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(48px,5.5vw,74px);
+font-weight:400;
+line-height:.95;
 }
 
 
 /* =========================================================
-   THE BEGINNING
+BEGINNING
 ========================================================= */
 
 .beginning{
-border-bottom:1px solid var(--line);
+border-bottom:1px solid #d6cfc4;
 }
 
 .beginning-grid{
@@ -416,17 +392,16 @@ align-items:start;
 
 .beginning-text{
 max-width:520px;
-}
 
-.beginning-text p{
 font-size:12px;
 line-height:1.9;
+
 color:#68635b;
 }
 
 .beginning-text strong{
-color:var(--black);
-font-weight:600;
+color:#191917;
+font-weight:500;
 }
 
 .beginning-text p + p{
@@ -435,11 +410,11 @@ margin-top:17px;
 
 
 /* =========================================================
-   JOURNEY
+JOURNEY
 ========================================================= */
 
 .journey{
-background:var(--black);
+background:#191917;
 color:#eee;
 }
 
@@ -462,8 +437,8 @@ grid-template-columns:repeat(3,1fr);
 
 margin-top:42px;
 
-border-top:1px solid var(--dark-line);
-border-bottom:1px solid var(--dark-line);
+border-top:1px solid #373734;
+border-bottom:1px solid #373734;
 }
 
 .journey-item{
@@ -475,20 +450,23 @@ padding-left:0;
 }
 
 .journey-item + .journey-item{
-border-left:1px solid var(--dark-line);
+border-left:1px solid #373734;
 }
 
 .journey-number{
 font-size:7px;
 letter-spacing:2.5px;
+
 color:#77736c;
+
 margin-bottom:20px;
 }
 
 .journey-item h3{
 font-family:'Cormorant Garamond',serif;
 font-size:29px;
-font-weight:500;
+font-weight:400;
+
 margin-bottom:10px;
 }
 
@@ -500,11 +478,11 @@ color:#aaa69e;
 
 
 /* =========================================================
-   ABOUT SUHAIL
+ABOUT SUHAIL
 ========================================================= */
 
 .about-me{
-background:var(--cream-light);
+background:#f8f5ed;
 }
 
 .about-grid{
@@ -537,26 +515,24 @@ font-size:7px;
 letter-spacing:2px;
 text-transform:uppercase;
 
-color:var(--muted);
+color:#777168;
 }
 
 .about-content h2{
 font-family:'Cormorant Garamond',serif;
-
 font-size:clamp(55px,6vw,82px);
-font-weight:500;
-line-height:.9;
+font-weight:400;
+line-height:.88;
 
 margin-bottom:18px;
 }
 
 .role{
 font-size:7px;
-font-weight:500;
 letter-spacing:2.5px;
 text-transform:uppercase;
 
-color:var(--muted);
+color:#777168;
 
 margin-bottom:25px;
 }
@@ -567,7 +543,7 @@ max-width:570px;
 font-size:11px;
 line-height:1.85;
 
-color:var(--text);
+color:#625e57;
 
 margin-bottom:15px;
 }
@@ -582,7 +558,6 @@ border-left:1px solid #8d8980;
 
 font-family:'Cormorant Garamond',serif;
 font-size:23px;
-font-weight:500;
 font-style:italic;
 line-height:1.35;
 
@@ -591,150 +566,223 @@ color:#22211e;
 
 
 /* =========================================================
-   OUR STORY — LENSOGRAPHY
+LENSOGRAPHY STORY
 ========================================================= */
 
-.our-story{
-background:var(--cream);
-border-top:1px solid var(--line);
-border-bottom:1px solid var(--line);
+.brand-story{
+background:#f3efe7;
+border-top:1px solid #d6cfc4;
+border-bottom:1px solid #d6cfc4;
 }
 
-.story-header{
+.brand-story-intro{
 display:grid;
-grid-template-columns:.9fr 1.1fr;
-
+grid-template-columns:1fr 1fr;
 gap:8vw;
 align-items:start;
 }
 
 .story-title{
-font-family:'Cormorant Garamond',serif;
+max-width:650px;
 
-font-size:clamp(55px,7vw,92px);
-font-weight:500;
-line-height:.9;
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(60px,7vw,100px);
+font-weight:400;
+line-height:.88;
+
+letter-spacing:-1px;
 }
 
-.story-copy{
-padding-top:7px;
+.story-intro-copy{
+max-width:500px;
+padding-top:8px;
 }
 
-.story-copy .lead{
+.story-intro-copy .lead{
 font-family:'Cormorant Garamond',serif;
-
-font-size:28px;
-font-weight:500;
-line-height:1.28;
+font-size:27px;
+line-height:1.3;
 
 color:#292824;
 
-margin-bottom:22px;
+margin-bottom:20px;
 }
 
-.story-copy p:not(.lead){
+.story-intro-copy p{
 font-size:11px;
-line-height:1.9;
-color:#625e57;
+line-height:1.85;
+
+color:#666159;
 }
 
-.story-copy p + p{
-margin-top:15px;
+.story-points{
+margin-top:50px;
+
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+border-top:1px solid #d6cfc4;
+border-bottom:1px solid #d6cfc4;
 }
 
-.story-line{
-width:100%;
-height:1px;
+.story-point{
+padding:32px 30px;
+}
 
-background:var(--line);
+.story-point:first-child{
+padding-left:0;
+}
 
-margin:45px 0 0;
+.story-point + .story-point{
+border-left:1px solid #d6cfc4;
+}
+
+.story-point-number{
+font-size:7px;
+letter-spacing:2.5px;
+color:#8a857c;
+margin-bottom:18px;
+}
+
+.story-point h3{
+font-family:'Cormorant Garamond',serif;
+font-size:29px;
+font-weight:400;
+margin-bottom:11px;
+}
+
+.story-point p{
+font-size:10px;
+line-height:1.8;
+color:#68635b;
 }
 
 
 /* =========================================================
-   WHY LENSOGRAPHY
+WHY US
 ========================================================= */
 
 .why-us{
-background:var(--cream-light);
+background:#f8f5ed;
 }
 
-.why-intro{
+.why-header{
 display:grid;
-grid-template-columns:1fr 1fr;
-
+grid-template-columns:1fr .8fr;
 gap:8vw;
 align-items:end;
-
-margin-bottom:42px;
 }
 
-.why-intro p{
-max-width:430px;
+.why-header p{
+max-width:400px;
 
-font-size:11px;
-line-height:1.85;
+font-family:'Cormorant Garamond',serif;
+font-size:24px;
+line-height:1.3;
 
-color:var(--text);
+color:#625e57;
 }
 
 .why-grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
 
-border-top:1px solid var(--line);
+margin-top:45px;
+
+border-top:1px solid #d6cfc4;
 }
 
 .why-item{
-display:grid;
-grid-template-columns:55px 1fr;
+padding:35px 35px 35px 0;
 
-gap:20px;
-
-padding:30px 35px 30px 0;
-
-border-bottom:1px solid var(--line);
+border-bottom:1px solid #d6cfc4;
 }
 
 .why-item:nth-child(even){
 padding-left:35px;
-border-left:1px solid var(--line);
+border-left:1px solid #d6cfc4;
 }
 
 .why-number{
-font-family:'Cormorant Garamond',serif;
-
-font-size:20px;
-color:#99948b;
+font-size:7px;
+letter-spacing:2.5px;
+color:#8a857c;
+margin-bottom:17px;
 }
 
 .why-item h3{
 font-family:'Cormorant Garamond',serif;
-
-font-size:29px;
-font-weight:500;
-line-height:1;
-
-margin-bottom:10px;
+font-size:30px;
+font-weight:400;
+margin-bottom:11px;
 }
 
 .why-item p{
-max-width:430px;
-
-font-size:10px;
+max-width:470px;
+font-size:10.5px;
 line-height:1.8;
-
-color:#6a655d;
+color:#666159;
 }
 
 
 /* =========================================================
-   EXPERIENCE
+WHAT I DO
+========================================================= */
+
+.what-i-do{
+border-top:1px solid #d6cfc4;
+border-bottom:1px solid #d6cfc4;
+}
+
+.what-grid{
+display:grid;
+grid-template-columns:.9fr 1.1fr;
+
+gap:8vw;
+}
+
+.what-text p{
+font-size:12px;
+line-height:1.9;
+
+color:#656159;
+
+margin-bottom:15px;
+}
+
+.what-list{
+margin-top:30px;
+border-top:1px solid #d6cfc4;
+}
+
+.what-list div{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:17px 0;
+
+border-bottom:1px solid #d6cfc4;
+
+font-family:'Cormorant Garamond',serif;
+font-size:22px;
+}
+
+.what-list span{
+font-family:'Montserrat',sans-serif;
+font-size:7px;
+letter-spacing:2px;
+
+color:#8a857c;
+}
+
+
+/* =========================================================
+EXPERIENCE
 ========================================================= */
 
 .experience{
-background:var(--cream-dark);
+background:#e5dfd4;
 }
 
 .experience-top{
@@ -778,9 +826,8 @@ border-left:1px solid #c5beb2;
 
 .stat-number{
 font-family:'Cormorant Garamond',serif;
-
 font-size:clamp(55px,6vw,80px);
-font-weight:500;
+font-weight:400;
 line-height:.9;
 }
 
@@ -788,74 +835,62 @@ line-height:.9;
 margin-top:12px;
 
 font-size:7px;
-font-weight:500;
 letter-spacing:2.5px;
 text-transform:uppercase;
 
-color:var(--muted);
+color:#777168;
 }
 
 
 /* =========================================================
-   WHAT WE DO
+LENSOGRAPHY
 ========================================================= */
 
-.what-i-do{
-background:var(--cream);
-border-bottom:1px solid var(--line);
+.lensography{
+background:#f8f5ed;
 }
 
-.what-grid{
+.lensography-grid{
 display:grid;
-grid-template-columns:.9fr 1.1fr;
+grid-template-columns:1.05fr .95fr;
 
 gap:8vw;
+align-items:start;
 }
 
-.what-text p{
-font-size:11px;
-line-height:1.9;
+.lensography-title{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(55px,6.5vw,88px);
+font-weight:400;
+line-height:.88;
+}
 
-color:#656159;
+.lensography-copy .lead{
+font-family:'Cormorant Garamond',serif;
+font-size:27px;
+line-height:1.25;
+
+color:#292824;
+
+margin-bottom:22px;
+}
+
+.lensography-copy p{
+font-size:11px;
+line-height:1.85;
+
+color:#666159;
 
 margin-bottom:15px;
 }
 
-.what-list{
-margin-top:30px;
-border-top:1px solid var(--line);
-}
-
-.what-list div{
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-padding:17px 0;
-
-border-bottom:1px solid var(--line);
-
-font-family:'Cormorant Garamond',serif;
-font-size:22px;
-font-weight:500;
-}
-
-.what-list span{
-font-family:'Montserrat',sans-serif;
-
-font-size:7px;
-letter-spacing:2px;
-
-color:#8a857c;
-}
-
 
 /* =========================================================
-   VALUES
+VALUES
 ========================================================= */
 
 .values{
-background:var(--black);
+background:#191917;
 color:#eee;
 }
 
@@ -869,8 +904,8 @@ grid-template-columns:repeat(3,1fr);
 
 margin-top:40px;
 
-border-top:1px solid var(--dark-line);
-border-bottom:1px solid var(--dark-line);
+border-top:1px solid #373734;
+border-bottom:1px solid #373734;
 }
 
 .value{
@@ -882,21 +917,22 @@ padding-left:0;
 }
 
 .value + .value{
-border-left:1px solid var(--dark-line);
+border-left:1px solid #373734;
 }
 
 .value-number{
 font-size:7px;
 letter-spacing:2.5px;
+
 color:#77736c;
+
 margin-bottom:20px;
 }
 
 .value h3{
 font-family:'Cormorant Garamond',serif;
-
 font-size:29px;
-font-weight:500;
+font-weight:400;
 
 margin-bottom:10px;
 }
@@ -909,7 +945,7 @@ color:#aaa69e;
 
 
 /* =========================================================
-   CTA
+CTA
 ========================================================= */
 
 .cta{
@@ -922,7 +958,7 @@ font-size:8px;
 letter-spacing:3.5px;
 text-transform:uppercase;
 
-color:var(--muted);
+color:#777168;
 
 margin-bottom:20px;
 }
@@ -932,10 +968,9 @@ max-width:850px;
 margin:auto;
 
 font-family:'Cormorant Garamond',serif;
-
 font-size:clamp(50px,6vw,78px);
-font-weight:500;
-line-height:.94;
+font-weight:400;
+line-height:.92;
 }
 
 .cta p{
@@ -960,7 +995,7 @@ margin-top:27px;
 
 
 /* =========================================================
-   FOOTER
+FOOTER
 ========================================================= */
 
 footer{
@@ -983,7 +1018,6 @@ margin-bottom:45px;
 .footer-logo{
 font-family:'Cormorant Garamond',serif;
 font-size:32px;
-font-weight:500;
 letter-spacing:5px;
 }
 
@@ -1019,13 +1053,13 @@ color:#777;
 
 
 /* =========================================================
-   MOBILE
+MOBILE
 ========================================================= */
 
 @media(max-width:700px){
 
 .container{
-width:calc(100% - 40px);
+width:calc(100% - 36px);
 }
 
 
@@ -1033,7 +1067,7 @@ width:calc(100% - 40px);
 
 .navbar{
 height:72px;
-padding:0 20px;
+padding:0 18px;
 }
 
 .logo{
@@ -1106,31 +1140,37 @@ margin-top:19px;
 /* HERO */
 
 .hero{
-padding:45px 0 48px;
+padding:48px 0 50px;
 }
 
 .hero .label{
 font-size:7px;
-letter-spacing:2.5px;
+letter-spacing:2.7px;
 line-height:1.6;
-
 margin-bottom:17px;
 }
 
+/* FIXED MOBILE HERO HEADING */
+
 .hero h1{
-font-size:54px;
-font-weight:500;
-line-height:.88;
+font-size:50px;
+line-height:.90;
 letter-spacing:-1px;
+max-width:100%;
+}
+
+/* desktop manual break removed on mobile */
+
+.hero h1 br{
+display:none;
 }
 
 .hero-description{
 max-width:350px;
 
-margin-top:22px;
+margin-top:23px;
 
 font-size:20px;
-font-weight:500;
 line-height:1.3;
 }
 
@@ -1143,14 +1183,13 @@ padding:48px 0;
 
 .section-label{
 font-size:7px;
-letter-spacing:2.6px;
+letter-spacing:2.7px;
 margin-bottom:18px;
 }
 
 .big-heading{
-font-size:42px;
-font-weight:500;
-line-height:.96;
+font-size:43px;
+line-height:.94;
 }
 
 
@@ -1161,10 +1200,8 @@ display:block;
 }
 
 .beginning-text{
-margin-top:23px;
-}
+margin-top:25px;
 
-.beginning-text p{
 font-size:11px;
 line-height:1.8;
 }
@@ -1173,30 +1210,29 @@ line-height:1.8;
 /* JOURNEY */
 
 .journey-heading{
-font-size:43px;
+font-size:44px;
 }
 
 .journey-grid{
 display:block;
 
-margin-top:29px;
+margin-top:30px;
 
 border-bottom:0;
 }
 
 .journey-item,
 .journey-item:first-child{
-padding:22px 0;
+padding:23px 0;
 }
 
 .journey-item + .journey-item{
 border-left:0;
-border-top:1px solid var(--dark-line);
+border-top:1px solid #373734;
 }
 
 .journey-item h3{
 font-size:27px;
-font-weight:500;
 }
 
 .journey-item p{
@@ -1204,7 +1240,7 @@ font-size:10px;
 }
 
 
-/* ABOUT SUHAIL */
+/* ABOUT */
 
 .about-grid{
 display:block;
@@ -1215,8 +1251,8 @@ max-width:none;
 }
 
 .portrait{
-aspect-ratio:1/1;
 height:auto;
+aspect-ratio:1/1;
 }
 
 .portrait-caption{
@@ -1224,19 +1260,18 @@ font-size:6px;
 }
 
 .about-content{
-margin-top:29px;
+margin-top:30px;
 }
 
 .about-content h2{
-font-size:51px;
-font-weight:500;
-line-height:.9;
+font-size:52px;
+line-height:.88;
 }
 
 .role{
 font-size:6px;
 line-height:1.6;
-margin-bottom:19px;
+margin-bottom:20px;
 }
 
 .about-content p{
@@ -1246,90 +1281,125 @@ line-height:1.8;
 
 .about-content .about-quote{
 font-size:21px;
-font-weight:500;
 margin-top:22px;
 }
 
 
-/* OUR STORY */
+/* BRAND STORY */
 
-.story-header{
+.brand-story-intro{
 display:block;
 }
 
+/* FIXED MOBILE STORY HEADING */
+
 .story-title{
-font-size:49px;
-font-weight:500;
-line-height:.9;
+font-size:46px;
+line-height:.92;
+letter-spacing:-.5px;
+max-width:100%;
 }
 
-.story-copy{
+/* desktop forced breaks removed */
+
+.story-title br{
+display:none;
+}
+
+.story-intro-copy{
 padding-top:0;
-margin-top:27px;
+margin-top:26px;
 }
 
-.story-copy .lead{
+.story-intro-copy .lead{
 font-size:22px;
-font-weight:500;
-line-height:1.28;
-margin-bottom:18px;
+line-height:1.3;
 }
 
-.story-copy p:not(.lead){
+.story-intro-copy p{
 font-size:10.5px;
 line-height:1.8;
 }
 
-.story-copy p + p{
-margin-top:13px;
+.story-points{
+display:block;
+margin-top:30px;
+border-bottom:0;
 }
 
-.story-line{
-margin-top:32px;
+.story-point,
+.story-point:first-child{
+padding:23px 0;
+}
+
+.story-point + .story-point{
+border-left:0;
+border-top:1px solid #d6cfc4;
+}
+
+.story-point h3{
+font-size:27px;
+}
+
+.story-point p{
+font-size:10px;
 }
 
 
 /* WHY US */
 
-.why-intro{
+.why-header{
 display:block;
-margin-bottom:28px;
 }
 
-.why-intro p{
+.why-header p{
 margin-top:20px;
-
-font-size:10.5px;
-line-height:1.8;
+font-size:21px;
 }
 
 .why-grid{
 display:block;
+margin-top:30px;
 }
 
 .why-item,
 .why-item:nth-child(even){
-grid-template-columns:38px 1fr;
-
-gap:12px;
-
-padding:22px 0;
-
+padding:24px 0;
 border-left:0;
+border-bottom:1px solid #d6cfc4;
 }
 
 .why-item h3{
-font-size:25px;
-font-weight:500;
+font-size:27px;
 }
 
 .why-item p{
-font-size:10px;
-line-height:1.75;
+font-size:10.5px;
 }
 
-.why-number{
-font-size:17px;
+
+/* WHAT */
+
+.what-grid{
+display:block;
+}
+
+.what-text{
+margin-top:25px;
+}
+
+.what-text p{
+font-size:11px;
+line-height:1.8;
+}
+
+.what-list{
+margin-top:25px;
+}
+
+.what-list div{
+font-size:20px;
+padding:15px 0;
 }
 
 
@@ -1353,7 +1423,7 @@ display:block;
 
 .stat,
 .stat:first-child{
-padding:22px 0;
+padding:23px 0;
 }
 
 .stat + .stat{
@@ -1362,8 +1432,7 @@ border-top:1px solid #c5beb2;
 }
 
 .stat-number{
-font-size:57px;
-font-weight:500;
+font-size:58px;
 }
 
 .stat-label{
@@ -1371,29 +1440,29 @@ font-size:6px;
 }
 
 
-/* WHAT WE DO */
+/* LENSOGRAPHY */
 
-.what-grid{
+.lensography-grid{
 display:block;
 }
 
-.what-text{
-margin-top:24px;
+.lensography-title{
+font-size:50px;
+line-height:.88;
 }
 
-.what-text p{
+.lensography-copy{
+margin-top:28px;
+}
+
+.lensography-copy .lead{
+font-size:23px;
+line-height:1.25;
+}
+
+.lensography-copy p{
 font-size:10.5px;
 line-height:1.8;
-}
-
-.what-list{
-margin-top:24px;
-}
-
-.what-list div{
-font-size:20px;
-font-weight:500;
-padding:15px 0;
 }
 
 
@@ -1409,17 +1478,16 @@ border-bottom:0;
 
 .value,
 .value:first-child{
-padding:22px 0;
+padding:23px 0;
 }
 
 .value + .value{
 border-left:0;
-border-top:1px solid var(--dark-line);
+border-top:1px solid #373734;
 }
 
 .value h3{
 font-size:27px;
-font-weight:500;
 }
 
 .value p{
@@ -1430,19 +1498,18 @@ font-size:10px;
 /* CTA */
 
 .cta{
-padding:52px 20px;
+padding:52px 18px;
 }
 
 .cta-small{
 font-size:7px;
-letter-spacing:2.6px;
+letter-spacing:2.7px;
 margin-bottom:17px;
 }
 
 .cta h2{
-font-size:44px;
-font-weight:500;
-line-height:.94;
+font-size:45px;
+line-height:.92;
 }
 
 .cta p{
@@ -1467,7 +1534,7 @@ min-height:44px;
 padding:0 10px;
 
 font-size:6px;
-letter-spacing:1.7px;
+letter-spacing:1.8px;
 }
 
 
@@ -1517,29 +1584,33 @@ margin-top:5px;
 
 
 /* =========================================================
-   SMALL PHONE
+SMALL PHONE
 ========================================================= */
 
 @media(max-width:380px){
 
 .hero h1{
-font-size:50px;
-}
-
-.big-heading{
-font-size:39px;
-}
-
-.story-title{
-font-size:46px;
-}
-
-.about-content h2{
 font-size:47px;
 }
 
+.big-heading{
+font-size:40px;
+}
+
+.about-content h2{
+font-size:48px;
+}
+
+.story-title{
+font-size:43px;
+}
+
+.lensography-title{
+font-size:46px;
+}
+
 .cta h2{
-font-size:41px;
+font-size:42px;
 }
 
 }
@@ -1552,7 +1623,7 @@ font-size:41px;
 
 
 <!-- =====================================================
-     FULL SCREEN MENU
+FULL SCREEN MENU
 ===================================================== -->
 
 <div class="menu-overlay" id="menu">
@@ -1575,7 +1646,6 @@ aria-label="Close menu">
 
 
 <div class="menu-content">
-
 
 <div class="menu-links">
 
@@ -1620,15 +1690,13 @@ and beautifully preserved.
 
 <div class="socials">
 
-<a
-href="https://instagram.com/lensography.in"
+<a href="https://instagram.com/lensography.in"
 target="_blank"
 rel="noopener noreferrer">
 Instagram
 </a>
 
-<a
-href="https://wa.me/917306963591"
+<a href="https://wa.me/917306963591"
 target="_blank"
 rel="noopener noreferrer">
 WhatsApp
@@ -1644,7 +1712,7 @@ WhatsApp
 
 
 <!-- =====================================================
-     NAV
+NAV
 ===================================================== -->
 
 <nav class="navbar">
@@ -1673,7 +1741,7 @@ MENU
 
 
 <!-- =====================================================
-     HERO
+HERO
 ===================================================== -->
 
 <section class="hero">
@@ -1690,8 +1758,7 @@ there's a <em>story.</em>
 </h1>
 
 <p class="hero-description">
-Meet the person behind Lensography — and discover the journey,
-purpose and creative philosophy behind the stories we preserve.
+Meet the person behind Lensography — and the journey that shaped the way we tell stories today.
 </p>
 
 </div>
@@ -1700,7 +1767,7 @@ purpose and creative philosophy behind the stories we preserve.
 
 
 <!-- =====================================================
-     THE BEGINNING
+THE BEGINNING
 ===================================================== -->
 
 <section class="section beginning">
@@ -1711,27 +1778,21 @@ purpose and creative philosophy behind the stories we preserve.
 The Beginning
 </div>
 
-
 <div class="beginning-grid">
 
 <h2 class="big-heading">
 It started with curiosity.
 </h2>
 
-
 <div class="beginning-text">
 
 <p>
 Suhail's creative journey began at just
-<strong>14 years old</strong>, first exploring graphic design
-and learning how ideas, details and emotions could be shaped
-into something meaningful.
+<strong>14 years old</strong>, first exploring graphic design and learning how ideas, details and emotions could be shaped into something meaningful.
 </p>
 
 <p>
-That curiosity soon led him towards photography and filmmaking,
-where creativity became more personal — capturing real people,
-real emotions and moments that could never happen the same way twice.
+That curiosity soon led him to photography and filmmaking, where creativity became more personal — capturing real people, real emotions and moments that could never happen the same way twice.
 </p>
 
 </div>
@@ -1744,7 +1805,7 @@ real emotions and moments that could never happen the same way twice.
 
 
 <!-- =====================================================
-     THE JOURNEY
+JOURNEY
 ===================================================== -->
 
 <section class="section journey">
@@ -1759,23 +1820,16 @@ The Journey
 From creating ideas to capturing <em>real moments.</em>
 </h2>
 
-
 <div class="journey-grid">
 
-
 <div class="journey-item">
 
-<div class="journey-number">
-01
-</div>
+<div class="journey-number">01</div>
 
-<h3>
-A Creative Beginning
-</h3>
+<h3>Started Creating</h3>
 
 <p>
-The journey began with design — learning composition,
-details and visual storytelling from a young age.
+The journey began with graphic design — learning, experimenting and developing a creative eye from a young age.
 </p>
 
 </div>
@@ -1783,17 +1837,12 @@ details and visual storytelling from a young age.
 
 <div class="journey-item">
 
-<div class="journey-number">
-02
-</div>
+<div class="journey-number">02</div>
 
-<h3>
-Finding Photography
-</h3>
+<h3>Found Photography</h3>
 
 <p>
-Photography and filmmaking opened a new way to create:
-not by designing moments, but by noticing the ones already happening.
+Photography and filmmaking opened a new way of creating — turning real people, emotions and moments into stories that could be remembered.
 </p>
 
 </div>
@@ -1801,21 +1850,15 @@ not by designing moments, but by noticing the ones already happening.
 
 <div class="journey-item">
 
-<div class="journey-number">
-03
-</div>
+<div class="journey-number">03</div>
 
-<h3>
-Building Lensography
-</h3>
+<h3>Built Lensography</h3>
 
 <p>
-Years of creating, learning and working with real people
-eventually shaped Lensography and the way we tell wedding stories today.
+Years of learning, experimenting and working with real clients helped shape Lensography into the wedding storytelling brand it is today.
 </p>
 
 </div>
-
 
 </div>
 
@@ -1825,7 +1868,7 @@ eventually shaped Lensography and the way we tell wedding stories today.
 
 
 <!-- =====================================================
-     ABOUT SUHAIL
+ABOUT SUHAIL
 ===================================================== -->
 
 <section class="section about-me">
@@ -1833,29 +1876,22 @@ eventually shaped Lensography and the way we tell wedding stories today.
 <div class="container">
 
 <div class="section-label">
-Behind The Lens
+About Me
 </div>
 
-
 <div class="about-grid">
-
 
 <div class="portrait-wrap">
 
 <img
 src="suhail.jpg"
-alt="Mohammed Suhail - Founder and Lead Photographer of Lensography"
+alt="Mohammed Suhail - Founder of Lensography"
 class="portrait">
 
 <div class="portrait-caption">
 
-<span>
-Mohammed Suhail
-</span>
-
-<span>
-Founder · Lensography
-</span>
+<span>Mohammed Suhail</span>
+<span>Lensography</span>
 
 </div>
 
@@ -1873,26 +1909,15 @@ Founder & Lead Photographer — Lensography
 </div>
 
 <p>
-I'm a photographer and creative who believes the best photographs
-aren't simply the ones that look beautiful — they're the ones that
-make you feel something.
+I'm a photographer and creative who believes the best photographs aren't simply the ones that look beautiful — they're the ones that make you feel something.
 </p>
 
 <p>
-Starting young taught me to learn by doing, adapt quickly and notice
-the small details. Today, those lessons influence the way I photograph
-every celebration and connect with the people in front of my camera.
-</p>
-
-<p>
-For me, photography isn't about controlling every second of a wedding.
-It's about knowing when to guide, when to observe and when to simply
-let a real moment happen.
+Starting young taught me to learn by doing, adapt quickly and pay attention to the little details. Today, those lessons influence the way I photograph every celebration and connect with every client.
 </p>
 
 <p class="about-quote">
-“I want you to remember not only how your day looked,
-but exactly how it felt.”
+“I want you to remember not only how your day looked, but exactly how it felt.”
 </p>
 
 </div>
@@ -1905,10 +1930,10 @@ but exactly how it felt.”
 
 
 <!-- =====================================================
-     OUR STORY — LENSOGRAPHY
+THE STORY BEHIND LENSOGRAPHY
 ===================================================== -->
 
-<section class="section our-story">
+<section class="section brand-story">
 
 <div class="container">
 
@@ -1916,9 +1941,7 @@ but exactly how it felt.”
 Our Story
 </div>
 
-
-<div class="story-header">
-
+<div class="brand-story-intro">
 
 <h2 class="story-title">
 The story<br>
@@ -1927,37 +1950,62 @@ Lensography.
 </h2>
 
 
-<div class="story-copy">
+<div class="story-intro-copy">
 
 <p class="lead">
-Lensography grew from a simple love for creating into
-a purpose — preserving stories that people can return to
-long after the celebration is over.
+Lensography grew from a love for creating into a purpose built around preserving real stories.
 </p>
 
 <p>
-Before photography became the focus, the journey began in the
-world of design and visual creativity. That early experience shaped
-the way we understand composition, details and storytelling today.
-</p>
-
-<p>
-As photography and filmmaking became a bigger part of the journey,
-the focus shifted from creating visuals to documenting something
-more meaningful — people, relationships and real emotions.
-</p>
-
-<p>
-That evolution became Lensography: a wedding photography and film
-brand built around honest storytelling, personal experiences and
-memories that remain meaningful beyond the wedding day.
+What started as a personal creative journey gradually became something larger — a photography and filmmaking brand focused on people, emotions and celebrations that deserve to be remembered.
 </p>
 
 </div>
 
 </div>
 
-<div class="story-line"></div>
+
+<div class="story-points">
+
+<div class="story-point">
+
+<div class="story-point-number">01</div>
+
+<h3>Our Story</h3>
+
+<p>
+Lensography was shaped through years of learning, experimenting and real experiences. Each celebration helped refine the way we see moments and tell stories through photographs and films.
+</p>
+
+</div>
+
+
+<div class="story-point">
+
+<div class="story-point-number">02</div>
+
+<h3>Our Approach</h3>
+
+<p>
+We believe meaningful photographs begin with understanding people. Instead of forcing every moment, we focus on observing what naturally happens and preserving it with care.
+</p>
+
+</div>
+
+
+<div class="story-point">
+
+<div class="story-point-number">03</div>
+
+<h3>Personal Touch</h3>
+
+<p>
+Every wedding is different. We approach each story personally so the photographs reflect the people, atmosphere and emotions that made the celebration uniquely theirs.
+</p>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1965,7 +2013,7 @@ memories that remain meaningful beyond the wedding day.
 
 
 <!-- =====================================================
-     WHY LENSOGRAPHY
+WHY US
 ===================================================== -->
 
 <section class="section why-us">
@@ -1976,18 +2024,14 @@ memories that remain meaningful beyond the wedding day.
 Why Lensography
 </div>
 
-
-<div class="why-intro">
+<div class="why-header">
 
 <h2 class="big-heading">
-More than simply<br>
-taking photographs.
+Why us?
 </h2>
 
 <p>
-We believe a great wedding experience is not only about the final
-photographs. It's also about how comfortable you feel, how well your
-story is understood and how naturally your day is allowed to unfold.
+Because your wedding deserves to feel like your story — not somebody else's.
 </p>
 
 </div>
@@ -1995,138 +2039,56 @@ story is understood and how naturally your day is allowed to unfold.
 
 <div class="why-grid">
 
-
 <div class="why-item">
 
-<div class="why-number">
-01
-</div>
+<div class="why-number">01</div>
 
-<div>
-
-<h3>
-Story First
-</h3>
+<h3>Story First</h3>
 
 <p>
-Every wedding is different. We focus on the people,
-relationships and moments that make yours uniquely yours.
+We look beyond individual photographs and focus on the complete story — the people, atmosphere, emotions and little moments connecting everything together.
 </p>
-
-</div>
 
 </div>
 
 
 <div class="why-item">
 
-<div class="why-number">
-02
-</div>
+<div class="why-number">02</div>
 
-<div>
-
-<h3>
-Natural Emotions
-</h3>
+<h3>Timeless Approach</h3>
 
 <p>
-We guide when necessary, but never force every moment.
-Real laughter, quiet glances and genuine emotions matter more.
+Our goal is to create photographs and films that remain meaningful long after trends change, preserving your celebration in a natural and lasting way.
 </p>
-
-</div>
 
 </div>
 
 
 <div class="why-item">
 
-<div class="why-number">
-03
-</div>
+<div class="why-number">03</div>
 
-<div>
-
-<h3>
-Personal Approach
-</h3>
+<h3>Personal Experience</h3>
 
 <p>
-Understanding you before the wedding helps us photograph
-your celebration in a way that feels personal rather than generic.
+From the first conversation to the final delivery, we take time to understand your plans, preferences and the kind of memories you want to preserve.
 </p>
-
-</div>
 
 </div>
 
 
 <div class="why-item">
 
-<div class="why-number">
-04
-</div>
+<div class="why-number">04</div>
 
-<div>
-
-<h3>
-Thoughtful Quality
-</h3>
+<h3>Attention to Detail</h3>
 
 <p>
-From photographing the day to editing and final delivery,
-every stage receives the same attention to detail.
+Big moments matter, but so do the small ones. Expressions, gestures, details and unexpected interactions often become the photographs people remember most.
 </p>
 
 </div>
-
-</div>
-
-
-<div class="why-item">
-
-<div class="why-number">
-05
-</div>
-
-<div>
-
-<h3>
-Timeless Perspective
-</h3>
-
-<p>
-Our goal isn't to chase every trend. We create photographs
-that can still feel meaningful when you revisit them years later.
-</p>
-
-</div>
-
-</div>
-
-
-<div class="why-item">
-
-<div class="why-number">
-06
-</div>
-
-<div>
-
-<h3>
-A Comfortable Experience
-</h3>
-
-<p>
-Clear communication and a calm approach help you spend less
-time worrying about the camera and more time experiencing your day.
-</p>
-
-</div>
-
-</div>
-
 
 </div>
 
@@ -2136,7 +2098,63 @@ time worrying about the camera and more time experiencing your day.
 
 
 <!-- =====================================================
-     EXPERIENCE
+WHAT I DO
+===================================================== -->
+
+<section class="section what-i-do">
+
+<div class="container">
+
+<div class="section-label">
+What We Do
+</div>
+
+<div class="what-grid">
+
+<h2 class="big-heading">
+Turning moments into memories.
+</h2>
+
+<div class="what-text">
+
+<p>
+Today, Lensography focuses on weddings and meaningful celebrations.
+</p>
+
+<p>
+Our approach is simple: understand the people first, then photograph the story naturally. The goal isn't to manufacture moments — it's to notice the real ones.
+</p>
+
+<div class="what-list">
+
+<div>
+Wedding Photography
+<span>01</span>
+</div>
+
+<div>
+Wedding Films
+<span>02</span>
+</div>
+
+<div>
+Creative Storytelling
+<span>03</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+EXPERIENCE
 ===================================================== -->
 
 <section class="section experience">
@@ -2144,28 +2162,23 @@ time worrying about the camera and more time experiencing your day.
 <div class="container">
 
 <div class="section-label">
-Built Through Experience
+Experience
 </div>
-
 
 <div class="experience-top">
 
 <h2 class="big-heading">
-Growing with<br>
-every story.
+Built through<br>experience.
 </h2>
 
 <p class="experience-intro">
-Every project, every celebration and every person we've worked
-with has contributed to the creative style and standard behind
-Lensography today.
+Every project, every client and every celebration has helped shape the creative style and standard behind Lensography today.
 </p>
 
 </div>
 
 
 <div class="stats">
-
 
 <div class="stat">
 
@@ -2205,7 +2218,6 @@ Stories still to tell
 
 </div>
 
-
 </div>
 
 </div>
@@ -2214,65 +2226,42 @@ Stories still to tell
 
 
 <!-- =====================================================
-     WHAT WE DO
+LENSOGRAPHY
 ===================================================== -->
 
-<section class="section what-i-do">
+<section class="section lensography">
 
 <div class="container">
 
 <div class="section-label">
-What We Do
+Lensography
 </div>
 
+<div class="lensography-grid">
 
-<div class="what-grid">
-
-<h2 class="big-heading">
-Stories preserved<br>
-in photographs<br>
-and films.
+<h2 class="lensography-title">
+More than<br>
+a photography<br>
+brand.
 </h2>
 
+<div class="lensography-copy">
 
-<div class="what-text">
-
-<p>
-Lensography focuses on weddings and meaningful celebrations,
-documenting everything from the defining moments to the quiet
-details happening in between.
+<p class="lead">
+Lensography was built around one simple belief: people deserve to remember how their moments felt, not only how they looked.
 </p>
 
 <p>
-Our approach combines thoughtful direction with natural
-observation, allowing every celebration to remain authentic
-while still creating photographs and films that feel refined.
+Weddings are filled with moments that happen only once — the nervous seconds before a ceremony, a parent's expression, an unexpected laugh, a quiet glance between two people.
 </p>
 
+<p>
+That's what we look for.
+</p>
 
-<div class="what-list">
-
-<div>
-Wedding Photography
-<span>01</span>
-</div>
-
-<div>
-Wedding Films
-<span>02</span>
-</div>
-
-<div>
-Couple Stories
-<span>03</span>
-</div>
-
-<div>
-Celebrations
-<span>04</span>
-</div>
-
-</div>
+<p>
+Every celebration is approached personally, with attention to the people, emotions and details that make each story different.
+</p>
 
 </div>
 
@@ -2284,7 +2273,7 @@ Celebrations
 
 
 <!-- =====================================================
-     VALUES
+VALUES
 ===================================================== -->
 
 <section class="section values">
@@ -2295,15 +2284,12 @@ Celebrations
 What We Believe
 </div>
 
-
 <h2 class="big-heading">
-The values behind<br>
+The way we approach<br>
 every story.
 </h2>
 
-
 <div class="values-grid">
-
 
 <div class="value">
 
@@ -2316,8 +2302,7 @@ Real Emotions
 </h3>
 
 <p>
-We value genuine laughter, quiet moments and real connections
-over photographs that feel unnecessarily staged.
+We value genuine laughter, quiet moments and real connections over photographs that feel overly staged.
 </p>
 
 </div>
@@ -2334,8 +2319,7 @@ Personal Connection
 </h3>
 
 <p>
-Understanding our clients helps us create photographs
-that feel connected to their personalities and their story.
+Understanding our clients helps us create photographs that actually feel like their story.
 </p>
 
 </div>
@@ -2352,12 +2336,10 @@ Timeless Stories
 </h3>
 
 <p>
-Trends change. Memories shouldn't depend on them.
-We create stories designed to remain meaningful years from now.
+Trends change. Your memories shouldn't. We create photographs designed to remain meaningful years from now.
 </p>
 
 </div>
-
 
 </div>
 
@@ -2367,7 +2349,7 @@ We create stories designed to remain meaningful years from now.
 
 
 <!-- =====================================================
-     CTA
+CTA
 ===================================================== -->
 
 <section class="cta">
@@ -2379,15 +2361,12 @@ Your story could be next
 </div>
 
 <h2>
-Let's create something
-worth remembering.
+Let's create something worth remembering.
 </h2>
 
 <p>
-If the way we see and preserve stories feels right for you,
-we'd love to hear about your celebration.
+If our way of seeing stories feels like yours, we'd love to hear about your celebration.
 </p>
-
 
 <div class="cta-buttons">
 
@@ -2407,7 +2386,7 @@ View Our Work
 
 
 <!-- =====================================================
-     FOOTER
+FOOTER
 ===================================================== -->
 
 <footer>
@@ -2418,32 +2397,19 @@ View Our Work
 LENSOGRAPHY
 </a>
 
-
 <div class="footer-links">
 
-<a href="index.html">
-Home
-</a>
+<a href="index.html">Home</a>
 
-<a href="about.html">
-About
-</a>
+<a href="about.html">About</a>
 
-<a href="gallery.html">
-Gallery
-</a>
+<a href="gallery.html">Gallery</a>
 
-<a href="testimonials.html">
-Testimonials
-</a>
+<a href="testimonials.html">Testimonials</a>
 
-<a href="booking.html">
-Book Us
-</a>
+<a href="booking.html">Book Us</a>
 
-<a href="contact.html">
-Contact
-</a>
+<a href="contact.html">Contact</a>
 
 <a
 href="https://instagram.com/lensography.in"
@@ -2473,13 +2439,12 @@ Kerala · India · Worldwide
 
 
 <!-- =====================================================
-     JAVASCRIPT
+JAVASCRIPT
 ===================================================== -->
 
 <script>
 
 const menu = document.getElementById("menu");
-
 
 function openMenu(){
 
@@ -2489,7 +2454,6 @@ document.body.classList.add("menu-open");
 
 }
 
-
 function closeMenu(){
 
 menu.classList.remove("active");
@@ -2497,7 +2461,6 @@ menu.classList.remove("active");
 document.body.classList.remove("menu-open");
 
 }
-
 
 document.addEventListener("keydown", function(event){
 
@@ -2507,17 +2470,7 @@ closeMenu();
 
 });
 
-
-menu.addEventListener("click", function(event){
-
-if(event.target === menu){
-closeMenu();
-}
-
-});
-
 </script>
-
 
 </body>
 </html>
