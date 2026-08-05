@@ -19,6 +19,10 @@ padding:0;
 box-sizing:border-box;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 html,body{
 width:100%;
 min-height:100%;
@@ -28,6 +32,8 @@ body{
 font-family:'Montserrat',sans-serif;
 background:#f4f0e8;
 color:#181816;
+overflow-x:hidden;
+-webkit-font-smoothing:antialiased;
 }
 
 body.menu-open{
@@ -37,6 +43,10 @@ overflow:hidden;
 a{
 color:inherit;
 text-decoration:none;
+}
+
+button{
+font:inherit;
 }
 
 img{
@@ -65,6 +75,7 @@ font-family:'Cormorant Garamond',serif;
 font-size:29px;
 letter-spacing:5px;
 font-weight:500;
+line-height:1;
 }
 
 .menu-button{
@@ -78,6 +89,7 @@ gap:14px;
 font-size:10px;
 letter-spacing:3px;
 text-transform:uppercase;
+padding:8px 0;
 }
 
 .hamburger{
@@ -103,18 +115,16 @@ inset:0;
 background:#171715;
 color:#eee;
 z-index:500;
-
 opacity:0;
 visibility:hidden;
-
-transition:
-opacity .45s ease,
-visibility .45s ease;
+pointer-events:none;
+transition:opacity .4s ease, visibility .4s ease;
 }
 
 .menu-overlay.active{
 opacity:1;
 visibility:visible;
+pointer-events:auto;
 }
 
 .menu-top{
@@ -136,16 +146,19 @@ border:0;
 background:none;
 color:white;
 cursor:pointer;
-font-size:32px;
+font-size:36px;
 font-weight:200;
+line-height:1;
+padding:8px;
 }
 
 .menu-content{
-height:calc(100vh - 90px);
+height:calc(100dvh - 90px);
 display:grid;
 grid-template-columns:1.2fr .8fr;
-padding:4% 8% 6%;
+padding:2% 8% 5%;
 align-items:center;
+overflow-y:auto;
 }
 
 .menu-links{
@@ -156,7 +169,7 @@ align-items:flex-start;
 
 .menu-links a{
 font-family:'Cormorant Garamond',serif;
-font-size:clamp(43px,5.5vw,78px);
+font-size:clamp(42px,5vw,72px);
 font-weight:400;
 line-height:1.05;
 transition:.3s;
@@ -197,7 +210,7 @@ max-width:300px;
 }
 
 .socials{
-margin-top:45px;
+margin-top:40px;
 display:flex;
 gap:25px;
 }
@@ -211,13 +224,14 @@ text-transform:uppercase;
 /* ================= HERO ================= */
 
 .hero{
-height:100vh;
-min-height:680px;
+height:88vh;
+min-height:600px;
+max-height:850px;
 
 background:
 linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.42)),
 url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90')
-center/cover;
+center 48% / cover no-repeat;
 
 display:flex;
 align-items:center;
@@ -225,11 +239,11 @@ justify-content:center;
 
 text-align:center;
 color:white;
-
-padding:100px 25px 50px;
+padding:100px 25px 55px;
 }
 
 .hero-inner{
+width:100%;
 max-width:1050px;
 }
 
@@ -237,14 +251,15 @@ max-width:1050px;
 font-size:9px;
 letter-spacing:5px;
 text-transform:uppercase;
-margin-bottom:30px;
+margin-bottom:25px;
 }
 
 .hero h1{
 font-family:'Cormorant Garamond',serif;
-font-size:clamp(62px,9vw,125px);
+font-size:clamp(60px,8vw,112px);
 font-weight:400;
-line-height:.82;
+line-height:.86;
+letter-spacing:-1px;
 }
 
 .hero h1 em{
@@ -254,32 +269,33 @@ font-weight:400;
 .hero p{
 font-family:'Cormorant Garamond',serif;
 font-style:italic;
-font-size:22px;
-margin-top:35px;
+font-size:21px;
+margin-top:28px;
 }
 
 .button{
-display:inline-block;
-margin-top:38px;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+margin-top:32px;
 border:1px solid currentColor;
-padding:16px 25px;
-
+padding:15px 24px;
 font-size:9px;
 letter-spacing:3px;
 text-transform:uppercase;
-
-transition:.3s;
+transition:background .3s,color .3s,transform .3s;
 }
 
 .button:hover{
 background:white;
 color:#111;
+transform:translateY(-2px);
 }
 
 /* ================= INTRO ================= */
 
 .intro{
-padding:140px 7%;
+padding:100px 7% 105px;
 max-width:1150px;
 margin:auto;
 text-align:center;
@@ -289,35 +305,37 @@ text-align:center;
 font-size:9px;
 letter-spacing:4px;
 text-transform:uppercase;
-margin-bottom:25px;
+margin-bottom:22px;
 }
 
 .heading{
 font-family:'Cormorant Garamond',serif;
-font-size:clamp(45px,6vw,78px);
+font-size:clamp(43px,5.3vw,72px);
 font-weight:400;
-line-height:1;
+line-height:.98;
+letter-spacing:-.5px;
 }
 
 .intro p{
 max-width:670px;
-margin:32px auto 0;
+margin:27px auto 0;
 font-size:13px;
-line-height:2;
+line-height:1.9;
 color:#686259;
 }
 
 /* ================= FEATURED ================= */
 
 .featured{
-padding:30px 5% 130px;
+padding:20px 5% 95px;
 }
 
 .featured-heading{
 display:flex;
 justify-content:space-between;
 align-items:flex-end;
-margin-bottom:50px;
+gap:30px;
+margin-bottom:38px;
 }
 
 .featured-heading span{
@@ -329,12 +347,13 @@ text-transform:uppercase;
 .gallery{
 display:grid;
 grid-template-columns:repeat(12,1fr);
-gap:16px;
+gap:14px;
 }
 
 .image{
 position:relative;
 overflow:hidden;
+background:#ddd6ca;
 }
 
 .image img{
@@ -343,27 +362,31 @@ transition:transform .8s ease;
 }
 
 .image:hover img{
-transform:scale(1.04);
+transform:scale(1.035);
 }
 
 .image1{
 grid-column:span 7;
-height:680px;
+height:560px;
 }
 
 .image2{
 grid-column:span 5;
-height:680px;
+height:560px;
 }
 
 .image3{
 grid-column:span 5;
-height:550px;
+height:455px;
 }
 
 .image4{
 grid-column:span 7;
-height:550px;
+height:455px;
+}
+
+.gallery-button-wrap{
+text-align:center;
 }
 
 /* ================= STORY ================= */
@@ -371,16 +394,16 @@ height:550px;
 .story{
 background:#171715;
 color:#eee;
-padding:130px 7%;
-
+padding:95px 7%;
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:90px;
+gap:70px;
 align-items:center;
 }
 
 .story-photo{
-height:720px;
+height:600px;
+overflow:hidden;
 }
 
 .story-photo img{
@@ -389,9 +412,9 @@ height:100%;
 
 .story-text p{
 font-size:13px;
-line-height:2;
+line-height:1.9;
 color:#bcb8af;
-margin-top:30px;
+margin-top:24px;
 max-width:520px;
 }
 
@@ -402,7 +425,7 @@ color:#171715;
 /* ================= QUOTE ================= */
 
 .quote{
-padding:140px 7%;
+padding:100px 7%;
 background:#ded6ca;
 text-align:center;
 }
@@ -410,9 +433,9 @@ text-align:center;
 .quote blockquote{
 font-family:'Cormorant Garamond',serif;
 font-style:italic;
-font-size:clamp(37px,5vw,65px);
-line-height:1.05;
-max-width:1000px;
+font-size:clamp(36px,4.5vw,59px);
+line-height:1.06;
+max-width:950px;
 margin:auto;
 }
 
@@ -420,18 +443,20 @@ margin:auto;
 font-size:9px;
 letter-spacing:3px;
 text-transform:uppercase;
-margin-top:35px;
+margin-top:30px;
 }
 
 /* ================= CTA ================= */
 
 .cta{
-min-height:80vh;
+min-height:620px;
+height:70vh;
+max-height:760px;
 
 background:
 linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.48)),
 url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=90')
-center/cover;
+center / cover no-repeat;
 
 display:flex;
 justify-content:center;
@@ -439,14 +464,14 @@ align-items:center;
 
 color:white;
 text-align:center;
-padding:80px 25px;
+padding:70px 25px;
 }
 
 .cta h2{
 font-family:'Cormorant Garamond',serif;
-font-size:clamp(55px,8vw,105px);
+font-size:clamp(54px,7vw,94px);
 font-weight:400;
-line-height:.85;
+line-height:.88;
 }
 
 /* ================= FOOTER ================= */
@@ -454,41 +479,64 @@ line-height:.85;
 footer{
 background:#111;
 color:#ddd;
-padding:80px 6% 30px;
+padding:60px 6% 28px;
 }
 
 .footer-top{
 display:flex;
 justify-content:space-between;
+align-items:flex-start;
 gap:50px;
-margin-bottom:70px;
+margin-bottom:50px;
 }
 
 .footer-logo{
 font-family:'Cormorant Garamond',serif;
-font-size:38px;
+font-size:34px;
 letter-spacing:5px;
 }
 
 .footer-links{
 display:flex;
 flex-wrap:wrap;
-gap:28px;
+justify-content:flex-end;
+gap:24px 28px;
 }
 
 .footer-links a{
 font-size:9px;
 letter-spacing:2px;
 text-transform:uppercase;
+transition:opacity .25s;
+}
+
+.footer-links a:hover{
+opacity:.55;
 }
 
 .footer-bottom{
 border-top:1px solid #333;
-padding-top:25px;
+padding-top:22px;
 font-size:9px;
 letter-spacing:2px;
 text-transform:uppercase;
 color:#777;
+}
+
+/* ================= TABLET ================= */
+
+@media(max-width:1000px){
+
+.story{
+gap:45px;
+padding-left:5%;
+padding-right:5%;
+}
+
+.story-photo{
+height:520px;
+}
+
 }
 
 /* ================= MOBILE ================= */
@@ -496,36 +544,49 @@ color:#777;
 @media(max-width:800px){
 
 .navbar{
-padding:24px 20px;
+padding:22px 20px;
 }
 
 .logo{
 font-size:21px;
-letter-spacing:4px;
+letter-spacing:3.5px;
 }
 
 .menu-button{
 font-size:0;
+gap:0;
+}
+
+.hamburger{
+width:27px;
+height:17px;
 }
 
 .menu-top{
-height:75px;
+height:72px;
 padding:0 20px;
 }
 
 .menu-logo{
 font-size:21px;
+letter-spacing:3.5px;
+}
+
+.close-button{
+font-size:34px;
 }
 
 .menu-content{
+height:calc(100dvh - 72px);
 display:block;
-height:auto;
-padding:40px 25px;
+padding:28px 24px 45px;
+overflow-y:auto;
 }
 
 .menu-links a{
-font-size:47px;
-margin-bottom:6px;
+font-size:clamp(38px,11vw,48px);
+line-height:1.08;
+margin-bottom:3px;
 }
 
 .menu-links small{
@@ -536,74 +597,250 @@ margin-right:10px;
 .menu-side{
 border-left:0;
 border-top:1px solid #333;
-padding:30px 0 0;
-margin-top:30px;
+padding:25px 0 0;
+margin-top:27px;
+}
+
+.menu-side-title{
+margin-bottom:15px;
 }
 
 .menu-side p{
-font-size:21px;
+font-size:20px;
+max-width:270px;
 }
 
 .socials{
-margin-top:25px;
+margin-top:22px;
 }
 
+/* HERO FIX */
+
 .hero{
-min-height:760px;
+height:72svh;
+min-height:540px;
+max-height:650px;
+padding:82px 22px 38px;
+background-position:center center;
+}
+
+.hero-inner{
+max-width:420px;
+}
+
+.eyebrow{
+font-size:8px;
+letter-spacing:3.5px;
+margin-bottom:20px;
 }
 
 .hero h1{
+font-size:clamp(51px,14.5vw,68px);
 line-height:.9;
+letter-spacing:-.5px;
 }
+
+.hero p{
+font-size:18px;
+margin-top:21px;
+}
+
+.hero .button{
+margin-top:25px;
+}
+
+/* INTRO */
 
 .intro{
-padding:95px 25px;
+padding:68px 22px 72px;
 }
 
+.section-label{
+font-size:8px;
+letter-spacing:3px;
+margin-bottom:18px;
+}
+
+.heading{
+font-size:clamp(41px,12vw,54px);
+line-height:.98;
+}
+
+.intro p{
+margin-top:22px;
+font-size:12px;
+line-height:1.85;
+}
+
+.intro .button{
+margin-top:26px;
+}
+
+/* FEATURED */
+
 .featured{
-padding:20px 15px 90px;
+padding:5px 14px 65px;
 }
 
 .featured-heading{
 display:block;
+margin-bottom:27px;
 }
 
 .featured-heading span{
 display:block;
-margin-top:18px;
+font-size:8px;
+line-height:1.6;
+margin-top:13px;
 }
 
 .gallery{
-display:block;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:8px;
 }
 
 .image{
-height:500px !important;
-margin-bottom:15px;
+margin:0;
 }
+
+.image1,
+.image4{
+grid-column:1 / -1;
+height:410px;
+}
+
+.image2,
+.image3{
+grid-column:auto;
+height:285px;
+}
+
+.gallery-button-wrap .button{
+margin-top:28px;
+}
+
+/* STORY */
 
 .story{
 grid-template-columns:1fr;
-padding:80px 20px;
-gap:50px;
+padding:65px 20px 70px;
+gap:38px;
 }
 
 .story-photo{
-height:550px;
+height:440px;
 }
 
+.story-text p{
+font-size:12px;
+line-height:1.85;
+margin-top:20px;
+}
+
+.story-text .button{
+margin-top:27px;
+}
+
+/* QUOTE */
+
 .quote{
-padding:100px 25px;
+padding:72px 22px;
+}
+
+.quote blockquote{
+font-size:clamp(35px,10vw,47px);
+line-height:1.06;
+}
+
+.quote-name{
+margin-top:25px;
+font-size:8px;
+}
+
+.quote .button{
+margin-top:27px;
+}
+
+/* CTA */
+
+.cta{
+height:62svh;
+min-height:480px;
+max-height:600px;
+padding:60px 22px;
+}
+
+.cta h2{
+font-size:clamp(53px,15vw,70px);
+line-height:.9;
+}
+
+.cta .button{
+margin-top:27px;
+}
+
+/* FOOTER */
+
+footer{
+padding:48px 22px 25px;
 }
 
 .footer-top{
 display:block;
+margin-bottom:38px;
+}
+
+.footer-logo{
+font-size:29px;
+letter-spacing:4px;
 }
 
 .footer-links{
-margin-top:40px;
+margin-top:30px;
 display:grid;
-gap:20px;
+grid-template-columns:1fr 1fr;
+justify-content:start;
+gap:18px 20px;
+}
+
+.footer-links a{
+font-size:8px;
+}
+
+.footer-bottom{
+font-size:8px;
+line-height:1.7;
+}
+
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media(max-width:390px){
+
+.hero{
+min-height:520px;
+}
+
+.hero h1{
+font-size:49px;
+}
+
+.gallery{
+grid-template-columns:1fr;
+}
+
+.image1,
+.image2,
+.image3,
+.image4{
+grid-column:1;
+height:390px;
+}
+
+.story-photo{
+height:410px;
 }
 
 }
@@ -619,11 +856,14 @@ gap:20px;
 
 <div class="menu-top">
 
-<div class="menu-logo">
+<a href="index.html" class="menu-logo">
 LENSOGRAPHY
-</div>
+</a>
 
-<button class="close-button" onclick="closeMenu()">
+<button
+class="close-button"
+onclick="closeMenu()"
+aria-label="Close menu">
 ×
 </button>
 
@@ -659,7 +899,6 @@ LENSOGRAPHY
 
 </div>
 
-
 <div class="menu-side">
 
 <div class="menu-side-title">
@@ -674,12 +913,17 @@ and beautifully preserved.
 
 <div class="socials">
 
-<a href="https://instagram.com/lensography.in"
-target="_blank">
+<a
+href="https://www.instagram.com/lensography.in/"
+target="_blank"
+rel="noopener noreferrer">
 Instagram
 </a>
 
-<a href="#">
+<a
+href="https://wa.me/917306963591?text=Hi%20Lensography%2C%20I%27d%20like%20to%20know%20more%20about%20your%20wedding%20coverage."
+target="_blank"
+rel="noopener noreferrer">
 WhatsApp
 </a>
 
@@ -691,7 +935,6 @@ WhatsApp
 
 </div>
 
-
 <!-- NAV -->
 
 <nav class="navbar">
@@ -700,7 +943,11 @@ WhatsApp
 LENSOGRAPHY
 </a>
 
-<button class="menu-button" onclick="openMenu()">
+<button
+class="menu-button"
+onclick="openMenu()"
+aria-label="Open menu"
+aria-controls="menu">
 
 MENU
 
@@ -713,7 +960,6 @@ MENU
 </button>
 
 </nav>
-
 
 <!-- HERO -->
 
@@ -742,7 +988,6 @@ Explore Our Stories
 
 </section>
 
-
 <!-- INTRO -->
 
 <section class="intro">
@@ -763,14 +1008,11 @@ with an honest and timeless approach, creating photographs and films
 that allow you to experience your story again and again.
 </p>
 
-<a href="about.html"
-class="button"
-style="color:#171715;">
+<a href="about.html" class="button" style="color:#171715;">
 Our Story
 </a>
 
 </section>
-
 
 <!-- FEATURED STORIES -->
 
@@ -796,7 +1038,6 @@ Weddings · Couples · Celebrations
 
 </div>
 
-
 <div class="gallery">
 
 <div class="image image1">
@@ -814,7 +1055,7 @@ alt="Wedding couple">
 <div class="image image3">
 <img
 src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=88"
-alt="Wedding">
+alt="Wedding ceremony">
 </div>
 
 <div class="image image4">
@@ -825,18 +1066,15 @@ alt="Wedding celebration">
 
 </div>
 
-<div style="text-align:center">
+<div class="gallery-button-wrap">
 
-<a href="gallery.html"
-class="button"
-style="color:#171715;">
+<a href="gallery.html" class="button" style="color:#171715;">
 View Full Gallery
 </a>
 
 </div>
 
 </section>
-
 
 <!-- ABOUT PREVIEW -->
 
@@ -849,7 +1087,6 @@ src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fi
 alt="Lensography wedding photography">
 
 </div>
-
 
 <div class="story-text">
 
@@ -882,7 +1119,6 @@ Discover Lensography
 
 </section>
 
-
 <!-- TESTIMONIAL -->
 
 <section class="quote">
@@ -900,14 +1136,11 @@ how our wedding day felt.”
 A Lensography Couple
 </div>
 
-<a href="testimonials.html"
-class="button"
-style="color:#171715;">
+<a href="testimonials.html" class="button" style="color:#171715;">
 Read Their Stories
 </a>
 
 </section>
-
 
 <!-- BOOKING CTA -->
 
@@ -932,40 +1165,42 @@ Book Your Date
 
 </section>
 
-
 <!-- FOOTER -->
 
 <footer>
 
 <div class="footer-top">
 
-<div class="footer-logo">
+<a href="index.html" class="footer-logo">
 LENSOGRAPHY
-</div>
+</a>
 
 <div class="footer-links">
 
 <a href="index.html">Home</a>
-
 <a href="about.html">About</a>
-
 <a href="gallery.html">Gallery</a>
-
 <a href="testimonials.html">Testimonials</a>
-
 <a href="booking.html">Book Us</a>
-
 <a href="contact.html">Contact</a>
 
-<a href="https://instagram.com/lensography.in"
-target="_blank">
+<a
+href="https://www.instagram.com/lensography.in/"
+target="_blank"
+rel="noopener noreferrer">
 Instagram
+</a>
+
+<a
+href="https://wa.me/917306963591"
+target="_blank"
+rel="noopener noreferrer">
+WhatsApp
 </a>
 
 </div>
 
 </div>
-
 
 <div class="footer-bottom">
 © 2026 Lensography · Wedding Photography & Films
@@ -973,34 +1208,29 @@ Instagram
 
 </footer>
 
-
 <script>
 
-const menu =
-document.getElementById("menu");
+const menu = document.getElementById("menu");
 
 function openMenu(){
-
 menu.classList.add("active");
-
 document.body.classList.add("menu-open");
-
 }
 
 function closeMenu(){
-
 menu.classList.remove("active");
-
 document.body.classList.remove("menu-open");
-
 }
 
 document.addEventListener("keydown",function(event){
-
 if(event.key === "Escape"){
 closeMenu();
 }
+});
 
+/* Close menu after selecting an internal page */
+document.querySelectorAll(".menu-links a").forEach(function(link){
+link.addEventListener("click", closeMenu);
 });
 
 </script>
