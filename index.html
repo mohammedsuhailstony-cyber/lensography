@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
 <title>Lensography | Wedding Photography & Films</title>
-<meta name="description" content="Lensography — timeless wedding photography and films.">
+<meta name="description" content="Lensography creates timeless wedding photography and films across Kerala, India and worldwide.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================================================
+   RESET
+========================================================= */
 
 *{
 margin:0;
@@ -23,16 +28,17 @@ html{
 scroll-behavior:smooth;
 }
 
-html,body{
+html,
+body{
 width:100%;
 min-height:100%;
+overflow-x:hidden;
 }
 
 body{
 font-family:'Montserrat',sans-serif;
-background:#f4f0e8;
-color:#181816;
-overflow-x:hidden;
+background:#f3efe7;
+color:#191917;
 -webkit-font-smoothing:antialiased;
 }
 
@@ -55,70 +61,155 @@ width:100%;
 object-fit:cover;
 }
 
-/* ================= NAV ================= */
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.container{
+width:min(1180px,90%);
+margin:auto;
+}
+
+.label{
+font-size:8px;
+font-weight:400;
+letter-spacing:3.5px;
+text-transform:uppercase;
+}
+
+.display{
+font-family:'Cormorant Garamond',serif;
+font-weight:400;
+line-height:.94;
+}
+
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+
+min-height:48px;
+padding:0 23px;
+
+border:1px solid currentColor;
+
+font-size:8px;
+letter-spacing:2.7px;
+text-transform:uppercase;
+
+transition:.3s ease;
+}
+
+.btn-light:hover{
+background:#fff;
+border-color:#fff;
+color:#151513;
+}
+
+.btn-dark:hover{
+background:#191917;
+border-color:#191917;
+color:#fff;
+}
+
+.text-link{
+display:inline-flex;
+align-items:center;
+gap:10px;
+
+padding-bottom:5px;
+
+border-bottom:1px solid currentColor;
+
+font-size:8px;
+letter-spacing:2.5px;
+text-transform:uppercase;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 .navbar{
 position:absolute;
 top:0;
 left:0;
+
 width:100%;
-padding:28px 5%;
+height:90px;
+
+padding:0 5%;
+
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
+
 z-index:100;
-color:white;
+
+color:#fff;
 }
 
 .logo{
 font-family:'Cormorant Garamond',serif;
-font-size:29px;
-letter-spacing:5px;
+font-size:27px;
 font-weight:500;
+letter-spacing:5px;
 line-height:1;
 }
 
 .menu-button{
 border:0;
 background:none;
-color:white;
-cursor:pointer;
+color:#fff;
+
 display:flex;
 align-items:center;
-gap:14px;
-font-size:10px;
+gap:13px;
+
+cursor:pointer;
+
+font-size:9px;
 letter-spacing:3px;
 text-transform:uppercase;
-padding:8px 0;
 }
 
 .hamburger{
 width:27px;
-height:18px;
+height:17px;
+
 display:flex;
 flex-direction:column;
 justify-content:space-between;
 }
 
 .hamburger span{
-height:1px;
-width:100%;
-background:currentColor;
 display:block;
+width:100%;
+height:1px;
+background:currentColor;
 }
 
-/* ================= FULL SCREEN MENU ================= */
+
+/* =========================================================
+   MENU
+========================================================= */
 
 .menu-overlay{
 position:fixed;
 inset:0;
+
+z-index:1000;
+
 background:#171715;
 color:#eee;
-z-index:500;
+
 opacity:0;
 visibility:hidden;
 pointer-events:none;
-transition:opacity .4s ease, visibility .4s ease;
+
+transition:.4s ease;
 }
 
 .menu-overlay.active{
@@ -128,37 +219,40 @@ pointer-events:auto;
 }
 
 .menu-top{
-height:90px;
+height:85px;
+padding:0 5%;
+
 display:flex;
 align-items:center;
 justify-content:space-between;
-padding:0 5%;
 }
 
 .menu-logo{
 font-family:'Cormorant Garamond',serif;
-font-size:29px;
+font-size:27px;
 letter-spacing:5px;
 }
 
 .close-button{
 border:0;
 background:none;
-color:white;
+color:#fff;
+
+font-family:'Cormorant Garamond',serif;
+font-size:39px;
+
 cursor:pointer;
-font-size:36px;
-font-weight:200;
-line-height:1;
-padding:8px;
 }
 
 .menu-content{
-height:calc(100dvh - 90px);
+height:calc(100dvh - 85px);
+
+padding:3% 8% 6%;
+
 display:grid;
-grid-template-columns:1.2fr .8fr;
-padding:2% 8% 5%;
+grid-template-columns:1.15fr .85fr;
+
 align-items:center;
-overflow-y:auto;
 }
 
 .menu-links{
@@ -169,330 +263,625 @@ align-items:flex-start;
 
 .menu-links a{
 font-family:'Cormorant Garamond',serif;
-font-size:clamp(42px,5vw,72px);
+
+font-size:clamp(43px,5vw,72px);
 font-weight:400;
-line-height:1.05;
+line-height:1.03;
+
 transition:.3s;
 }
 
 .menu-links a:hover{
 opacity:.45;
-transform:translateX(10px);
+transform:translateX(8px);
 }
 
 .menu-links small{
+display:inline-block;
+width:38px;
+
 font-family:'Montserrat',sans-serif;
-font-size:9px;
-letter-spacing:3px;
-margin-right:20px;
-vertical-align:middle;
+font-size:7px;
+letter-spacing:2px;
+
 color:#777;
 }
 
 .menu-side{
+padding-left:55px;
 border-left:1px solid #333;
-padding-left:60px;
 }
 
-.menu-side-title{
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
+.menu-side .label{
 color:#777;
-margin-bottom:25px;
+margin-bottom:22px;
 }
 
 .menu-side p{
+max-width:310px;
+
 font-family:'Cormorant Garamond',serif;
-font-size:28px;
-line-height:1.3;
-max-width:300px;
+font-size:27px;
+line-height:1.25;
 }
 
 .socials{
-margin-top:40px;
 display:flex;
 gap:25px;
+
+margin-top:35px;
 }
 
 .socials a{
-font-size:9px;
+font-size:8px;
 letter-spacing:2px;
 text-transform:uppercase;
 }
 
-/* ================= HERO ================= */
+
+/* =========================================================
+   HERO
+========================================================= */
 
 .hero{
+position:relative;
+
 height:88vh;
-min-height:600px;
+height:88svh;
+
+min-height:610px;
 max-height:850px;
 
-background:
-linear-gradient(rgba(0,0,0,.22),rgba(0,0,0,.42)),
-url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90')
-center 48% / cover no-repeat;
-
 display:flex;
-align-items:center;
-justify-content:center;
+align-items:flex-end;
 
-text-align:center;
-color:white;
-padding:100px 25px 55px;
+padding:0 5% 65px;
+
+color:#fff;
+
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,.10) 0%,
+rgba(0,0,0,.15) 38%,
+rgba(0,0,0,.55) 100%
+),
+url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2000&q=90')
+center 45% / cover no-repeat;
 }
 
-.hero-inner{
+.hero-content{
 width:100%;
-max-width:1050px;
+
+display:grid;
+grid-template-columns:1.35fr .65fr;
+gap:50px;
+
+align-items:end;
 }
 
-.eyebrow{
-font-size:9px;
-letter-spacing:5px;
-text-transform:uppercase;
-margin-bottom:25px;
+.hero-main{
+max-width:850px;
+}
+
+.hero .label{
+margin-bottom:18px;
 }
 
 .hero h1{
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(60px,8vw,112px);
-font-weight:400;
-line-height:.86;
-letter-spacing:-1px;
+font-size:clamp(60px,7.7vw,110px);
+letter-spacing:-1.5px;
 }
 
 .hero h1 em{
 font-weight:400;
 }
 
-.hero p{
+.hero-side{
+max-width:340px;
+justify-self:end;
+padding-bottom:5px;
+}
+
+.hero-side p{
 font-family:'Cormorant Garamond',serif;
+font-size:20px;
 font-style:italic;
-font-size:21px;
-margin-top:28px;
+line-height:1.35;
 }
 
-.button{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-margin-top:32px;
-border:1px solid currentColor;
-padding:15px 24px;
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
-transition:background .3s,color .3s,transform .3s;
-}
-
-.button:hover{
-background:white;
-color:#111;
-transform:translateY(-2px);
-}
-
-/* ================= INTRO ================= */
-
-.intro{
-padding:100px 7% 105px;
-max-width:1150px;
-margin:auto;
-text-align:center;
-}
-
-.section-label{
-font-size:9px;
-letter-spacing:4px;
-text-transform:uppercase;
-margin-bottom:22px;
-}
-
-.heading{
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(43px,5.3vw,72px);
-font-weight:400;
-line-height:.98;
-letter-spacing:-.5px;
-}
-
-.intro p{
-max-width:670px;
-margin:27px auto 0;
-font-size:13px;
-line-height:1.9;
-color:#686259;
-}
-
-/* ================= FEATURED ================= */
-
-.featured{
-padding:20px 5% 95px;
-}
-
-.featured-heading{
+.hero-actions{
 display:flex;
-justify-content:space-between;
-align-items:flex-end;
-gap:30px;
-margin-bottom:38px;
+align-items:center;
+gap:25px;
+
+margin-top:24px;
 }
 
-.featured-heading span{
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
+
+/* =========================================================
+   QUICK INTRO
+========================================================= */
+
+.quick-intro{
+padding:65px 0;
+border-bottom:1px solid #d6cfc4;
 }
 
-.gallery{
+.quick-grid{
 display:grid;
-grid-template-columns:repeat(12,1fr);
-gap:14px;
+grid-template-columns:.75fr 1.5fr .75fr;
+gap:50px;
+align-items:start;
 }
 
-.image{
-position:relative;
+.quick-intro .label{
+padding-top:9px;
+color:#777168;
+}
+
+.quick-copy h2{
+font-size:clamp(38px,4.2vw,58px);
+}
+
+.quick-copy p{
+max-width:650px;
+
+margin-top:18px;
+
+font-size:12px;
+line-height:1.85;
+
+color:#68635b;
+}
+
+.quick-info{
+padding-top:8px;
+}
+
+.info-item + .info-item{
+margin-top:19px;
+}
+
+.info-title{
+font-size:7px;
+letter-spacing:2.5px;
+text-transform:uppercase;
+color:#8b857c;
+margin-bottom:6px;
+}
+
+.info-value{
+font-family:'Cormorant Garamond',serif;
+font-size:20px;
+}
+
+
+/* =========================================================
+   SELECTED WORK
+========================================================= */
+
+.work{
+padding:70px 0 65px;
+}
+
+.work-head{
+display:flex;
+align-items:flex-end;
+justify-content:space-between;
+
+gap:40px;
+
+margin-bottom:30px;
+}
+
+.work-head h2{
+font-size:clamp(46px,5.5vw,72px);
+}
+
+.work-head .label{
+margin-bottom:10px;
+color:#777168;
+}
+
+.work-note{
+font-size:8px;
+letter-spacing:2.5px;
+text-transform:uppercase;
+color:#777168;
+padding-bottom:8px;
+}
+
+.work-grid{
+display:grid;
+grid-template-columns:1.2fr .8fr;
+grid-template-rows:310px 310px;
+gap:12px;
+}
+
+.work-item{
 overflow:hidden;
-background:#ddd6ca;
+position:relative;
 }
 
-.image img{
+.work-item img{
+width:100%;
 height:100%;
 transition:transform .8s ease;
 }
 
-.image:hover img{
+.work-item:hover img{
 transform:scale(1.035);
 }
 
-.image1{
-grid-column:span 7;
-height:560px;
+.work-item.large{
+grid-row:1 / 3;
 }
 
-.image2{
-grid-column:span 5;
-height:560px;
+.work-footer{
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+gap:30px;
+
+margin-top:25px;
 }
 
-.image3{
-grid-column:span 5;
-height:455px;
+.work-footer p{
+max-width:480px;
+
+font-size:11px;
+line-height:1.7;
+color:#716c64;
 }
 
-.image4{
-grid-column:span 7;
-height:455px;
+
+/* =========================================================
+   CINEMATIC FILM
+========================================================= */
+
+.film-section{
+position:relative;
+
+width:100%;
+height:65vh;
+height:65svh;
+
+min-height:500px;
+max-height:720px;
+
+overflow:hidden;
+color:#fff;
+
+background:#111;
 }
 
-.gallery-button-wrap{
-text-align:center;
+.film-video{
+position:absolute;
+inset:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+object-position:center;
+
+z-index:1;
 }
 
-/* ================= STORY ================= */
+.film-overlay{
+position:absolute;
+inset:0;
 
-.story{
-background:#171715;
+z-index:2;
+
+background:
+linear-gradient(
+to top,
+rgba(0,0,0,.62) 0%,
+rgba(0,0,0,.22) 48%,
+rgba(0,0,0,.08) 100%
+);
+}
+
+.film-content{
+position:absolute;
+
+left:5%;
+right:5%;
+bottom:50px;
+
+z-index:3;
+
+max-width:800px;
+}
+
+.film-content .label{
+margin-bottom:14px;
+}
+
+.film-content h2{
+font-size:clamp(50px,6vw,80px);
+line-height:.92;
+}
+
+.film-content h2 em{
+font-weight:400;
+}
+
+.film-content .text-link{
+margin-top:22px;
+}
+
+
+/* =========================================================
+   BRAND / PHILOSOPHY
+========================================================= */
+
+.brand{
+background:#191917;
 color:#eee;
-padding:95px 7%;
+
+padding:75px 0;
+}
+
+.brand-grid{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:70px;
+grid-template-columns:.9fr 1.1fr;
+gap:7vw;
 align-items:center;
 }
 
-.story-photo{
-height:600px;
+.brand-image{
+height:570px;
 overflow:hidden;
 }
 
-.story-photo img{
+.brand-image img{
 height:100%;
 }
 
-.story-text p{
-font-size:13px;
+.brand-content{
+max-width:580px;
+}
+
+.brand-content .label{
+color:#8f8b84;
+margin-bottom:20px;
+}
+
+.brand-content h2{
+font-size:clamp(48px,5.5vw,72px);
+}
+
+.brand-content p{
+max-width:500px;
+
+margin-top:22px;
+
+font-size:12px;
 line-height:1.9;
-color:#bcb8af;
-margin-top:24px;
-max-width:520px;
+
+color:#aaa69e;
 }
 
-.story .button:hover{
-color:#171715;
+.brand-points{
+display:grid;
+grid-template-columns:1fr 1fr;
+
+gap:20px;
+
+margin-top:30px;
+padding-top:25px;
+
+border-top:1px solid #373734;
 }
 
-/* ================= QUOTE ================= */
+.brand-point span{
+display:block;
 
-.quote{
-padding:100px 7%;
+font-size:7px;
+letter-spacing:2px;
+text-transform:uppercase;
+
+color:#74716b;
+
+margin-bottom:7px;
+}
+
+.brand-point strong{
+font-family:'Cormorant Garamond',serif;
+font-size:20px;
+font-weight:400;
+}
+
+.brand-content .text-link{
+margin-top:30px;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.experience{
+padding:65px 0;
+}
+
+.experience-head{
+display:grid;
+grid-template-columns:.75fr 1.5fr .75fr;
+gap:50px;
+
+margin-bottom:40px;
+}
+
+.experience-head .label{
+padding-top:9px;
+color:#777168;
+}
+
+.experience-head h2{
+font-size:clamp(40px,4.5vw,60px);
+}
+
+.experience-head p{
+font-size:11px;
+line-height:1.8;
+color:#706b63;
+padding-top:8px;
+}
+
+.experience-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+
+border-top:1px solid #cfc8bd;
+border-bottom:1px solid #cfc8bd;
+}
+
+.experience-item{
+padding:30px 30px 32px;
+}
+
+.experience-item + .experience-item{
+border-left:1px solid #cfc8bd;
+}
+
+.experience-number{
+font-size:7px;
+letter-spacing:2.5px;
+color:#8a847b;
+margin-bottom:24px;
+}
+
+.experience-item h3{
+font-family:'Cormorant Garamond',serif;
+font-size:29px;
+font-weight:400;
+margin-bottom:10px;
+}
+
+.experience-item p{
+font-size:10px;
+line-height:1.75;
+color:#706b63;
+}
+
+
+/* =========================================================
+   TESTIMONIAL
+========================================================= */
+
+.testimonial{
+padding:70px 0;
 background:#ded6ca;
 text-align:center;
 }
 
-.quote blockquote{
-font-family:'Cormorant Garamond',serif;
-font-style:italic;
-font-size:clamp(36px,4.5vw,59px);
-line-height:1.06;
-max-width:950px;
+.testimonial-inner{
+max-width:900px;
 margin:auto;
 }
 
-.quote-name{
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
-margin-top:30px;
+.testimonial .label{
+margin-bottom:23px;
 }
 
-/* ================= CTA ================= */
+.testimonial blockquote{
+font-family:'Cormorant Garamond',serif;
+font-size:clamp(37px,4.5vw,58px);
+font-style:italic;
+line-height:1.05;
+}
+
+.client-name{
+margin-top:23px;
+
+font-size:7px;
+letter-spacing:2.7px;
+text-transform:uppercase;
+}
+
+.testimonial .text-link{
+margin-top:27px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
-min-height:620px;
-height:70vh;
-max-height:760px;
-
-background:
-linear-gradient(rgba(0,0,0,.38),rgba(0,0,0,.48)),
-url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=90')
-center / cover no-repeat;
+min-height:570px;
 
 display:flex;
-justify-content:center;
 align-items:center;
+justify-content:center;
 
-color:white;
+padding:60px 25px;
+
 text-align:center;
-padding:70px 25px;
+color:#fff;
+
+background:
+linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.52)),
+url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=2000&q=90')
+center / cover no-repeat;
+}
+
+.cta-inner{
+max-width:850px;
+}
+
+.cta .label{
+margin-bottom:20px;
 }
 
 .cta h2{
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(54px,7vw,94px);
-font-weight:400;
-line-height:.88;
+font-size:clamp(55px,7vw,90px);
 }
 
-/* ================= FOOTER ================= */
+.cta p{
+max-width:500px;
+
+margin:20px auto 0;
+
+font-family:'Cormorant Garamond',serif;
+font-size:19px;
+font-style:italic;
+}
+
+.cta .btn{
+margin-top:27px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
 background:#111;
 color:#ddd;
-padding:60px 6% 28px;
+
+padding:50px 6% 25px;
 }
 
 .footer-top{
 display:flex;
-justify-content:space-between;
 align-items:flex-start;
+justify-content:space-between;
+
 gap:50px;
-margin-bottom:50px;
+
+margin-bottom:45px;
 }
 
 .footer-logo{
 font-family:'Cormorant Garamond',serif;
-font-size:34px;
+font-size:32px;
 letter-spacing:5px;
 }
 
@@ -500,347 +889,557 @@ letter-spacing:5px;
 display:flex;
 flex-wrap:wrap;
 justify-content:flex-end;
-gap:24px 28px;
+
+gap:22px 28px;
 }
 
 .footer-links a{
-font-size:9px;
+font-size:8px;
 letter-spacing:2px;
 text-transform:uppercase;
-transition:opacity .25s;
-}
-
-.footer-links a:hover{
-opacity:.55;
 }
 
 .footer-bottom{
-border-top:1px solid #333;
 padding-top:22px;
-font-size:9px;
+
+border-top:1px solid #333;
+
+display:flex;
+justify-content:space-between;
+gap:20px;
+
+font-size:7px;
 letter-spacing:2px;
 text-transform:uppercase;
 color:#777;
 }
 
-/* ================= TABLET ================= */
 
-@media(max-width:1000px){
+/* =========================================================
+   MOBILE
+========================================================= */
 
-.story{
-gap:45px;
-padding-left:5%;
-padding-right:5%;
+@media(max-width:700px){
+
+.container{
+width:calc(100% - 36px);
 }
 
-.story-photo{
-height:520px;
-}
 
-}
-
-/* ================= MOBILE ================= */
-
-@media(max-width:800px){
+/* NAV */
 
 .navbar{
-padding:22px 20px;
+height:72px;
+padding:0 18px;
 }
 
 .logo{
-font-size:21px;
+font-size:20px;
 letter-spacing:3.5px;
 }
 
 .menu-button{
 font-size:0;
-gap:0;
 }
 
 .hamburger{
-width:27px;
-height:17px;
+width:26px;
 }
 
+
+/* MENU */
+
 .menu-top{
-height:72px;
+height:70px;
 padding:0 20px;
 }
 
 .menu-logo{
-font-size:21px;
+font-size:20px;
 letter-spacing:3.5px;
 }
 
-.close-button{
-font-size:34px;
-}
-
 .menu-content{
-height:calc(100dvh - 72px);
+height:calc(100dvh - 70px);
+
 display:block;
-padding:28px 24px 45px;
+
+padding:30px 24px;
+
 overflow-y:auto;
 }
 
 .menu-links a{
-font-size:clamp(38px,11vw,48px);
-line-height:1.08;
+font-size:42px;
 margin-bottom:3px;
 }
 
 .menu-links small{
-font-size:7px;
-margin-right:10px;
+width:28px;
+font-size:6px;
 }
 
 .menu-side{
 border-left:0;
 border-top:1px solid #333;
-padding:25px 0 0;
-margin-top:27px;
+
+padding:23px 0 0;
+margin-top:24px;
 }
 
-.menu-side-title{
-margin-bottom:15px;
+.menu-side .label{
+margin-bottom:13px;
 }
 
 .menu-side p{
-font-size:20px;
-max-width:270px;
+font-size:19px;
 }
 
 .socials{
-margin-top:22px;
+margin-top:19px;
 }
 
-/* HERO FIX */
+
+/* HERO */
 
 .hero{
-height:72svh;
-min-height:540px;
+height:76vh;
+height:76svh;
+
+min-height:560px;
 max-height:650px;
-padding:82px 22px 38px;
+
+align-items:flex-end;
+
+padding:
+80px
+18px
+40px;
+
 background-position:center center;
 }
 
-.hero-inner{
-max-width:420px;
+.hero-content{
+display:block;
 }
 
-.eyebrow{
-font-size:8px;
-letter-spacing:3.5px;
-margin-bottom:20px;
+.hero .label{
+font-size:7px;
+letter-spacing:3px;
+margin-bottom:15px;
 }
 
 .hero h1{
-font-size:clamp(51px,14.5vw,68px);
-line-height:.9;
-letter-spacing:-.5px;
+max-width:360px;
+
+font-size:clamp(48px,13.3vw,59px);
+
+line-height:.88;
+letter-spacing:-.8px;
 }
 
-.hero p{
-font-size:18px;
+.hero h1 em{
+display:block;
+white-space:nowrap;
+font-size:.9em;
+margin-top:4px;
+}
+
+.hero-side{
+max-width:330px;
+
+margin-top:19px;
+padding:0;
+}
+
+.hero-side p{
+font-size:17px;
+}
+
+.hero-actions{
+margin-top:20px;
+gap:19px;
+}
+
+.btn{
+min-height:44px;
+padding:0 18px;
+
+font-size:7px;
+letter-spacing:2.2px;
+}
+
+.text-link{
+font-size:7px;
+letter-spacing:2px;
+}
+
+
+/* QUICK INTRO */
+
+.quick-intro{
+padding:43px 0 45px;
+}
+
+.quick-grid{
+display:block;
+}
+
+.quick-intro .label{
+padding:0;
+margin-bottom:14px;
+}
+
+.quick-copy h2{
+font-size:39px;
+line-height:.96;
+}
+
+.quick-copy p{
+font-size:11px;
+line-height:1.75;
+margin-top:15px;
+}
+
+.quick-info{
+display:grid;
+grid-template-columns:1fr 1fr;
+
+gap:18px;
+
+margin-top:25px;
+padding-top:22px;
+
+border-top:1px solid #d6cfc4;
+}
+
+.info-item + .info-item{
+margin-top:0;
+}
+
+.info-title{
+font-size:6px;
+}
+
+.info-value{
+font-size:17px;
+}
+
+
+/* WORK */
+
+.work{
+padding:45px 0 42px;
+}
+
+.work-head{
+display:block;
+margin-bottom:22px;
+}
+
+.work-head .label{
+margin-bottom:13px;
+}
+
+.work-head h2{
+font-size:47px;
+}
+
+.work-note{
+padding:0;
+margin-top:12px;
+font-size:7px;
+}
+
+.work-grid{
+grid-template-columns:1fr 1fr;
+grid-template-rows:390px 235px;
+gap:7px;
+}
+
+.work-item.large{
+grid-column:1 / -1;
+grid-row:auto;
+}
+
+.work-item:nth-child(2),
+.work-item:nth-child(3){
+height:235px;
+}
+
+.work-footer{
+display:block;
 margin-top:21px;
 }
 
-.hero .button{
-margin-top:25px;
+.work-footer p{
+font-size:10px;
+line-height:1.7;
 }
 
-/* INTRO */
-
-.intro{
-padding:68px 22px 72px;
+.work-footer .text-link{
+margin-top:17px;
 }
 
-.section-label{
-font-size:8px;
+
+/* FILM */
+
+.film-section{
+height:48vh;
+height:48svh;
+
+min-height:390px;
+max-height:500px;
+}
+
+.film-content{
+left:20px;
+right:20px;
+bottom:30px;
+}
+
+.film-content .label{
+font-size:7px;
 letter-spacing:3px;
+margin-bottom:11px;
+}
+
+.film-content h2{
+font-size:42px;
+line-height:.94;
+}
+
+.film-content .text-link{
+margin-top:17px;
+}
+
+
+/* BRAND */
+
+.brand{
+padding:50px 0 52px;
+}
+
+.brand-grid{
+display:block;
+}
+
+.brand-image{
+height:430px;
+}
+
+.brand-content{
+margin-top:35px;
+}
+
+.brand-content .label{
+margin-bottom:14px;
+}
+
+.brand-content h2{
+font-size:46px;
+line-height:.94;
+}
+
+.brand-content p{
+font-size:11px;
+line-height:1.8;
+margin-top:17px;
+}
+
+.brand-points{
+margin-top:23px;
+padding-top:20px;
+gap:15px;
+}
+
+.brand-point span{
+font-size:6px;
+}
+
+.brand-point strong{
+font-size:17px;
+}
+
+.brand-content .text-link{
+margin-top:23px;
+}
+
+
+/* EXPERIENCE */
+
+.experience{
+padding:45px 0 50px;
+}
+
+.experience-head{
+display:block;
+margin-bottom:28px;
+}
+
+.experience-head .label{
+padding:0;
+margin-bottom:13px;
+}
+
+.experience-head h2{
+font-size:40px;
+}
+
+.experience-head p{
+font-size:10px;
+line-height:1.7;
+padding:0;
+margin-top:15px;
+}
+
+.experience-grid{
+display:block;
+}
+
+.experience-item{
+padding:25px 3px 27px;
+}
+
+.experience-item + .experience-item{
+border-left:0;
+border-top:1px solid #cfc8bd;
+}
+
+.experience-number{
+margin-bottom:14px;
+}
+
+.experience-item h3{
+font-size:28px;
+}
+
+.experience-item p{
+font-size:10px;
+}
+
+
+/* TESTIMONIAL */
+
+.testimonial{
+padding:50px 22px 52px;
+}
+
+.testimonial .label{
 margin-bottom:18px;
 }
 
-.heading{
-font-size:clamp(41px,12vw,54px);
-line-height:.98;
+.testimonial blockquote{
+font-size:36px;
 }
 
-.intro p{
-margin-top:22px;
-font-size:12px;
-line-height:1.85;
-}
-
-.intro .button{
-margin-top:26px;
-}
-
-/* FEATURED */
-
-.featured{
-padding:5px 14px 65px;
-}
-
-.featured-heading{
-display:block;
-margin-bottom:27px;
-}
-
-.featured-heading span{
-display:block;
-font-size:8px;
-line-height:1.6;
-margin-top:13px;
-}
-
-.gallery{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:8px;
-}
-
-.image{
-margin:0;
-}
-
-.image1,
-.image4{
-grid-column:1 / -1;
-height:410px;
-}
-
-.image2,
-.image3{
-grid-column:auto;
-height:285px;
-}
-
-.gallery-button-wrap .button{
-margin-top:28px;
-}
-
-/* STORY */
-
-.story{
-grid-template-columns:1fr;
-padding:65px 20px 70px;
-gap:38px;
-}
-
-.story-photo{
-height:440px;
-}
-
-.story-text p{
-font-size:12px;
-line-height:1.85;
+.client-name{
 margin-top:20px;
 }
 
-.story-text .button{
-margin-top:27px;
+.testimonial .text-link{
+margin-top:22px;
 }
 
-/* QUOTE */
-
-.quote{
-padding:72px 22px;
-}
-
-.quote blockquote{
-font-size:clamp(35px,10vw,47px);
-line-height:1.06;
-}
-
-.quote-name{
-margin-top:25px;
-font-size:8px;
-}
-
-.quote .button{
-margin-top:27px;
-}
 
 /* CTA */
 
 .cta{
-height:62svh;
-min-height:480px;
-max-height:600px;
-padding:60px 22px;
+min-height:500px;
+padding:55px 22px;
+}
+
+.cta .label{
+margin-bottom:16px;
 }
 
 .cta h2{
-font-size:clamp(53px,15vw,70px);
+font-size:53px;
 line-height:.9;
 }
 
-.cta .button{
-margin-top:27px;
+.cta p{
+font-size:17px;
+margin-top:17px;
 }
+
+.cta .btn{
+margin-top:23px;
+}
+
 
 /* FOOTER */
 
 footer{
-padding:48px 22px 25px;
+padding:42px 22px 23px;
 }
 
 .footer-top{
 display:block;
-margin-bottom:38px;
+margin-bottom:35px;
 }
 
 .footer-logo{
-font-size:29px;
+font-size:27px;
 letter-spacing:4px;
 }
 
 .footer-links{
-margin-top:30px;
 display:grid;
 grid-template-columns:1fr 1fr;
-justify-content:start;
-gap:18px 20px;
-}
 
-.footer-links a{
-font-size:8px;
+justify-content:start;
+
+gap:17px;
+
+margin-top:28px;
 }
 
 .footer-bottom{
-font-size:8px;
-line-height:1.7;
+display:block;
+font-size:6px;
+line-height:1.8;
+}
+
+.footer-bottom span{
+display:block;
+}
+
+.footer-bottom span + span{
+margin-top:5px;
 }
 
 }
 
-/* ================= SMALL PHONES ================= */
 
-@media(max-width:390px){
+/* =========================================================
+   SMALL PHONES
+========================================================= */
 
-.hero{
-min-height:520px;
-}
+@media(max-width:380px){
 
 .hero h1{
-font-size:49px;
+font-size:46px;
 }
 
-.gallery{
-grid-template-columns:1fr;
+.hero h1 em{
+font-size:.87em;
 }
 
-.image1,
-.image2,
-.image3,
-.image4{
-grid-column:1;
-height:390px;
+.quick-copy h2{
+font-size:37px;
 }
 
-.story-photo{
-height:410px;
+.work-head h2{
+font-size:44px;
+}
+
+.film-content h2{
+font-size:39px;
+}
+
+.brand-content h2{
+font-size:43px;
 }
 
 }
@@ -848,9 +1447,13 @@ height:410px;
 </style>
 </head>
 
+
 <body>
 
-<!-- FULL SCREEN MENU -->
+
+<!-- =====================================================
+     MENU
+===================================================== -->
 
 <div class="menu-overlay" id="menu">
 
@@ -862,6 +1465,7 @@ LENSOGRAPHY
 
 <button
 class="close-button"
+type="button"
 onclick="closeMenu()"
 aria-label="Close menu">
 ×
@@ -869,39 +1473,42 @@ aria-label="Close menu">
 
 </div>
 
+
 <div class="menu-content">
+
 
 <div class="menu-links">
 
-<a href="index.html">
-<small>01</small> Home
+<a href="index.html" onclick="closeMenu()">
+<small>01</small>Home
 </a>
 
-<a href="about.html">
-<small>02</small> About Us
+<a href="about.html" onclick="closeMenu()">
+<small>02</small>About Us
 </a>
 
-<a href="gallery.html">
-<small>03</small> Gallery
+<a href="gallery.html" onclick="closeMenu()">
+<small>03</small>Gallery
 </a>
 
-<a href="testimonials.html">
-<small>04</small> Testimonials
+<a href="testimonials.html" onclick="closeMenu()">
+<small>04</small>Testimonials
 </a>
 
-<a href="booking.html">
-<small>05</small> Book Us
+<a href="booking.html" onclick="closeMenu()">
+<small>05</small>Book Us
 </a>
 
-<a href="contact.html">
-<small>06</small> Contact
+<a href="contact.html" onclick="closeMenu()">
+<small>06</small>Contact
 </a>
 
 </div>
 
+
 <div class="menu-side">
 
-<div class="menu-side-title">
+<div class="label">
 Lensography
 </div>
 
@@ -914,278 +1521,7 @@ and beautifully preserved.
 <div class="socials">
 
 <a
-href="https://www.instagram.com/lensography.in/"
-target="_blank"
-rel="noopener noreferrer">
-Instagram
-</a>
-
-<a
-href="https://wa.me/917306963591?text=Hi%20Lensography%2C%20I%27d%20like%20to%20know%20more%20about%20your%20wedding%20coverage."
-target="_blank"
-rel="noopener noreferrer">
-WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- NAV -->
-
-<nav class="navbar">
-
-<a href="index.html" class="logo">
-LENSOGRAPHY
-</a>
-
-<button
-class="menu-button"
-onclick="openMenu()"
-aria-label="Open menu"
-aria-controls="menu">
-
-MENU
-
-<span class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</span>
-
-</button>
-
-</nav>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="hero-inner">
-
-<div class="eyebrow">
-Wedding Photography & Films
-</div>
-
-<h1>
-Stories of Love,<br>
-<em>Captured Forever.</em>
-</h1>
-
-<p>
-Honest moments. Timeless memories.
-</p>
-
-<a href="gallery.html" class="button">
-Explore Our Stories
-</a>
-
-</div>
-
-</section>
-
-<!-- INTRO -->
-
-<section class="intro">
-
-<div class="section-label">
-Welcome to Lensography
-</div>
-
-<h2 class="heading">
-We preserve more<br>
-than photographs.
-</h2>
-
-<p>
-Every wedding has its own people, emotions and little moments
-that disappear within seconds. Lensography documents those moments
-with an honest and timeless approach, creating photographs and films
-that allow you to experience your story again and again.
-</p>
-
-<a href="about.html" class="button" style="color:#171715;">
-Our Story
-</a>
-
-</section>
-
-<!-- FEATURED STORIES -->
-
-<section class="featured">
-
-<div class="featured-heading">
-
-<div>
-
-<div class="section-label">
-Selected Work
-</div>
-
-<h2 class="heading">
-Love Stories
-</h2>
-
-</div>
-
-<span>
-Weddings · Couples · Celebrations
-</span>
-
-</div>
-
-<div class="gallery">
-
-<div class="image image1">
-<img
-src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1500&q=88"
-alt="Wedding photography">
-</div>
-
-<div class="image image2">
-<img
-src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1300&q=88"
-alt="Wedding couple">
-</div>
-
-<div class="image image3">
-<img
-src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=88"
-alt="Wedding ceremony">
-</div>
-
-<div class="image image4">
-<img
-src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1500&q=88"
-alt="Wedding celebration">
-</div>
-
-</div>
-
-<div class="gallery-button-wrap">
-
-<a href="gallery.html" class="button" style="color:#171715;">
-View Full Gallery
-</a>
-
-</div>
-
-</section>
-
-<!-- ABOUT PREVIEW -->
-
-<section class="story">
-
-<div class="story-photo">
-
-<img
-src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1300&q=88"
-alt="Lensography wedding photography">
-
-</div>
-
-<div class="story-text">
-
-<div class="section-label">
-Our Philosophy
-</div>
-
-<h2 class="heading">
-Real moments.<br>
-Beautiful stories.
-</h2>
-
-<p>
-We believe the photographs that matter most are often the ones
-that weren't planned — a glance, a laugh, a tear or a quiet moment
-between two people.
-</p>
-
-<p>
-Our approach blends natural documentary storytelling with an
-elegant visual style, creating memories that feel authentic today
-and timeless years from now.
-</p>
-
-<a href="about.html" class="button">
-Discover Lensography
-</a>
-
-</div>
-
-</section>
-
-<!-- TESTIMONIAL -->
-
-<section class="quote">
-
-<div class="section-label">
-Kind Words
-</div>
-
-<blockquote>
-“Every photograph took us back to exactly
-how our wedding day felt.”
-</blockquote>
-
-<div class="quote-name">
-A Lensography Couple
-</div>
-
-<a href="testimonials.html" class="button" style="color:#171715;">
-Read Their Stories
-</a>
-
-</section>
-
-<!-- BOOKING CTA -->
-
-<section class="cta">
-
-<div>
-
-<div class="eyebrow">
-Bookings & Enquiries
-</div>
-
-<h2>
-Your story<br>
-starts here.
-</h2>
-
-<a href="booking.html" class="button">
-Book Your Date
-</a>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<div class="footer-top">
-
-<a href="index.html" class="footer-logo">
-LENSOGRAPHY
-</a>
-
-<div class="footer-links">
-
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="gallery.html">Gallery</a>
-<a href="testimonials.html">Testimonials</a>
-<a href="booking.html">Book Us</a>
-<a href="contact.html">Contact</a>
-
-<a
-href="https://www.instagram.com/lensography.in/"
+href="https://instagram.com/lensography.in"
 target="_blank"
 rel="noopener noreferrer">
 Instagram
@@ -1202,35 +1538,614 @@ WhatsApp
 
 </div>
 
-<div class="footer-bottom">
-© 2026 Lensography · Wedding Photography & Films
 </div>
 
+</div>
+
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
+<nav class="navbar">
+
+<a href="index.html" class="logo">
+LENSOGRAPHY
+</a>
+
+<button
+class="menu-button"
+type="button"
+onclick="openMenu()"
+aria-label="Open menu">
+
+MENU
+
+<span class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</span>
+
+</button>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+<div class="hero-content">
+
+<div class="hero-main">
+
+<div class="label">
+Kerala · India · Worldwide
+</div>
+
+<h1 class="display">
+Wedding stories,<br>
+<em>felt forever.</em>
+</h1>
+
+</div>
+
+
+<div class="hero-side">
+
+<p>
+Timeless wedding photography and films,
+created around real people, real emotions
+and everything in between.
+</p>
+
+<div class="hero-actions">
+
+<a href="gallery.html" class="btn btn-light">
+View Stories
+</a>
+
+<a href="booking.html" class="text-link">
+Check Date
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     QUICK INTRO
+===================================================== -->
+
+<section class="quick-intro">
+
+<div class="container quick-grid">
+
+
+<div class="label">
+Lensography
+</div>
+
+
+<div class="quick-copy">
+
+<h2 class="display">
+Your wedding should feel like you —
+not a photoshoot.
+</h2>
+
+<p>
+Lensography is a wedding photography and filmmaking team
+focused on preserving your celebration as it naturally unfolds.
+From the loudest laughter to the quietest glance, we create
+photographs and films that bring you back to how it all felt.
+</p>
+
+</div>
+
+
+<div class="quick-info">
+
+<div class="info-item">
+
+<div class="info-title">
+Based in
+</div>
+
+<div class="info-value">
+Kerala, India
+</div>
+
+</div>
+
+
+<div class="info-item">
+
+<div class="info-title">
+Available
+</div>
+
+<div class="info-value">
+Worldwide
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     SELECTED WORK
+===================================================== -->
+
+<section class="work">
+
+<div class="container">
+
+
+<div class="work-head">
+
+<div>
+
+<div class="label">
+Selected Stories
+</div>
+
+<h2 class="display">
+Love, as it happened.
+</h2>
+
+</div>
+
+<div class="work-note">
+Weddings · Couples · Celebrations
+</div>
+
+</div>
+
+
+<div class="work-grid">
+
+
+<a href="gallery.html" class="work-item large">
+
+<img
+src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1500&q=88"
+alt="Wedding couple"
+loading="lazy">
+
+</a>
+
+
+<a href="gallery.html" class="work-item">
+
+<img
+src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=1000&q=88"
+alt="Wedding details"
+loading="lazy">
+
+</a>
+
+
+<a href="gallery.html" class="work-item">
+
+<img
+src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1000&q=88"
+alt="Wedding celebration"
+loading="lazy">
+
+</a>
+
+
+</div>
+
+
+<div class="work-footer">
+
+<p>
+A glimpse into the emotions, people and celebrations
+we have had the privilege of documenting.
+</p>
+
+<a href="gallery.html" class="text-link">
+Explore Full Gallery →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CINEMATIC WEDDING FILM
+===================================================== -->
+
+<section class="film-section">
+
+<video
+class="film-video"
+autoplay
+muted
+loop
+playsinline
+preload="metadata">
+
+<source src="wedding-film.mp4" type="video/mp4">
+
+</video>
+
+
+<div class="film-overlay"></div>
+
+
+<div class="film-content">
+
+<div class="label">
+Wedding Films
+</div>
+
+<h2 class="display">
+Not just how it looked.<br>
+<em>How it felt.</em>
+</h2>
+
+<a href="gallery.html" class="text-link">
+Explore Our Films →
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PHILOSOPHY
+===================================================== -->
+
+<section class="brand">
+
+<div class="container brand-grid">
+
+
+<div class="brand-image">
+
+<img
+src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1300&q=88"
+alt="Lensography wedding story"
+loading="lazy">
+
+</div>
+
+
+<div class="brand-content">
+
+<div class="label">
+The Lensography Approach
+</div>
+
+<h2 class="display">
+Less posing.<br>
+More feeling.
+</h2>
+
+<p>
+We don't want your wedding photographs to feel like a collection
+of poses. We want them to feel like memories. Our approach combines
+natural storytelling with an elegant visual style — giving you the
+space to enjoy your day while we preserve the moments that matter.
+</p>
+
+
+<div class="brand-points">
+
+<div class="brand-point">
+
+<span>
+Our Style
+</span>
+
+<strong>
+Natural & Timeless
+</strong>
+
+</div>
+
+
+<div class="brand-point">
+
+<span>
+What We Create
+</span>
+
+<strong>
+Photography & Films
+</strong>
+
+</div>
+
+</div>
+
+
+<a href="about.html" class="text-link">
+Discover Our Story →
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section class="experience">
+
+<div class="container">
+
+
+<div class="experience-head">
+
+<div class="label">
+The Experience
+</div>
+
+<h2 class="display">
+Present for the moments.<br>
+Invisible when it matters.
+</h2>
+
+<p>
+From your first conversation with us to the final delivery,
+the experience is kept simple, personal and focused on you.
+</p>
+
+</div>
+
+
+<div class="experience-grid">
+
+
+<div class="experience-item">
+
+<div class="experience-number">
+01
+</div>
+
+<h3>
+We Understand
+</h3>
+
+<p>
+We begin by understanding your celebration,
+your people and what matters most to you.
+</p>
+
+</div>
+
+
+<div class="experience-item">
+
+<div class="experience-number">
+02
+</div>
+
+<h3>
+You Live It
+</h3>
+
+<p>
+Enjoy your wedding without turning the day
+into one long photoshoot. We document it naturally.
+</p>
+
+</div>
+
+
+<div class="experience-item">
+
+<div class="experience-number">
+03
+</div>
+
+<h3>
+You Relive It
+</h3>
+
+<p>
+Receive photographs and films created to take
+you back to the people, emotions and atmosphere of your day.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TESTIMONIAL
+===================================================== -->
+
+<section class="testimonial">
+
+<div class="testimonial-inner">
+
+<div class="label">
+Kind Words
+</div>
+
+<blockquote>
+“Every photograph took us back
+to exactly how our wedding day felt.”
+</blockquote>
+
+<div class="client-name">
+A Lensography Couple
+</div>
+
+<a href="testimonials.html" class="text-link">
+More Stories →
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<div class="cta-inner">
+
+<div class="label">
+Bookings & Enquiries
+</div>
+
+<h2 class="display">
+Your story<br>
+starts here.
+</h2>
+
+<p>
+Planning your wedding?
+Tell us about your day and let's create something
+that will still feel like you years from now.
+</p>
+
+<a href="booking.html" class="btn btn-light">
+Check Availability
+</a>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+
+<div class="footer-top">
+
+<a href="index.html" class="footer-logo">
+LENSOGRAPHY
+</a>
+
+
+<div class="footer-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="about.html">
+About
+</a>
+
+<a href="gallery.html">
+Gallery
+</a>
+
+<a href="testimonials.html">
+Testimonials
+</a>
+
+<a href="booking.html">
+Book Us
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+<a
+href="https://instagram.com/lensography.in"
+target="_blank"
+rel="noopener noreferrer">
+Instagram
+</a>
+
+</div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+<span>
+© 2026 Lensography
+</span>
+
+<span>
+Kerala · India · Worldwide
+</span>
+
+</div>
+
+
 </footer>
+
+
+<!-- =====================================================
+     SCRIPT
+===================================================== -->
 
 <script>
 
 const menu = document.getElementById("menu");
 
 function openMenu(){
+
 menu.classList.add("active");
+
 document.body.classList.add("menu-open");
+
 }
 
 function closeMenu(){
+
 menu.classList.remove("active");
+
 document.body.classList.remove("menu-open");
+
 }
 
-document.addEventListener("keydown",function(event){
+document.addEventListener("keydown", function(event){
+
 if(event.key === "Escape"){
 closeMenu();
 }
-});
 
-/* Close menu after selecting an internal page */
-document.querySelectorAll(".menu-links a").forEach(function(link){
-link.addEventListener("click", closeMenu);
 });
 
 </script>
