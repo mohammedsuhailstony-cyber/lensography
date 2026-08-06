@@ -2307,20 +2307,265 @@ Explore Full Gallery →
 
 
 <!-- =====================================================
-     MAIN WEDDING FILM SECTION
+     LENSOGRAPHY WEDDING FILM - CLEAN FINAL VERSION
 ===================================================== -->
 
-<section
-    class="film-section"
-    id="filmSection">
+<style>
+
+/* ---------- MAIN SECTION ---------- */
+
+#lensoWeddingFilm {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    min-height: 520px;
+    overflow: hidden;
+    background: #000;
+}
+
+#lensoWeddingFilm .lenso-bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 1;
+}
+
+#lensoWeddingFilm .lenso-dark {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.15)
+    );
+}
+
+#lensoWeddingFilm .lenso-film-text {
+    position: absolute;
+    left: 7%;
+    bottom: 13%;
+    z-index: 3;
+    color: white;
+}
+
+#lensoWeddingFilm .lenso-film-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: white;
+}
+
+#lensoWeddingFilm .lenso-film-heading {
+    margin: 0 0 28px 0;
+    padding: 0;
+    color: white;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    font-size: clamp(45px, 6vw, 85px);
+    line-height: .95;
+}
+
+#lensoWeddingFilm .lenso-film-heading em {
+    font-weight: 400;
+    color: white;
+}
 
 
-    <!-- BACKGROUND VIDEO
-         Autoplay + muted + loop -->
+/* ---------- WATCH OUR FILM ---------- */
+
+#lensoWatchFilm {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+
+    background: none !important;
+    background-color: transparent !important;
+
+    border: none !important;
+    border-radius: 0 !important;
+
+    border-bottom: 1px solid white !important;
+
+    padding: 0 0 7px 0 !important;
+    margin: 0 !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+
+    font-family: inherit !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+
+    letter-spacing: 3px !important;
+    text-transform: uppercase !important;
+
+    box-shadow: none !important;
+    outline: none !important;
+
+    cursor: pointer !important;
+}
+
+#lensoWatchFilm:hover {
+    opacity: .7;
+}
+
+
+/* =====================================================
+   POPUP
+
+   DEFAULT = ABSOLUTELY HIDDEN
+===================================================== */
+
+#lensoVideoPopup {
+    display: none;
+}
+
+
+/* ONLY THIS CLASS OPENS POPUP */
+
+#lensoVideoPopup.lenso-popup-open {
+    display: flex !important;
+
+    position: fixed !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+
+    background: #000 !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    z-index: 2147483647 !important;
+}
+
+
+/* FULL VIDEO */
+
+#lensoPopupVideo {
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+    max-height: none !important;
+
+    object-fit: contain !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: #000 !important;
+}
+
+
+/* ---------- CLOSE BUTTON ---------- */
+
+#lensoCloseFilm {
+    position: fixed !important;
+
+    top: 20px !important;
+    right: 20px !important;
+
+    width: 45px !important;
+    height: 45px !important;
+
+    min-width: 45px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: rgba(0,0,0,.65) !important;
+
+    color: white !important;
+    -webkit-text-fill-color: white !important;
+
+    border: 1px solid rgba(255,255,255,.7) !important;
+    border-radius: 50% !important;
+
+    font-family: Arial, sans-serif !important;
+    font-size: 27px !important;
+    line-height: 1 !important;
+
+    box-shadow: none !important;
+
+    z-index: 2147483647 !important;
+
+    cursor: pointer !important;
+}
+
+
+/* ---------- MOBILE ---------- */
+
+@media(max-width:768px){
+
+    #lensoWeddingFilm {
+        height: 70vh;
+        min-height: 520px;
+    }
+
+    #lensoWeddingFilm .lenso-bg-video {
+        object-position: center;
+    }
+
+    #lensoWeddingFilm .lenso-dark {
+        background: linear-gradient(
+            0deg,
+            rgba(0,0,0,.65),
+            rgba(0,0,0,.08)
+        );
+    }
+
+    #lensoWeddingFilm .lenso-film-text {
+        left: 22px;
+        right: 22px;
+        bottom: 55px;
+    }
+
+    #lensoWeddingFilm .lenso-film-heading {
+        font-size: 45px;
+        line-height: .95;
+    }
+
+    #lensoCloseFilm {
+        top: calc(15px + env(safe-area-inset-top)) !important;
+        right: 15px !important;
+    }
+}
+
+</style>
+
+
+<!-- =====================================================
+     BACKGROUND WEDDING FILM
+===================================================== -->
+
+<section id="lensoWeddingFilm">
 
     <video
-        class="film-video"
-        id="backgroundFilm"
+        id="lensoBackgroundFilm"
+        class="lenso-bg-video"
         autoplay
         muted
         loop
@@ -2334,81 +2579,54 @@ Explore Full Gallery →
     </video>
 
 
-
-    <!-- DARK OVERLAY -->
-
-    <div class="film-overlay"></div>
+    <div class="lenso-dark"></div>
 
 
+    <div class="lenso-film-text">
 
-    <!-- TEXT CONTENT -->
-
-    <div class="film-content">
-
-
-        <div class="film-label">
-
+        <div class="lenso-film-label">
             Wedding Films
-
         </div>
 
 
-        <h2 class="film-title">
-
+        <h2 class="lenso-film-heading">
             Not just how it looked.<br>
-
             <em>How it felt.</em>
-
         </h2>
 
 
-
-        <!-- WATCH BUTTON -->
-
         <button
             type="button"
-            class="film-open"
-            id="openFilm">
+            id="lensoWatchFilm">
 
             Watch Our Film →
 
         </button>
-
 
     </div>
 
 </section>
 
 
-
 <!-- =====================================================
-     FULLSCREEN VIDEO POPUP
-     Hidden until Watch Our Film is clicked
+     FULL SCREEN POPUP
+     THIS IS INVISIBLE UNTIL CLICK
 ===================================================== -->
 
-<div
-    id="filmModal"
-    aria-hidden="true">
-
-
-    <!-- CLOSE BUTTON -->
+<div id="lensoVideoPopup">
 
     <button
         type="button"
-        class="film-close"
-        id="closeFilm"
-        aria-label="Close video">
+        id="lensoCloseFilm"
+        aria-label="Close">
 
         ×
 
     </button>
 
 
-
-    <!-- FULL VIDEO WITH SOUND + CONTROLS -->
-
     <video
-        id="fullFilm"
+        id="lensoPopupVideo"
         controls
         playsinline
         preload="metadata">
@@ -2419,9 +2637,7 @@ Explore Full Gallery →
 
     </video>
 
-
 </div>
-
 
 
 <!-- =====================================================
@@ -2430,260 +2646,105 @@ Explore Full Gallery →
 
 <script>
 
-(function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const modal =
-        document.getElementById("filmModal");
+    const watchButton =
+        document.getElementById("lensoWatchFilm");
 
-    const openButton =
-        document.getElementById("openFilm");
+    const popup =
+        document.getElementById("lensoVideoPopup");
+
+    const popupVideo =
+        document.getElementById("lensoPopupVideo");
 
     const closeButton =
-        document.getElementById("closeFilm");
+        document.getElementById("lensoCloseFilm");
 
-    const fullFilm =
-        document.getElementById("fullFilm");
-
-    const backgroundFilm =
-        document.getElementById("backgroundFilm");
+    const backgroundVideo =
+        document.getElementById("lensoBackgroundFilm");
 
 
-    /* =================================
-       OPEN FULL VIDEO
-    ================================= */
+    /* OPEN VIDEO */
 
-    function openFilm() {
+    watchButton.addEventListener("click", function () {
 
-        modal.classList.add(
-            "film-active"
-        );
+        popup.classList.add("lenso-popup-open");
 
-
-        modal.setAttribute(
-            "aria-hidden",
-            "false"
-        );
+        document.body.style.overflow = "hidden";
+        document.documentElement.style.overflow = "hidden";
 
 
-        /* Stop website scrolling */
+        /* Pause background */
 
-        document.documentElement.style.overflow =
-            "hidden";
-
-        document.body.style.overflow =
-            "hidden";
+        backgroundVideo.pause();
 
 
-        /* Pause background loop */
+        /* Full video */
 
-        if (backgroundFilm) {
+        popupVideo.currentTime = 0;
 
-            backgroundFilm.pause();
+        popupVideo.muted = false;
 
-        }
+        popupVideo.volume = 1;
 
+        popupVideo.play().catch(function(){});
 
-        /* Start full video from beginning */
-
-        fullFilm.currentTime = 0;
-
-
-        /* SOUND ON */
-
-        fullFilm.muted = false;
-
-        fullFilm.volume = 1;
+    });
 
 
-        const playPromise =
-            fullFilm.play();
+    /* CLOSE FUNCTION */
+
+    function closeLensoFilm() {
+
+        popupVideo.pause();
+
+        popupVideo.currentTime = 0;
 
 
-        if (playPromise !== undefined) {
+        popup.classList.remove("lenso-popup-open");
 
-            playPromise.catch(function () {
 
-                /*
-                Some browsers may require
-                user to press play.
-                Controls are available.
-                */
+        document.body.style.overflow = "";
+        document.documentElement.style.overflow = "";
 
-            });
 
-        }
+        backgroundVideo.muted = true;
+
+        backgroundVideo.play().catch(function(){});
 
     }
 
 
-
-    /* =================================
-       CLOSE FULL VIDEO
-    ================================= */
-
-    function closeFilm() {
-
-        /* Stop full video */
-
-        fullFilm.pause();
-
-        fullFilm.currentTime = 0;
-
-
-        /* Hide popup */
-
-        modal.classList.remove(
-            "film-active"
-        );
-
-
-        modal.setAttribute(
-            "aria-hidden",
-            "true"
-        );
-
-
-        /* Restore website scrolling */
-
-        document.documentElement.style.overflow =
-            "";
-
-        document.body.style.overflow =
-            "";
-
-
-        /* Resume background video */
-
-        if (backgroundFilm) {
-
-            backgroundFilm.muted = true;
-
-
-            const bgPlay =
-                backgroundFilm.play();
-
-
-            if (bgPlay !== undefined) {
-
-                bgPlay.catch(function () {});
-
-            }
-
-        }
-
-    }
-
-
-
-    /* =================================
-       WATCH BUTTON
-    ================================= */
-
-    openButton.addEventListener(
-        "click",
-        function (event) {
-
-            event.preventDefault();
-
-            event.stopPropagation();
-
-            openFilm();
-
-        }
-    );
-
-
-
-    /* =================================
-       CLOSE X
-    ================================= */
+    /* X BUTTON */
 
     closeButton.addEventListener(
         "click",
-        function (event) {
-
-            event.preventDefault();
-
-            event.stopPropagation();
-
-            closeFilm();
-
-        }
+        closeLensoFilm
     );
 
 
+    /* ESC KEY */
 
-    /* =================================
-       CLICK BLACK AREA TO CLOSE
-    ================================= */
+    document.addEventListener("keydown", function(e){
 
-    modal.addEventListener(
-        "click",
-        function (event) {
+        if(e.key === "Escape"){
 
-            if (event.target === modal) {
-
-                closeFilm();
-
-            }
-
-        }
-    );
-
-
-
-    /* =================================
-       ESC KEY TO CLOSE
-    ================================= */
-
-    document.addEventListener(
-        "keydown",
-        function (event) {
-
-            if (
-                event.key === "Escape" &&
-                modal.classList.contains(
-                    "film-active"
-                )
-            ) {
-
-                closeFilm();
-
-            }
-
-        }
-    );
-
-
-
-    /* =================================
-       FORCE BACKGROUND VIDEO
-       TO REMAIN MUTED
-    ================================= */
-
-    if (backgroundFilm) {
-
-        backgroundFilm.muted = true;
-
-        backgroundFilm.defaultMuted = true;
-
-
-        const bgPlay =
-            backgroundFilm.play();
-
-
-        if (bgPlay !== undefined) {
-
-            bgPlay.catch(function () {});
+            closeLensoFilm();
 
         }
 
-    }
+    });
 
-})();
+
+    /* BACKGROUND MUST STAY MUTED */
+
+    backgroundVideo.muted = true;
+
+    backgroundVideo.defaultMuted = true;
+
+});
 
 </script>
-
 
 <!-- =====================================================
      PHILOSOPHY
