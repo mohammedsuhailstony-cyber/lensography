@@ -1846,45 +1846,66 @@ Explore Full Gallery →
      CINEMATIC WEDDING FILM
 ===================================================== -->
 
-<section class="film-section">
+<section class="film-section" id="filmSection">
 
-<video
-class="film-video"
-autoplay
-muted
-loop
-playsinline
-preload="metadata">
+  <!-- BACKGROUND LOOP VIDEO -->
+  <video
+    class="film-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto">
 
-<source
-src="wedding-film.mp4"
-type="video/mp4"
->
+    <source src="wedding-film.MP4" type="video/mp4">
 
-</video>
+  </video>
 
+  <div class="film-overlay"></div>
 
-<div class="film-overlay"></div>
+  <div class="film-content">
 
+    <div class="label">
+      Wedding Films
+    </div>
 
-<div class="film-content">
+    <h2 class="display">
+      Not just how it looked.<br>
+      <em>How it felt.</em>
+    </h2>
 
-<div class="label">
-Wedding Films
-</div>
+    <button type="button" class="text-link film-open" id="openFilm">
+      Watch Our Film →
+    </button>
 
-<h2 class="display">
-Not just how it looked.<br>
-<em>How it felt.</em>
-</h2>
-
-<a href="wedding-film.MP4" class="text-link" target="_blank">
-  Watch Our Film →
-</a>
-
-</div>
+  </div>
 
 </section>
+
+
+<!-- FULL SCREEN VIDEO POPUP -->
+<div class="film-modal" id="filmModal">
+
+  <button
+    type="button"
+    class="film-close"
+    id="closeFilm"
+    aria-label="Close video">
+    ×
+  </button>
+
+  <video
+    id="fullFilm"
+    class="film-full-video"
+    controls
+    playsinline
+    preload="metadata">
+
+    <source src="wedding-film.MP4" type="video/mp4">
+
+  </video>
+
+</div>
 
 
 <!-- =====================================================
