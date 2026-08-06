@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Book Us | Lensography</title>
+<title>Book an Appointment | Lensography</title>
 
 <meta name="description"
-content="Tell Lensography about your wedding or celebration and start your booking enquiry directly through WhatsApp.">
+content="Tell Lensography about your wedding or event and start your booking enquiry directly through WhatsApp.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,1123 +16,1154 @@ content="Tell Lensography about your wedding or celebration and start your booki
 
 <style>
 
-/* =========================================================
-   RESET
-========================================================= */
-
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 :root{
---cream:#f3efe7;
---cream-light:#f8f5ed;
---cream-dark:#e5dfd4;
---black:#191917;
---text:#292824;
---grey:#777168;
---line:#d6cfc4;
---dark-line:#373734;
---white:#eee;
+    --cream:#f3efe6;
+    --cream-light:#faf7f0;
+    --cream-dark:#e6ded1;
+    --black:#171715;
+    --text:#211f1b;
+    --grey:#777067;
+    --line:#d1c8bc;
+    --white:#fffdf8;
 }
 
 html{
-scroll-behavior:smooth;
-}
-
-html,
-body{
-width:100%;
-min-height:100%;
-overflow-x:hidden;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:'Montserrat',sans-serif;
-background:var(--cream);
-color:var(--black);
--webkit-font-smoothing:antialiased;
+    background:var(--cream);
+    color:var(--text);
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
 }
 
 body.menu-open{
-overflow:hidden;
+    overflow:hidden;
 }
 
 a{
-color:inherit;
-text-decoration:none;
+    color:inherit;
+    text-decoration:none;
 }
 
 button,
 input,
 select,
 textarea{
-font:inherit;
+    font:inherit;
 }
 
 button{
-cursor:pointer;
+    border:0;
 }
 
 .container{
-width:min(1180px,90%);
-margin:auto;
+    width:min(1080px,90%);
+    margin:auto;
 }
 
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* =========================================
+   HEADER
+========================================= */
 
-.navbar{
-height:90px;
-padding:0 5%;
+header{
+    height:78px;
+    display:flex;
+    align-items:center;
+    border-bottom:1px solid rgba(110,103,93,.15);
+}
 
-display:flex;
-align-items:center;
-justify-content:space-between;
+.nav{
+    width:min(1180px,90%);
+    margin:auto;
 
-position:relative;
-z-index:100;
-
-background:var(--cream);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-font-family:'Cormorant Garamond',serif;
-font-size:27px;
-font-weight:500;
-letter-spacing:5px;
-line-height:1;
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    letter-spacing:5px;
+    font-weight:500;
 }
 
 .menu-button{
-border:0;
-background:none;
-color:var(--black);
+    background:none;
+    color:var(--black);
+    cursor:pointer;
 
-display:flex;
-align-items:center;
-gap:13px;
+    display:flex;
+    align-items:center;
+    gap:14px;
 
-font-size:9px;
-letter-spacing:3px;
-text-transform:uppercase;
+    font-size:8px;
+    letter-spacing:3px;
+    text-transform:uppercase;
 }
 
 .hamburger{
-width:27px;
-height:17px;
+    width:27px;
+    height:16px;
 
-display:flex;
-flex-direction:column;
-justify-content:space-between;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
 }
 
 .hamburger span{
-display:block;
-width:100%;
-height:1px;
-background:currentColor;
+    width:100%;
+    height:1px;
+    background:currentColor;
 }
 
 
-/* =========================================================
-   FULL SCREEN MENU
-========================================================= */
+/* =========================================
+   MENU
+========================================= */
 
 .menu-overlay{
-position:fixed;
-inset:0;
+    position:fixed;
+    inset:0;
+    z-index:1000;
 
-z-index:1000;
+    background:#171715;
+    color:#eee;
 
-background:#171715;
-color:#eee;
+    opacity:0;
+    visibility:hidden;
 
-opacity:0;
-visibility:hidden;
-pointer-events:none;
-
-transition:.4s ease;
+    transition:.4s ease;
 }
 
 .menu-overlay.active{
-opacity:1;
-visibility:visible;
-pointer-events:auto;
+    opacity:1;
+    visibility:visible;
 }
 
 .menu-top{
-height:85px;
-padding:0 5%;
+    height:78px;
+    padding:0 5%;
 
-display:flex;
-align-items:center;
-justify-content:space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .menu-logo{
-font-family:'Cormorant Garamond',serif;
-font-size:27px;
-font-weight:500;
-letter-spacing:5px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    letter-spacing:5px;
 }
 
 .close-button{
-border:0;
-background:none;
-color:#fff;
+    background:none;
+    color:#fff;
 
-font-family:'Cormorant Garamond',serif;
-font-size:39px;
-font-weight:400;
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+
+    cursor:pointer;
 }
 
 .menu-content{
-height:calc(100dvh - 85px);
+    min-height:calc(100vh - 78px);
 
-padding:3% 8% 6%;
+    padding:2% 8% 5%;
 
-display:grid;
-grid-template-columns:1.15fr .85fr;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
 
-align-items:center;
+    align-items:center;
 }
 
 .menu-links{
-display:flex;
-flex-direction:column;
-align-items:flex-start;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
 }
 
 .menu-links a{
-font-family:'Cormorant Garamond',serif;
+    font-family:'Cormorant Garamond',serif;
 
-font-size:clamp(43px,5vw,72px);
-font-weight:400;
-line-height:1.03;
+    font-size:clamp(43px,5.3vw,75px);
+    line-height:1.04;
 
-transition:.3s ease;
+    transition:.3s;
 }
 
 .menu-links a:hover{
-opacity:.45;
-transform:translateX(8px);
+    opacity:.45;
+    transform:translateX(10px);
 }
 
 .menu-links small{
-display:inline-block;
-width:38px;
+    margin-right:20px;
 
-font-family:'Montserrat',sans-serif;
-font-size:7px;
-letter-spacing:2px;
+    color:#777;
 
-color:#777;
+    font-family:'Montserrat',sans-serif;
+    font-size:8px;
+    letter-spacing:3px;
 }
 
 .menu-side{
-padding-left:55px;
-border-left:1px solid #333;
+    border-left:1px solid #333;
+    padding-left:55px;
 }
 
-.menu-side-label{
-font-size:8px;
-letter-spacing:3px;
-text-transform:uppercase;
-color:#777;
+.menu-side-title{
+    margin-bottom:22px;
 
-margin-bottom:22px;
+    color:#777;
+
+    font-size:8px;
+    letter-spacing:3px;
+    text-transform:uppercase;
 }
 
 .menu-side p{
-max-width:310px;
+    max-width:300px;
 
-font-family:'Cormorant Garamond',serif;
-font-size:27px;
-line-height:1.25;
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    line-height:1.35;
 }
 
 .socials{
-display:flex;
-gap:25px;
-
-margin-top:35px;
+    display:flex;
+    gap:25px;
+    margin-top:35px;
 }
 
 .socials a{
-font-size:8px;
-letter-spacing:2px;
-text-transform:uppercase;
+    font-size:8px;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 
-/* =========================================================
+/* =========================================
    HERO
-========================================================= */
+========================================= */
 
 .hero{
-padding:70px 0 80px;
-
-border-bottom:1px solid var(--line);
+    padding:45px 0 35px;
 }
 
-.hero-small{
-font-size:8px;
-font-weight:400;
-letter-spacing:3.5px;
-text-transform:uppercase;
+.hero-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
 
-color:var(--grey);
+    margin-bottom:16px;
 
-margin-bottom:22px;
+    color:#817a70;
+
+    font-size:8px;
+    letter-spacing:3.5px;
+    text-transform:uppercase;
+}
+
+.hero-line{
+    width:38px;
+    height:1px;
+    background:#918a80;
 }
 
 .hero-grid{
-display:grid;
-grid-template-columns:1.25fr .75fr;
-
-gap:7vw;
-align-items:end;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:55px;
+    align-items:end;
 }
 
 .hero h1{
-max-width:850px;
+    font-family:'Cormorant Garamond',serif;
 
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(68px,9vw,120px);
-font-weight:500;
+    font-size:clamp(60px,7.2vw,94px);
+    font-weight:400;
 
-line-height:.82;
-letter-spacing:-2px;
+    line-height:.85;
+    letter-spacing:-1.5px;
 }
 
 .hero h1 em{
-font-weight:400;
-color:#89847b;
+    color:#80786e;
+    font-weight:400;
 }
 
 .hero-text{
-max-width:410px;
+    max-width:370px;
 
-font-family:'Cormorant Garamond',serif;
-font-size:25px;
-line-height:1.35;
+    padding-bottom:5px;
 
-color:#615d56;
+    color:#665f57;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.45;
 }
 
 
-/* =========================================================
+/* =========================================
    BOOKING
-========================================================= */
+========================================= */
 
 .booking{
-padding:80px 0 95px;
+    padding-bottom:65px;
 }
 
-.booking-grid{
-display:grid;
-grid-template-columns:.78fr 1.22fr;
-
-gap:8vw;
-align-items:start;
+.booking-inner{
+    padding-top:30px;
+    border-top:1px solid var(--line);
 }
 
 
-/* =========================================================
-   BOOKING INFO
-========================================================= */
-
-.booking-info{
-position:sticky;
-top:40px;
-}
-
-.section-label{
-font-size:8px;
-letter-spacing:3.5px;
-text-transform:uppercase;
-
-color:var(--grey);
-
-margin-bottom:24px;
-}
-
-.booking-info h2{
-max-width:430px;
-
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(48px,5vw,68px);
-font-weight:500;
-line-height:.95;
-
-margin-bottom:25px;
-}
-
-.booking-info > p{
-max-width:400px;
-
-font-size:11px;
-line-height:1.85;
-
-color:#68635b;
-}
-
-
-/* =========================================================
-   STEPS
-========================================================= */
-
-.steps{
-margin-top:42px;
-
-border-top:1px solid var(--line);
-}
-
-.step{
-display:grid;
-grid-template-columns:43px 1fr;
-
-padding:21px 0;
-
-border-bottom:1px solid var(--line);
-}
-
-.step-number{
-padding-top:5px;
-
-font-size:7px;
-letter-spacing:2px;
-
-color:#8a857c;
-}
-
-.step strong{
-display:block;
-
-font-family:'Cormorant Garamond',serif;
-font-size:21px;
-font-weight:500;
-
-margin-bottom:4px;
-}
-
-.step p{
-font-size:9px;
-line-height:1.7;
-
-color:#777168;
-}
-
-
-/* =========================================================
+/* =========================================
    FORM CARD
-========================================================= */
+========================================= */
 
 .booking-form{
-background:var(--cream-light);
+    position:relative;
 
-padding:50px;
+    width:min(780px,100%);
+    margin:auto;
+
+    padding:45px 52px 48px;
+
+    background:rgba(250,247,240,.92);
+
+    border:1px solid rgba(177,167,154,.42);
 }
 
-.form-intro{
-padding-bottom:35px;
-margin-bottom:35px;
+.booking-form::before{
+    content:"";
 
-border-bottom:1px solid var(--line);
+    position:absolute;
+
+    top:-1px;
+    left:50%;
+
+    width:70px;
+    height:2px;
+
+    background:#292722;
+
+    transform:translateX(-50%);
 }
 
-.form-intro span{
-display:block;
+.form-heading{
+    margin-bottom:30px;
+    padding-bottom:27px;
 
-font-size:7px;
-letter-spacing:3px;
-text-transform:uppercase;
+    text-align:center;
 
-color:var(--grey);
-
-margin-bottom:14px;
+    border-bottom:1px solid var(--line);
 }
 
-.form-intro h3{
-max-width:520px;
+.form-eyebrow{
+    margin-bottom:10px;
 
-font-family:'Cormorant Garamond',serif;
-font-size:40px;
-font-weight:500;
-line-height:1.05;
+    color:#8c8479;
+
+    font-size:7px;
+    letter-spacing:3.5px;
+    text-transform:uppercase;
+}
+
+.form-heading h2{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:44px;
+    font-weight:500;
+
+    line-height:1;
+}
+
+.form-heading p{
+    max-width:430px;
+
+    margin:10px auto 0;
+
+    color:#797168;
+
+    font-family:'Cormorant Garamond',serif;
+    font-size:16px;
+    line-height:1.45;
 }
 
 
-/* =========================================================
+/* =========================================
    FORM
-========================================================= */
+========================================= */
 
 .form-row{
-display:grid;
-grid-template-columns:1fr 1fr;
-
-gap:27px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
 .form-group{
-margin-bottom:29px;
+    margin-bottom:19px;
 }
 
 .form-group label{
-display:block;
+    display:block;
 
-margin-bottom:11px;
+    margin-bottom:8px;
 
-font-size:7px;
-font-weight:500;
-letter-spacing:2px;
-text-transform:uppercase;
+    color:#665f57;
 
-color:#67635c;
+    font-size:7px;
+    font-weight:500;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .required{
-color:#967467;
+    color:#9d7467;
 }
 
 input,
 select,
 textarea{
-width:100%;
+    width:100%;
 
-border:0;
-border-bottom:1px solid #bbb4a8;
+    outline:none;
 
-border-radius:0;
-outline:0;
+    border:1px solid #d2c9bd;
+    border-radius:0;
 
-background:transparent;
-color:var(--black);
+    background:#fffdf8;
+    color:#211f1b;
 
-padding:12px 1px;
+    padding:14px 15px;
 
-font-family:'Montserrat',sans-serif;
-font-size:11px;
-font-weight:400;
+    font-size:13px;
 
-transition:border-color .25s ease;
+    transition:.25s ease;
+}
+
+input,
+select{
+    height:50px;
+}
+
+input:hover,
+select:hover,
+textarea:hover{
+    border-color:#b3aa9e;
 }
 
 input:focus,
 select:focus,
 textarea:focus{
-border-bottom-color:var(--black);
+    border-color:#514c45;
+    background:#fff;
 }
 
 input::placeholder,
 textarea::placeholder{
-color:#aaa59c;
-opacity:1;
+    color:#aaa399;
 }
 
 select{
-appearance:none;
--webkit-appearance:none;
+    appearance:none;
+    cursor:pointer;
 
-cursor:pointer;
+    padding-right:42px;
 
-background-image:
-linear-gradient(45deg,transparent 50%,#777 50%),
-linear-gradient(135deg,#777 50%,transparent 50%);
+    background-image:
+        linear-gradient(45deg,transparent 50%,#777 50%),
+        linear-gradient(135deg,#777 50%,transparent 50%);
 
-background-position:
-calc(100% - 8px) 50%,
-calc(100% - 4px) 50%;
+    background-position:
+        calc(100% - 19px) 21px,
+        calc(100% - 14px) 21px;
 
-background-size:4px 4px,4px 4px;
-background-repeat:no-repeat;
-
-padding-right:25px;
+    background-size:5px 5px;
+    background-repeat:no-repeat;
 }
 
 textarea{
-min-height:105px;
-
-resize:vertical;
-
-line-height:1.7;
+    min-height:100px;
+    resize:vertical;
+    line-height:1.6;
 }
+
+
+/* =========================================
+   SUBMIT
+========================================= */
 
 .form-divider{
-height:1px;
-background:var(--line);
+    display:flex;
+    align-items:center;
+    gap:14px;
 
-margin:8px 0 30px;
+    margin:5px 0 21px;
+
+    color:#999187;
+
+    font-size:7px;
+    letter-spacing:3px;
+    text-transform:uppercase;
 }
 
+.form-divider::before,
+.form-divider::after{
+    content:"";
 
-/* =========================================================
-   SUBMIT
-========================================================= */
+    flex:1;
+
+    height:1px;
+
+    background:var(--line);
+}
 
 .submit-btn{
-width:100%;
+    width:100%;
 
-min-height:54px;
+    padding:19px 22px;
 
-border:1px solid var(--black);
+    background:var(--black);
+    color:#fff;
 
-background:var(--black);
-color:#fff;
+    cursor:pointer;
 
-font-size:8px;
-letter-spacing:2.8px;
-text-transform:uppercase;
+    font-size:8px;
+    letter-spacing:3.2px;
+    text-transform:uppercase;
 
-transition:.3s ease;
+    transition:.3s ease;
 }
 
 .submit-btn:hover{
-background:transparent;
-color:var(--black);
+    background:#292824;
 }
 
 .whatsapp-note{
-max-width:480px;
+    max-width:470px;
 
-margin:14px auto 0;
+    margin:12px auto 0;
 
-text-align:center;
+    text-align:center;
 
-font-size:8px;
-line-height:1.7;
+    color:#948d83;
 
-color:#8a857d;
+    font-size:9px;
+    line-height:1.55;
 }
 
 
-/* =========================================================
+/* =========================================
    WHAT HAPPENS NEXT
-========================================================= */
+========================================= */
 
 .after{
-background:var(--cream-dark);
+    background:#e5ddd1;
 
-padding:75px 0;
-}
-
-.after-label{
-font-size:8px;
-letter-spacing:3.5px;
-text-transform:uppercase;
-
-color:var(--grey);
-
-margin-bottom:25px;
+    padding:58px 0;
 }
 
 .after-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
 
-gap:8vw;
-align-items:start;
+    gap:70px;
+    align-items:start;
+}
+
+.after-label{
+    margin-bottom:13px;
+
+    color:#80796f;
+
+    font-size:7px;
+    letter-spacing:3px;
+    text-transform:uppercase;
 }
 
 .after h2{
-max-width:480px;
+    font-family:'Cormorant Garamond',serif;
 
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(48px,5.5vw,72px);
-font-weight:500;
-line-height:.94;
+    font-size:clamp(44px,5vw,64px);
+    font-weight:400;
+
+    line-height:.9;
 }
 
 .after-content{
-max-width:510px;
+    border-top:1px solid #c4baae;
 }
 
-.after-content p{
-font-size:11px;
-line-height:1.85;
+.after-item{
+    display:grid;
+    grid-template-columns:40px 1fr;
 
-color:#625e57;
+    padding:17px 0;
+
+    border-bottom:1px solid #c4baae;
 }
 
-.after-content p + p{
-margin-top:16px;
+.after-number{
+    padding-top:5px;
+
+    color:#8c847a;
+
+    font-size:7px;
+    letter-spacing:2px;
+}
+
+.after-item h3{
+    margin-bottom:4px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:21px;
+    font-weight:500;
+}
+
+.after-item p{
+    max-width:480px;
+
+    color:#70685f;
+
+    font-size:10px;
+    line-height:1.65;
 }
 
 
-/* =========================================================
-   CLOSING LINE
-========================================================= */
+/* =========================================
+   FINAL BRAND SECTION
+========================================= */
 
 .closing{
-background:var(--cream-light);
+    position:relative;
 
-padding:70px 20px;
+    min-height:520px;
 
-text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    background:#171715;
+    color:#f3efe6;
+
+    text-align:center;
+}
+
+.closing::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:50%;
+
+    width:1px;
+    height:55px;
+
+    background:rgba(255,255,255,.25);
+}
+
+.closing-inner{
+    position:relative;
+    z-index:2;
+
+    width:min(820px,88%);
+
+    padding:85px 0 75px;
 }
 
 .closing-label{
-font-size:7px;
-letter-spacing:3px;
-text-transform:uppercase;
+    margin-bottom:23px;
 
-color:var(--grey);
+    color:#918d86;
 
-margin-bottom:17px;
+    font-size:7px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+}
+
+.closing h2{
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:clamp(57px,8vw,98px);
+    font-weight:400;
+
+    line-height:.82;
+    letter-spacing:-1px;
+}
+
+.closing h2 em{
+    color:#9a958d;
+    font-weight:400;
 }
 
 .closing p{
-max-width:690px;
+    max-width:460px;
 
-margin:auto;
+    margin:28px auto 0;
 
-font-family:'Cormorant Garamond',serif;
-font-size:clamp(30px,3.5vw,45px);
-font-weight:400;
-line-height:1.15;
+    color:#aaa69e;
 
-color:#292824;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.45;
+}
+
+.closing-links{
+    margin-top:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:34px;
+}
+
+.closing-link{
+    position:relative;
+
+    padding-bottom:7px;
+
+    color:#e7e3db;
+
+    font-size:7px;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
+}
+
+.closing-link::after{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:1px;
+
+    background:#69665f;
+
+    transition:.3s;
+}
+
+.closing-link:hover::after{
+    background:#fff;
 }
 
 
-/* =========================================================
+/* =========================================
    FOOTER
-========================================================= */
+========================================= */
 
 footer{
-background:#111;
-color:#ddd;
+    background:#0f0f0e;
+    color:#ddd;
 
-padding:50px 6% 25px;
+    padding:42px 6% 25px;
+
+    border-top:1px solid #292927;
 }
 
 .footer-top{
-display:flex;
-align-items:flex-start;
-justify-content:space-between;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-gap:50px;
+    gap:40px;
 
-margin-bottom:45px;
+    margin-bottom:35px;
 }
 
 .footer-logo{
-font-family:'Cormorant Garamond',serif;
-font-size:32px;
-font-weight:500;
-letter-spacing:5px;
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:29px;
+    letter-spacing:5px;
 }
 
 .footer-links{
-display:flex;
-flex-wrap:wrap;
-justify-content:flex-end;
+    display:flex;
+    flex-wrap:wrap;
 
-gap:22px 28px;
+    gap:22px;
 }
 
 .footer-links a{
-font-size:8px;
-letter-spacing:2px;
-text-transform:uppercase;
+    color:#9b9892;
+
+    font-size:7px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    transition:.25s;
+}
+
+.footer-links a:hover{
+    color:#fff;
 }
 
 .footer-bottom{
-padding-top:22px;
+    padding-top:19px;
 
-border-top:1px solid #333;
+    border-top:1px solid #2d2d2a;
 
-display:flex;
-justify-content:space-between;
+    color:#696761;
 
-gap:20px;
-
-font-size:7px;
-letter-spacing:2px;
-text-transform:uppercase;
-
-color:#777;
+    font-size:7px;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 
-/* =========================================================
+/* =========================================
    MOBILE
-========================================================= */
+========================================= */
 
-@media(max-width:700px){
+@media(max-width:800px){
 
-.container{
-width:calc(100% - 36px);
-}
-
-
-/* NAV */
-
-.navbar{
-height:72px;
-padding:0 18px;
-}
-
-.logo{
-font-size:20px;
-letter-spacing:3.5px;
-}
-
-.menu-button{
-font-size:0;
-}
+    .container{
+        width:calc(100% - 34px);
+    }
 
-.hamburger{
-width:26px;
-}
-
-
-/* MENU */
-
-.menu-top{
-height:70px;
-padding:0 20px;
-}
 
-.menu-logo{
-font-size:20px;
-letter-spacing:3.5px;
-}
+    /* HEADER */
 
-.menu-content{
-height:calc(100dvh - 70px);
+    header{
+        height:66px;
+    }
 
-display:block;
+    .nav{
+        width:calc(100% - 36px);
+    }
 
-padding:30px 24px;
+    .logo{
+        font-size:19px;
+        letter-spacing:3.5px;
+    }
 
-overflow-y:auto;
-}
+    .menu-button{
+        font-size:0;
+    }
 
-.menu-links a{
-font-size:42px;
-margin-bottom:3px;
-}
+    .hamburger{
+        width:24px;
+        height:15px;
+    }
 
-.menu-links small{
-width:28px;
-font-size:6px;
-}
 
-.menu-side{
-border-left:0;
-border-top:1px solid #333;
+    /* MENU */
 
-padding:23px 0 0;
-margin-top:24px;
-}
+    .menu-top{
+        height:66px;
+        padding:0 19px;
+    }
 
-.menu-side-label{
-margin-bottom:13px;
-}
+    .menu-logo{
+        font-size:19px;
+    }
 
-.menu-side p{
-font-size:19px;
-}
+    .menu-content{
+        display:block;
 
-.socials{
-margin-top:19px;
-}
+        min-height:0;
 
+        padding:24px 23px 35px;
+    }
 
-/* HERO */
+    .menu-links a{
+        font-size:38px;
+    }
 
-.hero{
-padding:48px 0 52px;
-}
+    .menu-links small{
+        margin-right:10px;
+        font-size:6px;
+    }
 
-.hero-small{
-font-size:7px;
-letter-spacing:2.7px;
-line-height:1.6;
+    .menu-side{
+        margin-top:22px;
 
-margin-bottom:17px;
-}
+        padding:19px 0 0;
 
-.hero-grid{
-display:block;
-}
+        border-left:0;
+        border-top:1px solid #333;
+    }
 
-.hero h1{
-max-width:100%;
+    .menu-side p{
+        font-size:18px;
+    }
 
-font-size:52px;
-font-weight:500;
-line-height:.88;
+    .socials{
+        margin-top:18px;
+    }
 
-letter-spacing:-1px;
-}
 
-/* remove desktop manual break */
+    /* HERO */
 
-.hero h1 br{
-display:none;
-}
+    .hero{
+        padding:28px 0 23px;
+    }
 
-.hero-text{
-max-width:340px;
+    .hero-top{
+        margin-bottom:11px;
 
-margin-top:23px;
+        font-size:6.5px;
+        letter-spacing:2.5px;
+    }
 
-font-size:20px;
-line-height:1.3;
-}
+    .hero-line{
+        width:26px;
+    }
 
+    .hero-grid{
+        grid-template-columns:1fr;
 
-/* BOOKING */
+        gap:10px;
+    }
 
-.booking{
-padding:48px 0 60px;
-}
+    .hero h1{
+        font-size:47px;
+        line-height:.88;
+        letter-spacing:-.5px;
+    }
 
-.booking-grid{
-display:block;
-}
+    .hero-text{
+        max-width:310px;
 
-.booking-info{
-position:static;
-}
+        padding:0;
 
-.section-label{
-font-size:7px;
-letter-spacing:2.7px;
+        font-size:15px;
+        line-height:1.4;
+    }
 
-margin-bottom:18px;
-}
 
-.booking-info h2{
-max-width:350px;
+    /* BOOKING */
 
-font-size:43px;
-font-weight:500;
-line-height:.94;
+    .booking{
+        padding-bottom:38px;
+    }
 
-margin-bottom:20px;
-}
+    .booking-inner{
+        padding-top:19px;
+    }
 
-.booking-info > p{
-max-width:350px;
 
-font-size:10.5px;
-line-height:1.8;
-}
+    /* FORM */
 
+    .booking-form{
+        padding:27px 17px 29px;
+    }
 
-/* STEPS */
+    .booking-form::before{
+        width:48px;
+    }
 
-.steps{
-margin-top:30px;
-}
+    .form-heading{
+        margin-bottom:21px;
+        padding-bottom:20px;
+    }
 
-.step{
-grid-template-columns:36px 1fr;
+    .form-eyebrow{
+        margin-bottom:7px;
 
-padding:18px 0;
-}
+        font-size:6px;
+    }
 
-.step-number{
-font-size:6px;
-}
+    .form-heading h2{
+        font-size:31px;
+    }
 
-.step strong{
-font-size:20px;
-}
+    .form-heading p{
+        margin-top:7px;
 
-.step p{
-font-size:9px;
-}
+        font-size:13px;
+    }
 
+    .form-row{
+        grid-template-columns:1fr;
+        gap:0;
+    }
 
-/* FORM */
+    .form-group{
+        margin-bottom:14px;
+    }
 
-.booking-form{
-margin-top:42px;
+    .form-group label{
+        margin-bottom:6px;
 
-padding:32px 20px;
-}
+        font-size:6.5px;
+        letter-spacing:1.7px;
+    }
 
-.form-intro{
-padding-bottom:27px;
-margin-bottom:29px;
-}
+    input,
+    select{
+        height:48px;
+    }
 
-.form-intro span{
-font-size:6px;
-letter-spacing:2.5px;
-}
+    input,
+    select,
+    textarea{
+        padding:12px 13px;
 
-.form-intro h3{
-font-size:31px;
-line-height:1.08;
-}
+        font-size:16px;
+    }
 
-.form-row{
-display:block;
-}
+    textarea{
+        min-height:90px;
+    }
 
-.form-group{
-margin-bottom:26px;
-}
+    .form-divider{
+        margin:4px 0 17px;
 
-.form-group label{
-font-size:6px;
-letter-spacing:1.8px;
-}
+        font-size:6px;
+    }
 
-input,
-select,
-textarea{
-font-size:16px;
-padding:10px 1px;
-}
+    .submit-btn{
+        padding:17px 12px;
 
-textarea{
-min-height:105px;
-}
+        font-size:7px;
+        letter-spacing:2.4px;
+    }
 
-.form-divider{
-margin:5px 0 26px;
-}
+    .whatsapp-note{
+        font-size:8px;
+    }
 
-.submit-btn{
-min-height:50px;
 
-font-size:7px;
-letter-spacing:2px;
-}
+    /* AFTER */
 
-.whatsapp-note{
-font-size:7.5px;
-}
+    .after{
+        padding:43px 0;
+    }
 
+    .after-grid{
+        grid-template-columns:1fr;
 
-/* AFTER */
+        gap:23px;
+    }
 
-.after{
-padding:50px 0;
-}
+    .after h2{
+        font-size:43px;
+    }
 
-.after-label{
-font-size:7px;
-letter-spacing:2.7px;
+    .after-item{
+        padding:15px 0;
+    }
 
-margin-bottom:18px;
-}
+    .after-item h3{
+        font-size:20px;
+    }
 
-.after-grid{
-display:block;
-}
+    .after-item p{
+        font-size:10px;
+    }
 
-.after h2{
-font-size:43px;
-line-height:.94;
-}
 
-.after-content{
-margin-top:25px;
-}
+    /* CLOSING */
 
-.after-content p{
-font-size:10.5px;
-line-height:1.8;
-}
+    .closing{
+        min-height:430px;
+    }
 
+    .closing::before{
+        height:38px;
+    }
 
-/* CLOSING */
+    .closing-inner{
+        padding:65px 0 55px;
+    }
 
-.closing{
-padding:50px 18px;
-}
+    .closing-label{
+        margin-bottom:18px;
 
-.closing-label{
-font-size:6px;
-}
+        font-size:6px;
+    }
 
-.closing p{
-max-width:340px;
+    .closing h2{
+        font-size:55px;
+        line-height:.83;
+    }
 
-font-size:29px;
-line-height:1.15;
-}
+    .closing p{
+        max-width:310px;
 
+        margin-top:22px;
 
-/* FOOTER */
+        font-size:17px;
+    }
 
-footer{
-padding:42px 22px 23px;
-}
+    .closing-links{
+        margin-top:29px;
 
-.footer-top{
-display:block;
+        gap:24px;
+    }
 
-margin-bottom:35px;
-}
+    .closing-link{
+        font-size:6px;
+        letter-spacing:2px;
+    }
 
-.footer-logo{
-font-size:27px;
-letter-spacing:4px;
-}
 
-.footer-links{
-display:grid;
-grid-template-columns:1fr 1fr;
+    /* FOOTER */
 
-justify-content:start;
+    footer{
+        padding:35px 20px 22px;
+    }
 
-gap:17px;
+    .footer-top{
+        display:block;
 
-margin-top:28px;
-}
+        margin-bottom:28px;
+    }
 
-.footer-bottom{
-display:block;
+    .footer-logo{
+        font-size:25px;
+    }
 
-font-size:6px;
-line-height:1.8;
-}
+    .footer-links{
+        display:grid;
 
-.footer-bottom span{
-display:block;
-}
+        gap:14px;
 
-.footer-bottom span + span{
-margin-top:5px;
-}
+        margin-top:23px;
+    }
 
 }
 
 
-/* =========================================================
-   SMALL PHONE
-========================================================= */
+/* =========================================
+   SMALL MOBILE
+========================================= */
 
-@media(max-width:380px){
+@media(max-width:390px){
 
-.hero h1{
-font-size:48px;
-}
-
-.booking-info h2{
-font-size:40px;
-}
+    .hero h1{
+        font-size:43px;
+    }
 
-.after h2{
-font-size:40px;
-}
+    .booking-form{
+        padding-left:14px;
+        padding-right:14px;
+    }
 
-.form-intro h3{
-font-size:29px;
-}
+    .closing h2{
+        font-size:50px;
+    }
 
 }
 
@@ -1143,699 +1174,672 @@ font-size:29px;
 <body>
 
 
-<!-- =====================================================
-     FULL SCREEN MENU
-===================================================== -->
+<!-- =========================================
+     MENU
+========================================= -->
 
 <div class="menu-overlay" id="menu">
 
-<div class="menu-top">
+    <div class="menu-top">
 
-<a href="index.html" class="menu-logo">
-LENSOGRAPHY
-</a>
+        <div class="menu-logo">
+            LENSOGRAPHY
+        </div>
 
-<button
-class="close-button"
-type="button"
-onclick="closeMenu()"
-aria-label="Close menu">
-×
-</button>
+        <button
+            class="close-button"
+            onclick="closeMenu()"
+            aria-label="Close menu">
+            ×
+        </button>
 
-</div>
-
-
-<div class="menu-content">
+    </div>
 
 
-<div class="menu-links">
+    <div class="menu-content">
 
-<a href="index.html" onclick="closeMenu()">
-<small>01</small>Home
-</a>
+        <div class="menu-links">
 
-<a href="about.html" onclick="closeMenu()">
-<small>02</small>About Us
-</a>
+            <a href="index.html">
+                <small>01</small>Home
+            </a>
 
-<a href="gallery.html" onclick="closeMenu()">
-<small>03</small>Gallery
-</a>
+            <a href="about.html">
+                <small>02</small>About Us
+            </a>
 
-<a href="testimonials.html" onclick="closeMenu()">
-<small>04</small>Testimonials
-</a>
+            <a href="gallery.html">
+                <small>03</small>Gallery
+            </a>
 
-<a href="booking.html" onclick="closeMenu()">
-<small>05</small>Book Us
-</a>
+            <a href="testimonials.html">
+                <small>04</small>Testimonials
+            </a>
 
-<a href="contact.html" onclick="closeMenu()">
-<small>06</small>Contact
-</a>
+            <a href="booking.html">
+                <small>05</small>Book Us
+            </a>
 
-</div>
+            <a href="contact.html">
+                <small>06</small>Contact
+            </a>
 
-
-<div class="menu-side">
-
-<div class="menu-side-label">
-Lensography
-</div>
-
-<p>
-Wedding stories,
-honestly captured
-and beautifully preserved.
-</p>
-
-<div class="socials">
-
-<a
-href="https://instagram.com/lensography.in"
-target="_blank"
-rel="noopener noreferrer">
-Instagram
-</a>
-
-<a
-href="https://wa.me/917306963591"
-target="_blank"
-rel="noopener noreferrer">
-WhatsApp
-</a>
-
-</div>
-
-</div>
+        </div>
 
 
-</div>
+        <div class="menu-side">
+
+            <div class="menu-side-title">
+                Lensography
+            </div>
+
+            <p>
+                Wedding stories,
+                honestly captured
+                and beautifully preserved.
+            </p>
+
+            <div class="socials">
+
+                <a
+                    href="https://instagram.com/lensography.in"
+                    target="_blank">
+                    Instagram
+                </a>
+
+                <a
+                    href="https://wa.me/917306963591"
+                    target="_blank">
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
 
-<!-- =====================================================
-     NAV
-===================================================== -->
 
-<nav class="navbar">
+<!-- =========================================
+     HEADER
+========================================= -->
 
-<a href="index.html" class="logo">
-LENSOGRAPHY
-</a>
+<header>
 
-<button
-class="menu-button"
-type="button"
-onclick="openMenu()"
-aria-label="Open menu">
+    <div class="nav">
 
-MENU
+        <a href="index.html" class="logo">
+            LENSOGRAPHY
+        </a>
 
-<span class="hamburger">
-<span></span>
-<span></span>
-<span></span>
-</span>
+        <button
+            class="menu-button"
+            onclick="openMenu()">
 
-</button>
+            MENU
 
-</nav>
+            <span class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
 
 
-<!-- =====================================================
+
+<!-- =========================================
      HERO
-===================================================== -->
+========================================= -->
 
 <section class="hero">
 
-<div class="container">
+    <div class="container">
 
-<div class="hero-small">
-Lensography · Wedding Enquiry
-</div>
+        <div class="hero-top">
+
+            <span class="hero-line"></span>
+
+            Wedding Enquiry
+
+        </div>
 
 
-<div class="hero-grid">
+        <div class="hero-grid">
 
-<h1>
-Tell us about<br>
-your <em>story.</em>
-</h1>
+            <h1>
+                Tell us about<br>
+                your <em>story.</em>
+            </h1>
 
-<p class="hero-text">
-Every celebration begins differently. Tell us a little about yours and we'll continue the conversation personally.
-</p>
+            <p class="hero-text">
+                Share a few details about your celebration.
+                We'll take it from there.
+            </p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     BOOKING
-===================================================== -->
+
+<!-- =========================================
+     FORM
+========================================= -->
 
 <section class="booking">
 
-<div class="container">
+    <div class="container">
 
-<div class="booking-grid">
+        <div class="booking-inner">
 
+            <div class="booking-form">
 
-<!-- LEFT INFORMATION -->
+                <div class="form-heading">
 
-<div class="booking-info">
+                    <div class="form-eyebrow">
+                        Your Celebration
+                    </div>
 
-<div class="section-label">
-Book Your Date
-</div>
+                    <h2>
+                        Fill in your requirements
+                    </h2>
 
-<h2>
-Let's start with a few details.
-</h2>
+                    <p>
+                        A few details are all we need to begin.
+                    </p>
 
-<p>
-Share the basic details of your celebration. Once you're done, we'll take you directly to WhatsApp with your enquiry neatly prepared.
-</p>
+                </div>
 
 
-<div class="steps">
+                <form id="bookingForm">
 
 
-<div class="step">
+                    <div class="form-row">
 
-<div class="step-number">
-01
-</div>
+                        <div class="form-group">
 
-<div>
+                            <label for="name">
+                                Your Name
+                                <span class="required">*</span>
+                            </label>
 
-<strong>
-Tell us about you
-</strong>
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Your full name"
+                                autocomplete="name"
+                                required>
 
-<p>
-Your name and contact number.
-</p>
+                        </div>
 
-</div>
 
-</div>
+                        <div class="form-group">
 
+                            <label for="phone">
+                                Contact Number
+                                <span class="required">*</span>
+                            </label>
 
-<div class="step">
+                            <input
+                                type="tel"
+                                id="phone"
+                                placeholder="+91 98765 43210"
+                                autocomplete="tel"
+                                required>
 
-<div class="step-number">
-02
-</div>
+                        </div>
 
-<div>
+                    </div>
 
-<strong>
-Share your celebration
-</strong>
 
-<p>
-Event, date, location and requirements.
-</p>
 
-</div>
+                    <div class="form-row">
 
-</div>
+                        <div class="form-group">
 
+                            <label for="eventType">
+                                Event Type
+                                <span class="required">*</span>
+                            </label>
 
-<div class="step">
+                            <select id="eventType" required>
 
-<div class="step-number">
-03
-</div>
+                                <option value="">
+                                    Select your event
+                                </option>
 
-<div>
+                                <option value="Wedding">
+                                    Wedding
+                                </option>
 
-<strong>
-Continue on WhatsApp
-</strong>
+                                <option value="Nikah">
+                                    Nikah
+                                </option>
 
-<p>
-Start a personal conversation with Lensography.
-</p>
+                                <option value="Engagement">
+                                    Engagement
+                                </option>
 
-</div>
+                                <option value="Reception">
+                                    Reception
+                                </option>
 
-</div>
+                                <option value="Pre-Wedding">
+                                    Pre-Wedding
+                                </option>
 
+                                <option value="Other Celebration">
+                                    Other Celebration
+                                </option>
 
-</div>
+                            </select>
 
-</div>
+                        </div>
 
 
-<!-- FORM -->
+                        <div class="form-group">
 
-<div class="booking-form">
+                            <label for="eventDate">
+                                Event Date
+                                <span class="required">*</span>
+                            </label>
 
-<div class="form-intro">
+                            <input
+                                type="date"
+                                id="eventDate"
+                                required>
 
-<span>
-Your Celebration
-</span>
+                        </div>
 
-<h3>
-A few details before we begin.
-</h3>
+                    </div>
 
-</div>
 
 
-<form id="bookingForm">
+                    <div class="form-group">
 
+                        <label for="location">
+                            Event Location
+                            <span class="required">*</span>
+                        </label>
 
-<!-- NAME + PHONE -->
+                        <input
+                            type="text"
+                            id="location"
+                            placeholder="Venue / City / District"
+                            required>
 
-<div class="form-row">
+                    </div>
 
 
-<div class="form-group">
 
-<label>
-Your Name
-<span class="required">*</span>
-</label>
+                    <div class="form-group">
 
-<input
-type="text"
-id="name"
-placeholder="Your full name"
-autocomplete="name"
-required>
+                        <label for="coverage">
+                            What are you looking for?
+                            <span class="required">*</span>
+                        </label>
 
-</div>
+                        <select id="coverage" required>
 
+                            <option value="">
+                                Select coverage
+                            </option>
 
-<div class="form-group">
+                            <option value="Photography">
+                                Photography
+                            </option>
 
-<label>
-Call Number
-<span class="required">*</span>
-</label>
+                            <option value="Videography">
+                                Videography
+                            </option>
 
-<input
-type="tel"
-id="phone"
-inputmode="tel"
-placeholder="+91 98765 43210"
-autocomplete="tel"
-required>
+                            <option value="Photography + Videography">
+                                Photography + Videography
+                            </option>
 
-</div>
+                            <option value="Photography + iPhone Videography">
+                                Photography + iPhone Videography
+                            </option>
 
+                            <option value="Complete Wedding Coverage">
+                                Complete Wedding Coverage
+                            </option>
 
-</div>
+                            <option value="Need Guidance">
+                                Not Sure Yet — Need Guidance
+                            </option>
 
+                        </select>
 
-<!-- EVENT + DATE -->
+                    </div>
 
-<div class="form-row">
 
 
-<div class="form-group">
+                    <div class="form-group">
 
-<label>
-Event Type
-<span class="required">*</span>
-</label>
+                        <label for="functions">
+                            Functions / Events
+                        </label>
 
-<select id="eventType" required>
+                        <input
+                            type="text"
+                            id="functions"
+                            placeholder="Eg: Haldi, Nikah, Wedding, Reception">
 
-<option value="">
-Select your event
-</option>
+                    </div>
 
-<option value="Wedding">
-Wedding
-</option>
 
-<option value="Nikah">
-Nikah
-</option>
 
-<option value="Engagement">
-Engagement
-</option>
+                    <div class="form-group">
 
-<option value="Reception">
-Reception
-</option>
+                        <label for="source">
+                            How did you find Lensography?
+                        </label>
 
-<option value="Pre-Wedding">
-Pre-Wedding
-</option>
+                        <select id="source">
 
-<option value="Other Celebration">
-Other Celebration
-</option>
+                            <option value="">
+                                Select an option
+                            </option>
 
-</select>
+                            <option value="Instagram">
+                                Instagram
+                            </option>
 
-</div>
+                            <option value="Friend / Family">
+                                Friend / Family
+                            </option>
 
+                            <option value="Previous Client">
+                                Previous Client
+                            </option>
 
-<div class="form-group">
+                            <option value="Google">
+                                Google
+                            </option>
 
-<label>
-Event Date
-<span class="required">*</span>
-</label>
+                            <option value="Other">
+                                Other
+                            </option>
 
-<input
-type="date"
-id="eventDate"
-required>
+                        </select>
 
-</div>
+                    </div>
 
 
-</div>
 
+                    <div class="form-group">
 
-<!-- LOCATION -->
+                        <label for="message">
+                            Anything you'd like us to know?
+                        </label>
 
-<div class="form-group">
+                        <textarea
+                            id="message"
+                            placeholder="Tell us about your plans or requirements..."></textarea>
 
-<label>
-Event Location
-<span class="required">*</span>
-</label>
+                    </div>
 
-<input
-type="text"
-id="location"
-placeholder="Venue / City / District"
-autocomplete="address-level2"
-required>
 
-</div>
 
+                    <div class="form-divider">
+                        Almost There
+                    </div>
 
-<!-- COVERAGE -->
 
-<div class="form-group">
+                    <button
+                        type="submit"
+                        class="submit-btn">
 
-<label>
-What are you looking for?
-<span class="required">*</span>
-</label>
+                        Send Enquiry on WhatsApp →
 
-<select id="coverage" required>
+                    </button>
 
-<option value="">
-Select coverage
-</option>
 
-<option value="Photography">
-Photography
-</option>
+                    <p class="whatsapp-note">
+                        Your enquiry will open directly in WhatsApp
+                        so we can continue the conversation personally.
+                    </p>
 
-<option value="Videography">
-Videography
-</option>
 
-<option value="Photography + Videography">
-Photography + Videography
-</option>
+                </form>
 
-<option value="Photography + iPhone Videography">
-Photography + iPhone Videography
-</option>
+            </div>
 
-<option value="Complete Wedding Coverage">
-Complete Wedding Coverage
-</option>
+        </div>
 
-<option value="Need Guidance">
-Not Sure Yet — Need Guidance
-</option>
-
-</select>
-
-</div>
-
-
-<!-- FUNCTIONS -->
-
-<div class="form-group">
-
-<label>
-Functions / Events
-</label>
-
-<input
-type="text"
-id="functions"
-placeholder="Eg: Haldi, Nikah, Wedding, Reception">
-
-</div>
-
-
-<!-- SOURCE -->
-
-<div class="form-group">
-
-<label>
-How did you find Lensography?
-</label>
-
-<select id="source">
-
-<option value="">
-Select an option
-</option>
-
-<option value="Instagram">
-Instagram
-</option>
-
-<option value="Friend / Family">
-Friend / Family
-</option>
-
-<option value="Previous Client">
-Previous Client
-</option>
-
-<option value="Google">
-Google
-</option>
-
-<option value="Other">
-Other
-</option>
-
-</select>
-
-</div>
-
-
-<!-- MESSAGE -->
-
-<div class="form-group">
-
-<label>
-Anything you'd like us to know?
-</label>
-
-<textarea
-id="message"
-placeholder="Tell us about your plans, requirements or anything else you'd like to share..."></textarea>
-
-</div>
-
-
-<div class="form-divider"></div>
-
-
-<button
-type="submit"
-class="submit-btn">
-
-Continue on WhatsApp →
-
-</button>
-
-
-<p class="whatsapp-note">
-Your enquiry will open directly in WhatsApp. No payment or booking confirmation happens on this page.
-</p>
-
-
-</form>
-
-</div>
-
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================
      WHAT HAPPENS NEXT
-===================================================== -->
+========================================= -->
 
 <section class="after">
 
-<div class="container">
+    <div class="container">
 
-<div class="after-label">
-After Your Enquiry
-</div>
+        <div class="after-grid">
 
-<div class="after-grid">
+            <div>
 
-<h2>
-What happens next?
-</h2>
+                <div class="after-label">
+                    After Your Enquiry
+                </div>
+
+                <h2>
+                    What happens<br>
+                    next?
+                </h2>
+
+            </div>
 
 
-<div class="after-content">
+            <div class="after-content">
 
-<p>
-Once your message reaches us, we'll review your event details and check availability for your date.
-</p>
+                <div class="after-item">
 
-<p>
-We'll then personally guide you through the suitable coverage, requirements and everything you need to know before confirming your booking.
-</p>
+                    <div class="after-number">
+                        01
+                    </div>
 
-<p>
-No complicated process — just a simple conversation about your celebration.
-</p>
+                    <div>
 
-</div>
+                        <h3>
+                            We check your date.
+                        </h3>
 
-</div>
+                        <p>
+                            We'll review your celebration details
+                            and confirm availability.
+                        </p>
 
-</div>
+                    </div>
+
+                </div>
+
+
+                <div class="after-item">
+
+                    <div class="after-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            We understand your plans.
+                        </h3>
+
+                        <p>
+                            We'll discuss your events,
+                            requirements and preferred coverage.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="after-item">
+
+                    <div class="after-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            We take it from there.
+                        </h3>
+
+                        <p>
+                            We'll personally guide you through
+                            the suitable coverage and booking process.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
-     CLOSING
-===================================================== -->
+
+<!-- =========================================
+     FINAL BRAND SECTION
+========================================= -->
 
 <section class="closing">
 
-<div class="closing-label">
-Lensography
-</div>
+    <div class="closing-inner">
 
-<p>
-Your celebration deserves to be remembered exactly the way it felt.
-</p>
+        <div class="closing-label">
+            Your Story Starts Here
+        </div>
+
+        <h2>
+            Some moments<br>
+            happen <em>once.</em>
+        </h2>
+
+        <p>
+            Let's make sure they stay with you
+            long after the day is over.
+        </p>
+
+
+        <div class="closing-links">
+
+            <a
+                href="gallery.html"
+                class="closing-link">
+
+                View Our Stories ↗
+
+            </a>
+
+
+            <a
+                href="https://instagram.com/lensography.in"
+                target="_blank"
+                class="closing-link">
+
+                Instagram ↗
+
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================================
+
+<!-- =========================================
      FOOTER
-===================================================== -->
+========================================= -->
 
 <footer>
 
-<div class="footer-top">
+    <div class="footer-top">
 
-<a href="index.html" class="footer-logo">
-LENSOGRAPHY
-</a>
+        <div class="footer-logo">
+            LENSOGRAPHY
+        </div>
 
+        <div class="footer-links">
 
-<div class="footer-links">
+            <a href="index.html">Home</a>
 
-<a href="index.html">
-Home
-</a>
+            <a href="about.html">About</a>
 
-<a href="about.html">
-About
-</a>
+            <a href="gallery.html">Gallery</a>
 
-<a href="gallery.html">
-Gallery
-</a>
+            <a href="testimonials.html">Testimonials</a>
 
-<a href="testimonials.html">
-Testimonials
-</a>
+            <a href="booking.html">Book Us</a>
 
-<a href="booking.html">
-Book Us
-</a>
+            <a href="contact.html">Contact</a>
 
-<a href="contact.html">
-Contact
-</a>
+            <a
+                href="https://instagram.com/lensography.in"
+                target="_blank">
+                Instagram
+            </a>
 
-<a
-href="https://instagram.com/lensography.in"
-target="_blank"
-rel="noopener noreferrer">
-Instagram
-</a>
+        </div>
 
-</div>
+    </div>
 
-</div>
-
-
-<div class="footer-bottom">
-
-<span>
-© 2026 Lensography
-</span>
-
-<span>
-Kerala · India · Worldwide
-</span>
-
-</div>
+    <div class="footer-bottom">
+        © 2026 Lensography · Wedding Photography & Films
+    </div>
 
 </footer>
 
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
 <script>
 
-/* =========================================================
-   MENU
-========================================================= */
+/* MENU */
 
 const menu =
 document.getElementById("menu");
 
 function openMenu(){
 
-menu.classList.add("active");
+    menu.classList.add("active");
 
-document.body.classList.add("menu-open");
+    document.body.classList.add("menu-open");
 
 }
 
 function closeMenu(){
 
-menu.classList.remove("active");
+    menu.classList.remove("active");
 
-document.body.classList.remove("menu-open");
+    document.body.classList.remove("menu-open");
 
 }
 
@@ -1843,16 +1847,14 @@ document.addEventListener(
 "keydown",
 function(event){
 
-if(event.key === "Escape"){
-closeMenu();
-}
+    if(event.key === "Escape"){
+        closeMenu();
+    }
 
 });
 
 
-/* =========================================================
-   MINIMUM EVENT DATE
-========================================================= */
+/* EVENT DATE */
 
 const dateInput =
 document.getElementById("eventDate");
@@ -1864,7 +1866,7 @@ const year =
 today.getFullYear();
 
 const month =
-String(today.getMonth() + 1)
+String(today.getMonth()+1)
 .padStart(2,"0");
 
 const day =
@@ -1875,9 +1877,7 @@ dateInput.min =
 `${year}-${month}-${day}`;
 
 
-/* =========================================================
-   BOOKING FORM
-========================================================= */
+/* BOOKING FORM */
 
 document
 .getElementById("bookingForm")
@@ -1885,85 +1885,71 @@ document
 "submit",
 function(event){
 
-event.preventDefault();
+    event.preventDefault();
 
 
-/* VALUES */
+    const name =
+    document.getElementById("name")
+    .value.trim();
 
-const name =
-document.getElementById("name")
-.value
-.trim();
+    const phone =
+    document.getElementById("phone")
+    .value.trim();
 
-const phone =
-document.getElementById("phone")
-.value
-.trim();
+    const eventType =
+    document.getElementById("eventType")
+    .value;
 
-const eventType =
-document.getElementById("eventType")
-.value;
+    const eventDate =
+    document.getElementById("eventDate")
+    .value;
 
-const eventDate =
-document.getElementById("eventDate")
-.value;
+    const location =
+    document.getElementById("location")
+    .value.trim();
 
-const location =
-document.getElementById("location")
-.value
-.trim();
+    const coverage =
+    document.getElementById("coverage")
+    .value;
 
-const coverage =
-document.getElementById("coverage")
-.value;
+    const functions =
+    document.getElementById("functions")
+    .value.trim();
 
-const functions =
-document.getElementById("functions")
-.value
-.trim();
+    const source =
+    document.getElementById("source")
+    .value;
 
-const source =
-document.getElementById("source")
-.value;
-
-const extraMessage =
-document.getElementById("message")
-.value
-.trim();
+    const extraMessage =
+    document.getElementById("message")
+    .value.trim();
 
 
-/* =========================================================
-   FORMAT DATE
-========================================================= */
-
-let formattedDate =
-eventDate;
-
-if(eventDate){
-
-const date =
-new Date(
-eventDate + "T00:00:00"
-);
-
-formattedDate =
-date.toLocaleDateString(
-"en-IN",
-{
-day:"numeric",
-month:"long",
-year:"numeric"
-}
-);
-
-}
+    let formattedDate =
+    eventDate;
 
 
-/* =========================================================
-   WHATSAPP MESSAGE
-========================================================= */
+    if(eventDate){
 
-let whatsappMessage =
+        const date =
+        new Date(
+            eventDate + "T00:00:00"
+        );
+
+        formattedDate =
+        date.toLocaleDateString(
+            "en-IN",
+            {
+                day:"numeric",
+                month:"long",
+                year:"numeric"
+            }
+        );
+
+    }
+
+
+    let whatsappMessage =
 
 `Hi Lensography 👋
 
@@ -1971,7 +1957,7 @@ I'd like to enquire about a booking.
 
 *CLIENT DETAILS*
 Name: ${name}
-Call Number: ${phone}
+Contact Number: ${phone}
 
 *EVENT DETAILS*
 Event: ${eventType}
@@ -1982,67 +1968,57 @@ Location: ${location}
 ${coverage}`;
 
 
-/* FUNCTIONS */
+    if(functions){
 
-if(functions){
-
-whatsappMessage +=
+        whatsappMessage +=
 
 `\n\n*FUNCTIONS / EVENTS*
 ${functions}`;
 
-}
+    }
 
 
-/* SOURCE */
+    if(source){
 
-if(source){
-
-whatsappMessage +=
+        whatsappMessage +=
 
 `\n\n*HOW I FOUND LENSOGRAPHY*
 ${source}`;
 
-}
+    }
 
 
-/* EXTRA DETAILS */
+    if(extraMessage){
 
-if(extraMessage){
-
-whatsappMessage +=
+        whatsappMessage +=
 
 `\n\n*ADDITIONAL DETAILS*
 ${extraMessage}`;
 
-}
+    }
 
 
-/* END */
-
-whatsappMessage +=
+    whatsappMessage +=
 
 `\n\nPlease let me know the availability and further details. Thank you!`;
 
 
-/* =========================================================
-   WHATSAPP
-========================================================= */
+    const lensographyNumber =
+    "917306963591";
 
-const lensographyNumber =
-"917306963591";
 
-const whatsappURL =
+    const whatsappURL =
 
-"https://wa.me/" +
-lensographyNumber +
-"?text=" +
-encodeURIComponent(
-whatsappMessage
-);
+    "https://wa.me/" +
+    lensographyNumber +
+    "?text=" +
+    encodeURIComponent(
+        whatsappMessage
+    );
 
-window.location.href =
-whatsappURL;
+
+    window.location.href =
+    whatsappURL;
 
 });
 
