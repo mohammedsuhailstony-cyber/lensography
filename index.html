@@ -1843,69 +1843,846 @@ Explore Full Gallery →
 
 
 <!-- =====================================================
-     CINEMATIC WEDDING FILM
+     LENSOGRAPHY — CINEMATIC WEDDING FILM
+     FINAL COMPLETE VERSION
+     HTML + CSS + JAVASCRIPT
 ===================================================== -->
 
-<section class="film-section" id="filmSection">
+<style>
 
-  <!-- BACKGROUND LOOP VIDEO -->
-  <video
-    class="film-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto">
+/* =====================================================
+   MAIN WEDDING FILM SECTION
+===================================================== */
 
-    <source src="wedding-film.MP4" type="video/mp4">
+#filmSection {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    min-height: 520px;
+    overflow: hidden;
+    background: #050505;
+    display: flex;
+    align-items: center;
+}
 
-  </video>
 
-  <div class="film-overlay"></div>
+/* BACKGROUND LOOP VIDEO */
 
-  <div class="film-content">
+#filmSection .film-video {
+    position: absolute;
+    inset: 0;
 
-    <div class="label">
-      Wedding Films
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    z-index: 1;
+}
+
+
+/* DARK CINEMATIC OVERLAY */
+
+#filmSection .film-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+
+    background: linear-gradient(
+        90deg,
+        rgba(0,0,0,.58) 0%,
+        rgba(0,0,0,.28) 55%,
+        rgba(0,0,0,.12) 100%
+    );
+
+    pointer-events: none;
+}
+
+
+/* CONTENT */
+
+#filmSection .film-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+    max-width: 1300px;
+
+    margin: 0 auto;
+
+    padding: 70px 7%;
+
+    color: #fff;
+}
+
+
+/* SMALL WEDDING FILMS TEXT */
+
+#filmSection .film-label {
+    margin-bottom: 18px;
+
+    color: rgba(255,255,255,.9);
+
+    font-size: 11px;
+    font-weight: 400;
+
+    letter-spacing: 5px;
+
+    line-height: 1.4;
+
+    text-transform: uppercase;
+}
+
+
+/* BIG TITLE */
+
+#filmSection .film-title {
+    max-width: 900px;
+
+    margin: 0 0 30px 0;
+    padding: 0;
+
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(48px, 6vw, 88px);
+
+    font-weight: 400;
+
+    line-height: .96;
+
+    letter-spacing: -2px;
+}
+
+
+#filmSection .film-title em {
+    color: #fff;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 400;
+}
+
+
+/* =====================================================
+   WATCH OUR FILM BUTTON
+   Browser default white/blue button removed
+===================================================== */
+
+#filmSection button.film-open,
+#filmSection button.film-open:hover,
+#filmSection button.film-open:active,
+#filmSection button.film-open:focus {
+
+    -webkit-appearance: none !important;
+    appearance: none !important;
+
+    display: inline-block !important;
+
+    width: auto !important;
+    height: auto !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 0 8px 0 !important;
+
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+
+    border: 0 !important;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.85) !important;
+
+    border-radius: 0 !important;
+
+    box-shadow: none !important;
+
+    outline: none !important;
+
+    color: #fff !important;
+
+    -webkit-text-fill-color: #fff !important;
+
+    font-family: inherit !important;
+
+    font-size: 10px !important;
+
+    font-weight: 400 !important;
+
+    line-height: 1.5 !important;
+
+    letter-spacing: 3px !important;
+
+    text-transform: uppercase !important;
+
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+}
+
+
+#filmSection button.film-open:hover {
+    opacity: .7 !important;
+}
+
+
+/* =====================================================
+   FULL SCREEN VIDEO POPUP
+
+   IMPORTANT:
+   Completely hidden before clicking.
+   Fixes white strip / second video / X issue.
+===================================================== */
+
+#filmModal {
+
+    display: none !important;
+
+    visibility: hidden !important;
+
+    opacity: 0 !important;
+
+    position: fixed !important;
+
+    inset: 0 !important;
+
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    width: 100vw !important;
+
+    height: 100vh !important;
+    height: 100dvh !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background: #000 !important;
+
+    overflow: hidden !important;
+
+    z-index: 2147483647 !important;
+}
+
+
+/* ONLY SHOW AFTER CLICK */
+
+#filmModal.film-active {
+
+    display: flex !important;
+
+    visibility: visible !important;
+
+    opacity: 1 !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+}
+
+
+/* FULL SCREEN VIDEO */
+
+#filmModal #fullFilm {
+
+    display: block !important;
+
+    position: relative !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    max-width: none !important;
+
+    max-height: none !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    background: #000 !important;
+
+    object-fit: contain !important;
+
+    z-index: 1 !important;
+}
+
+
+/* =====================================================
+   CLOSE X BUTTON
+===================================================== */
+
+#filmModal button.film-close,
+#filmModal button.film-close:hover,
+#filmModal button.film-close:focus,
+#filmModal button.film-close:active {
+
+    -webkit-appearance: none !important;
+    appearance: none !important;
+
+    position: absolute !important;
+
+    top: calc(15px + env(safe-area-inset-top)) !important;
+
+    right: 15px !important;
+
+    bottom: auto !important;
+
+    left: auto !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    width: 44px !important;
+
+    height: 44px !important;
+
+    min-width: 44px !important;
+
+    min-height: 44px !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    background: rgba(0,0,0,.55) !important;
+
+    background-image: none !important;
+
+    border:
+        1px solid rgba(255,255,255,.65) !important;
+
+    border-radius: 50% !important;
+
+    box-shadow: none !important;
+
+    outline: none !important;
+
+    color: #fff !important;
+
+    -webkit-text-fill-color: #fff !important;
+
+    font-family: Arial, sans-serif !important;
+
+    font-size: 28px !important;
+
+    font-weight: 300 !important;
+
+    line-height: 1 !important;
+
+    text-decoration: none !important;
+
+    cursor: pointer !important;
+
+    z-index: 999999 !important;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    #filmSection {
+
+        height: 70vh;
+
+        min-height: 540px;
+
+        align-items: flex-end;
+    }
+
+
+    #filmSection .film-video {
+
+        object-position: center center;
+    }
+
+
+    #filmSection .film-overlay {
+
+        background: linear-gradient(
+            0deg,
+            rgba(0,0,0,.70) 0%,
+            rgba(0,0,0,.30) 55%,
+            rgba(0,0,0,.08) 100%
+        );
+    }
+
+
+    #filmSection .film-content {
+
+        padding:
+            45px
+            24px
+            55px;
+    }
+
+
+    #filmSection .film-label {
+
+        margin-bottom: 13px;
+
+        font-size: 9px;
+
+        letter-spacing: 4px;
+    }
+
+
+    #filmSection .film-title {
+
+        margin-bottom: 25px;
+
+        font-size: clamp(
+            42px,
+            12vw,
+            62px
+        );
+
+        line-height: .94;
+
+        letter-spacing: -1px;
+    }
+
+
+    #filmSection button.film-open {
+
+        font-size: 9px !important;
+
+        letter-spacing: 2.5px !important;
+    }
+
+}
+
+
+/* SMALL MOBILE */
+
+@media (max-width: 430px) {
+
+    #filmSection {
+
+        height: 68vh;
+
+        min-height: 520px;
+    }
+
+
+    #filmSection .film-content {
+
+        padding:
+            35px
+            22px
+            50px;
+    }
+
+
+    #filmSection .film-title {
+
+        font-size: 45px;
+    }
+
+}
+
+</style>
+
+
+
+<!-- =====================================================
+     MAIN WEDDING FILM SECTION
+===================================================== -->
+
+<section
+    class="film-section"
+    id="filmSection">
+
+
+    <!-- BACKGROUND VIDEO
+         Autoplay + muted + loop -->
+
+    <video
+        class="film-video"
+        id="backgroundFilm"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto">
+
+        <source
+            src="wedding-film.MP4"
+            type="video/mp4">
+
+    </video>
+
+
+
+    <!-- DARK OVERLAY -->
+
+    <div class="film-overlay"></div>
+
+
+
+    <!-- TEXT CONTENT -->
+
+    <div class="film-content">
+
+
+        <div class="film-label">
+
+            Wedding Films
+
+        </div>
+
+
+        <h2 class="film-title">
+
+            Not just how it looked.<br>
+
+            <em>How it felt.</em>
+
+        </h2>
+
+
+
+        <!-- WATCH BUTTON -->
+
+        <button
+            type="button"
+            class="film-open"
+            id="openFilm">
+
+            Watch Our Film →
+
+        </button>
+
+
     </div>
-
-    <h2 class="display">
-      Not just how it looked.<br>
-      <em>How it felt.</em>
-    </h2>
-
-    <button type="button" class="text-link film-open" id="openFilm">
-      Watch Our Film →
-    </button>
-
-  </div>
 
 </section>
 
 
-<!-- FULL SCREEN VIDEO POPUP -->
-<div class="film-modal" id="filmModal">
 
-  <button
-    type="button"
-    class="film-close"
-    id="closeFilm"
-    aria-label="Close video">
-    ×
-  </button>
+<!-- =====================================================
+     FULLSCREEN VIDEO POPUP
+     Hidden until Watch Our Film is clicked
+===================================================== -->
 
-  <video
-    id="fullFilm"
-    class="film-full-video"
-    controls
-    playsinline
-    preload="metadata">
+<div
+    id="filmModal"
+    aria-hidden="true">
 
-    <source src="wedding-film.MP4" type="video/mp4">
 
-  </video>
+    <!-- CLOSE BUTTON -->
+
+    <button
+        type="button"
+        class="film-close"
+        id="closeFilm"
+        aria-label="Close video">
+
+        ×
+
+    </button>
+
+
+
+    <!-- FULL VIDEO WITH SOUND + CONTROLS -->
+
+    <video
+        id="fullFilm"
+        controls
+        playsinline
+        preload="metadata">
+
+        <source
+            src="wedding-film.MP4"
+            type="video/mp4">
+
+    </video>
+
 
 </div>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+(function () {
+
+    const modal =
+        document.getElementById("filmModal");
+
+    const openButton =
+        document.getElementById("openFilm");
+
+    const closeButton =
+        document.getElementById("closeFilm");
+
+    const fullFilm =
+        document.getElementById("fullFilm");
+
+    const backgroundFilm =
+        document.getElementById("backgroundFilm");
+
+
+    /* =================================
+       OPEN FULL VIDEO
+    ================================= */
+
+    function openFilm() {
+
+        modal.classList.add(
+            "film-active"
+        );
+
+
+        modal.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+
+        /* Stop website scrolling */
+
+        document.documentElement.style.overflow =
+            "hidden";
+
+        document.body.style.overflow =
+            "hidden";
+
+
+        /* Pause background loop */
+
+        if (backgroundFilm) {
+
+            backgroundFilm.pause();
+
+        }
+
+
+        /* Start full video from beginning */
+
+        fullFilm.currentTime = 0;
+
+
+        /* SOUND ON */
+
+        fullFilm.muted = false;
+
+        fullFilm.volume = 1;
+
+
+        const playPromise =
+            fullFilm.play();
+
+
+        if (playPromise !== undefined) {
+
+            playPromise.catch(function () {
+
+                /*
+                Some browsers may require
+                user to press play.
+                Controls are available.
+                */
+
+            });
+
+        }
+
+    }
+
+
+
+    /* =================================
+       CLOSE FULL VIDEO
+    ================================= */
+
+    function closeFilm() {
+
+        /* Stop full video */
+
+        fullFilm.pause();
+
+        fullFilm.currentTime = 0;
+
+
+        /* Hide popup */
+
+        modal.classList.remove(
+            "film-active"
+        );
+
+
+        modal.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+
+        /* Restore website scrolling */
+
+        document.documentElement.style.overflow =
+            "";
+
+        document.body.style.overflow =
+            "";
+
+
+        /* Resume background video */
+
+        if (backgroundFilm) {
+
+            backgroundFilm.muted = true;
+
+
+            const bgPlay =
+                backgroundFilm.play();
+
+
+            if (bgPlay !== undefined) {
+
+                bgPlay.catch(function () {});
+
+            }
+
+        }
+
+    }
+
+
+
+    /* =================================
+       WATCH BUTTON
+    ================================= */
+
+    openButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            openFilm();
+
+        }
+    );
+
+
+
+    /* =================================
+       CLOSE X
+    ================================= */
+
+    closeButton.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+            event.stopPropagation();
+
+            closeFilm();
+
+        }
+    );
+
+
+
+    /* =================================
+       CLICK BLACK AREA TO CLOSE
+    ================================= */
+
+    modal.addEventListener(
+        "click",
+        function (event) {
+
+            if (event.target === modal) {
+
+                closeFilm();
+
+            }
+
+        }
+    );
+
+
+
+    /* =================================
+       ESC KEY TO CLOSE
+    ================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape" &&
+                modal.classList.contains(
+                    "film-active"
+                )
+            ) {
+
+                closeFilm();
+
+            }
+
+        }
+    );
+
+
+
+    /* =================================
+       FORCE BACKGROUND VIDEO
+       TO REMAIN MUTED
+    ================================= */
+
+    if (backgroundFilm) {
+
+        backgroundFilm.muted = true;
+
+        backgroundFilm.defaultMuted = true;
+
+
+        const bgPlay =
+            backgroundFilm.play();
+
+
+        if (bgPlay !== undefined) {
+
+            bgPlay.catch(function () {});
+
+        }
+
+    }
+
+})();
+
+</script>
 
 
 <!-- =====================================================
